@@ -61,12 +61,12 @@ body{
   border-bottom: 3px solid var(--ter);
 }
 
-.luggageBtn img{
+/* .luggageBtn img{
   margin-top: 8px;
   max-width: 250px;
-}
+} */
 
-#passport{
+/* #passport{
   width: 100%;
   height: 100%;
   position: relative;
@@ -78,9 +78,9 @@ body{
 #passport_image{
   width: 200%;
   height: 200%;
-}
+} */
 
-#stamp {
+/* #stamp {
   position: absolute;
   top: 50%;
   right: 50%;
@@ -89,18 +89,243 @@ body{
   height: auto;
   opacity: 0;
   transition: opacity 0.5s ease;
-}
-
-/* start button */
-.image{
-  position: absolute;
-  opacity: 1;
-  transition: 0.3s;
-}
-
-/* .image:hover{
-  opacity: 0;
 } */
+
+/* ------------------- INDEX PAGE ------------------- */
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.card {
+  border: 1px solid #47464742;
+  display: inline-block;
+  max-width: 100%;
+  padding: 0px;
+}
+
+.cover-image {
+  width: 100%;
+  aspect-ratio: 65/45;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.start-info {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.start-info-desc {
+  font-family: 'OpenSans-Regular', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+  text-align: center;
+  color: #000000;
+  margin: 0 auto;
+  display: block;
+  padding: 35px 0px;
+}
+
+@media (max-width: 595px) {
+  .start-info-desc {
+      font-size: 16px;
+      line-height: 24px;
+      padding: 20px 0px;
+  }
+}
+
+.start-button-link,
+.start-button-link:hover {
+  text-decoration: none;
+}
+
+.start-button {
+  width: 92%;
+
+  border-radius: 20px;
+  background-color: #CC0000;
+  color: #FFFFFF;
+  border: none;
+
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 70px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  font-family: 'OpenSans-SemiBold', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 21.79px;
+  letter-spacing: 0.5px;
+  text-align: center;
+  text-transform: none;
+  padding: 20px;
+}
+
+.start-button:hover {
+  background-color: #b30000;
+  transform: scale(1.05);
+}
+
+/* ------------------- END OF INDEX PAGE ------------------- */
+
+/* ------------------- QUIZ ------------------- */
+
+.quiz-container {
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto; */
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.quiz-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 0;
+  align-items: center;
+  margin-bottom: 50px;
+  padding: 0 0 50px;
+
+  /* border: 1px solid #47464742;
+  display: inline-block;
+  max-width: 100%;
+  padding: 0px; */
+}
+
+.quiz-cover-image {
+  margin-bottom: 20px;
+  opacity: 1;
+  /* background-size: cover;
+  background-position: top; */
+  width: 100%;
+  aspect-ratio: 65/45;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.quiz-info {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.quiz-transition {
+  font-family: 'OpenSans-Regular', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: center;
+  color: #000000;
+  margin: 0 auto;
+  display: block;
+  max-width: 610px;
+}
+
+.quiz-desc {
+  font-family: 'OpenSans-Regular', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: center;
+  color: #000000;
+}
+
+.quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.quiz-option {
+  display: flex;
+  align-items: center;
+}
+
+.quiz-option input {
+  display: none;
+}
+
+.quiz-option label {
+  display: block;
+  width: 100%;
+  font-family: 'OpenSans-SemiBold', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 21.79px;
+  letter-spacing: .5px;
+  color: #FFFFFF;
+  background: #000;
+  border-radius: 20px;
+  padding: 15px 20px;
+  transition: all .3s ease;
+  cursor: pointer;
+  text-align: center;
+}
+
+.quiz-option label:hover {
+  background: #c00;
+}
+
+.quiz-option input:checked+label {
+  background: #c00;
+}
+
+.quiz-option input:disabled:not(:checked)+label {
+  opacity: .75;
+  cursor: default;
+}
+
+/* ------------------- END OF QUIZ ------------------- */
+
+/* ------------------- RESPONSIVE ------------------- */
+@media screen and (max-width: 959px) {
+  .container {
+      width: 100%;
+  }
+
+  .cover-img {
+      width: 100%;
+      aspect-ratio: 65/45;
+      object-fit: cover;
+      object-position: center center;
+  }
+
+  .start-button {
+      width: 100%;
+  }
+
+  .quiz-radio-button {
+      width: 100%;
+  }
+
+  .haqdarshak-btn {
+      width: 100%;
+  }
+
+  .brandbadge-content-img {
+      width: 100%;
+      padding: 20px 0;
+  }
+}
+
+/* ------------------- END OF RESPONSIVE ------------------- */
+
+/* ------------------- FOOTER ------------------- */
 
 #footer{
   width: 100%;
