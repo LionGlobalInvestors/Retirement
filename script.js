@@ -8,118 +8,118 @@ class Quiz {
       {
         image: `quiz-Q1.png`,
         transition: ``,
-        question: `You begin your adventure at the Singapore Flyer, where you are greeted by the shimmering waters and city skyline. As you take in the sights from the top of the flyer, you see a single orchid in front of you.<br><br> Do you ...`,
+        question: `As you prepare to embark on a long journey, you pack your bag. <br> How do you pack?`,
         answers: {
           // Sensing: `Admire the orchid’s details and colours`,
           // Intuition: `Think about what the orchid symbolises`,
-          Capital: `AAAAAAAAAAAA`,
-          Wealth: `BBBBBBBBBBBB`,
-          Income: `CCCCCCCC`,
-          Legacy: `DDDDDDDDDD`,
+          Capital: `Pack everything you might need`,
+          Wealth: `Bring the bare minimum`,
+          Income: `Pack half and buy the rest there`,
+          Legacy: `Pack half and wash there`,
         },
       },
       {
         image: `quiz-Q2.png`,
-        transition: `Your choice illuminates a pathway of flowers that leads you to the Shilin Night Market in Taipei.`,
-        question: `The scent of street food fills the air, blending with the lively buzz of vendors. <br><br> Do you ... `,
+        transition: ``,
+        question: `Who is accompanying you to see the Northern Lights?`,
         answers: {
           // Introversion: `Prefer to explore the market quietly, soaking in the sights and sounds`,
           // Extroversion: `Engage with the vendors and make every interaction a part of the experience`,
-          Capital: `AAAAAAAAAAAA`,
-          Wealth: `BBBBBBBBBBBB`,
-          Income: `CCCCCCCC`,
-          Legacy: `DDDDDDDDDD`,
+          Capital: `2 - 3 friends to split cost`,
+          Wealth: `Traveling solo for adventure`,
+          Income: `Join a tour group for convenience`,
+          Legacy: `Bring the whole kampong`,
         },
       },
       {
         image: `quiz-Q3.png`,
-        transition: `A lantern vendor hands you a magical lantern that lifts you into the sky, carrying you into the clouds.`,
-        question: `Upon landing, you find yourself standing atop Victoria Peak in Hong Kong. The city lights sparkle like stars below you.<br><br> Do you ... `,
+        transition: ``,
+        question: `It's time to head to the airport. <br> How early do you leave?`,
         answers: {
           // Thinking: `Examine the lantern and wonder how it works`,
           // Feeling: `Focus on the magical and emotional experience`,
-          Capital: `AAAAAAAAAAAA`,
-          Wealth: `BBBBBBBBBBBB`,
-          Income: `CCCCCCCC`,
-          Legacy: `DDDDDDDDDD`,
+          Capital: `Leave 3 hours early because kiasu`,
+          Wealth: `Leave 1 hour before your flight`,
+          Income: `Leave 2 hours before to be just right on time`,
+          Legacy: `Leave 3 hours early to go shopping/eating`,
         },
       },
       {
         image: `quiz-Q4.png`,
-        transition: `A mystical fog envelops you, and as it clears, you find yourself at the Amber Fort in Jaipur, a majestic fortress perched on a hilltop.`,
-        question: `A peacock gracefully approaches, its vibrant feathers fanned out in a dazzling display. <br><br> Do you ... `,
+        transition: ``,
+        question: `While queuing to check in your luggage, someone tries to cut in front of you. <br> Do you:`,
         answers: {
           // Judging: `Avoid the peacock and stay cautious of your surroundings `,
           // Perceiving: `Observe the peacock’s behaviour and adapt to the unfolding situation`,
-          Capital: `AAAAAAAAAAAA`,
-          Wealth: `BBBBBBBBBBBB`,
-          Income: `CCCCCCCC`,
-          Legacy: `DDDDDDDDDD`,
+          Capital: `Let them cut in front of you hoping that someone else will speak up`,
+          Wealth: `Speak loudly to get them to join the queue`,
+          Income: `Let them cut in front of you to avoid creating a scene`,
+          Legacy: `Ask them nicely to join the queue behind you`,
         },
       },
       {
         image: `quiz-Q5.png`,
-        transition: `A shimmering peacock feather floats into your hand. The moment you touch it, you’re whisked away to the Great Wall of China.`,
-        question: `Suddenly, a tiny dragon appears before your eyes!<br><br> Do you ... `,
+        transition: ``,
+        question: `At the check in counter, you're told that your flight is delayed. What do you do first?`,
         answers: {
           // Sensing: `Find the size of the dragon amusing`,
           // Intuition: `Think about the significance of the dragon appearing now`,
-          Capital: `AAAAAAAAAAAA`,
-          Wealth: `BBBBBBBBBBBB`,
-          Income: `CCCCCCCC`,
-          Legacy: `DDDDDDDDDD`,
+          Capital: `Wait for the delayed flight`,
+          Wealth: `Create a ruckus`,
+          Income: `Pay extra to get onto the next available flight`,
+          Legacy: `Claim full compensation from insurance happily`,
         },
       },
       {
         image: `quiz-Q6.png`,
-        transition: `You stumble into a glowing portal and emerge at the Borobudur Temple in Indonesia.`,
-        question: `The early morning mist swirls around the ancient Buddhist monument, creating a mystical atmosphere. <br><br> Do you ... `,
+        transition: ``,
+        question: `You still have 30 minutes before your flight and you're feeling hungry. What do you do?`,
         answers: {
           // Introversion: `Find a quiet spot to relax and catch your breath`,
           // Extroversion: `Seek out other visitors in the area to learn more about the temple`,
-          Capital: `AAAAAAAAAAAA`,
-          Wealth: `BBBBBBBBBBBB`,
-          Income: `CCCCCCCC`,
-          Legacy: `DDDDDDDDDD`,
+          Capital: `Wait for the in-flight meal`,
+          Wealth: `Eat at a restaurant at the transit area`,
+          Income: `Buy a takeaway at transit area and eat on the aircraft`,
+          Legacy: `Get a snack at the convenience store`,
         },
       },
       {
         image: `quiz-Q7.png`,
-        transition: `A gentle breeze carries the scent of incense. As you take a deep breath and close your eyes, a wave of calm washes over you. `,
-        question: `When you open your eyes, you find yourself at the top Marina Bay Sands, by the infinity pool.<br><br> Do you ... `,
+        transition: ``,
+        question: `Seated at the window seat, you're enjoying the view when you notice the person next to you is sleeping. What do you do?`,
         answers: {
           // Thinking: `Assess your surroundings and wonder where everyone is`,
           // Feeling: `Relish the moment and enjoy the serene setting by the pool`,
-          Capital: `AAAAAAAAAAAA`,
-          Wealth: `BBBBBBBBBBBB`,
-          Income: `CCCCCCCC`,
-          Legacy: `DDDDDDDDDD`,
+          Capital: `Lower the shade halfway so you can still enjoy the view`,
+          Wealth: `Continue enjoying the view with the shade up`,
+          Income: `Leave the shade up until they ask you to close it`,
+          Legacy: `Pull down the window shade fully`,
         },
       },
       {
         image: `quiz-Q8.png`,
-        transition: `Water droplets start forming all around. `,
-        question: `All at once, they splash to the ground and you find yourself at the Taroko Gorge in Taiwan, surrounded by marble cliffs and turquoise rivers. You also notice several groups of people around. <br><br> Do you ... `,
+        transition: ` `,
+        question: `At the baggage claim, you notice someone struggling to lift their luggage. Do you:`,
         answers: {
           // Judging: `Follow a planned route to visit the main attractions`,
           // Perceiving: `Wander the gorge freely, enjoying unexpected discoveries`,
-          Capital: `AAAAAAAAAAAA`,
-          Wealth: `BBBBBBBBBBBB`,
-          Income: `CCCCCCCC`,
-          Legacy: `DDDDDDDDDD`,
+          Capital: `Look around to see if anyone else is offering help`,
+          Wealth: `Take their luggage for them`,
+          Income: `Take your luggage and walk away`,
+          Legacy: `Offer to help them`,
         },
       },
       {
         image: `quiz-Q9.png`,
-        transition: `You take two steps forward, and suddenly, the sky darkens.`,
-        question: `You find yourself at the vibrant Temple Street Night Market in Hong Kong, surrounded by stalls brimming with trinkets, clothes and food.<br><br> Do you ... `,
+        transition: ``,
+        question: `When you are at the Northern Lights, for your first picture, do you: `,
         answers: {
           // Sensing: `Get drawn to the sights, sounds and smells`,
           // Intuition: `Wonder if night markets will always exist and what they represent`,
-          Capital: `AAAAAAAAAAAA`,
-          Wealth: `BBBBBBBBBBBB`,
-          Income: `CCCCCCCC`,
-          Legacy: `DDDDDDDDDD`,
+          Capital: `Take a selfie`,
+          Wealth: `Ask someone to take pictures of you`,
+          Income: `Take pictures of the scenery`,
+          Legacy: `Live in the moment and enjoy it without taking pictures`,
         },
       },
     ].map((v, i) => ({ ...v, id: i + 1 }));
@@ -265,12 +265,25 @@ class Quiz {
       console.log("----------------");
 
       // ALLOCATING TO EACH QUESTIONS' ANSWER TO RETIREMENT GOAL (PUT ALL HERE) !!CHECK
-      let fistAnswerKey =
-        countElements("E") > countElements("I")
-          ? "E"
-          : countElements("I") > countElements("E")
-            ? "I"
-            : "E";
+      if (countElements("A") > countElements("B") && countElements("A") > countElements("C") && countElements("A") > countElements("D")){
+          let fistAnswerKey = "A"
+      }  
+      else if (countElements("B") > countElements("A") && countElements("B") > countElements("C") && countElements("B") > countElements("D")){
+        let fistAnswerKey = "B"
+      }
+      else if (countElements("C") > countElements("A") && countElements("C") > countElements("B") && countElements("C") > countElements("D")){
+        let fistAnswerKey = "C"
+      }
+      else if (countElements("D") > countElements("A") && countElements("D") > countElements("B") && countElements("D") > countElements("C")){
+        let fistAnswerKey = "D"
+      }
+      
+      // let fistAnswerKey =
+      //   countElements("A") > countElements("B")
+      //     ? "A"
+      //     : countElements("I") > countElements("E")
+      //       ? "I"
+      //       : "E";
       console.log({ fistAnswerKey });
       // let secondAnswerKey =
       //   countElements("N") > countElements("S")
