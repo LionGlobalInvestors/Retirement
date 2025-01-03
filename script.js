@@ -19,7 +19,7 @@ class Quiz {
         },
       },
       {
-        image: `quiz-Q2.png`,
+        image: `quiz-Q1.png`,
         transition: ``,
         question: `Who is accompanying you to see the Northern Lights?`,
         answers: {
@@ -32,7 +32,7 @@ class Quiz {
         },
       },
       {
-        image: `quiz-Q3.png`,
+        image: `quiz-Q1.png`,
         transition: ``,
         question: `It's time to head to the airport. <br> How early do you leave?`,
         answers: {
@@ -45,7 +45,7 @@ class Quiz {
         },
       },
       {
-        image: `quiz-Q4.png`,
+        image: `quiz-Q1.png`,
         transition: ``,
         question: `While queuing to check in your luggage, someone tries to cut in front of you. <br> Do you:`,
         answers: {
@@ -58,7 +58,7 @@ class Quiz {
         },
       },
       {
-        image: `quiz-Q5.png`,
+        image: `quiz-Q1.png`,
         transition: ``,
         question: `At the check in counter, you're told that your flight is delayed. What do you do first?`,
         answers: {
@@ -71,7 +71,7 @@ class Quiz {
         },
       },
       {
-        image: `quiz-Q6.png`,
+        image: `quiz-Q1.png`,
         transition: ``,
         question: `You still have 30 minutes before your flight and you're feeling hungry. What do you do?`,
         answers: {
@@ -84,7 +84,7 @@ class Quiz {
         },
       },
       {
-        image: `quiz-Q7.png`,
+        image: `quiz-Q1.png`,
         transition: ``,
         question: `Seated at the window seat, you're enjoying the view when you notice the person next to you is sleeping. What do you do?`,
         answers: {
@@ -97,7 +97,7 @@ class Quiz {
         },
       },
       {
-        image: `quiz-Q8.png`,
+        image: `quiz-Q1.png`,
         transition: ` `,
         question: `At the baggage claim, you notice someone struggling to lift their luggage. Do you:`,
         answers: {
