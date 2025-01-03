@@ -109,7 +109,7 @@ class Quiz {
           Legacy: `Offer to help them`,
         },
       },
-      {
+      { //only show when got tie-breaker
         image: `quiz-Q9.png`,
         transition: ``,
         question: `When you are at the Northern Lights, for your first picture, do you: `,
@@ -243,8 +243,6 @@ class Quiz {
       //   location.href = resultData.url;
       // }
 
-      // e	n	t	p
-      // i	s	f	j
       let answerArray = this.userAnswers.map((item) => item.answer.charAt(0));
       function countElements(value) {
         return answerArray.filter((x) => x === value).length;
@@ -257,25 +255,23 @@ class Quiz {
       console.log("----------------");
       console.log("D", countElements("D"));
       console.log("----------------");
-      // console.log("T", countElements("T"));
-      // console.log("F", countElements("F"));
-      // console.log("----------------");
-      // console.log("P", countElements("P"));
-      // console.log("j", countElements("j"));
-      console.log("----------------");
 
       // ALLOCATING TO EACH QUESTIONS' ANSWER TO RETIREMENT GOAL (PUT ALL HERE) !!CHECK
       if (countElements("A") > countElements("B") && countElements("A") > countElements("C") && countElements("A") > countElements("D")){
-          let fistAnswerKey = "A"
+          let fistAnswerKey = "A";
+          console.log({ fistAnswerKey });
       }  
       else if (countElements("B") > countElements("A") && countElements("B") > countElements("C") && countElements("B") > countElements("D")){
-        let fistAnswerKey = "B"
+        let secondAnswerKey = "B";
+        console.log({ fistAnswerKey });
       }
       else if (countElements("C") > countElements("A") && countElements("C") > countElements("B") && countElements("C") > countElements("D")){
-        let fistAnswerKey = "C"
+        let thridAnswerKey = "C";
+        console.log({ fistAnswerKey });
       }
       else if (countElements("D") > countElements("A") && countElements("D") > countElements("B") && countElements("D") > countElements("C")){
-        let fistAnswerKey = "D"
+        let fourthAnswerKey = "D";
+        console.log({ fistAnswerKey });
       }
       
       // let fistAnswerKey =
@@ -284,7 +280,7 @@ class Quiz {
       //     : countElements("I") > countElements("E")
       //       ? "I"
       //       : "E";
-      console.log({ fistAnswerKey });
+
       // let secondAnswerKey =
       //   countElements("N") > countElements("S")
       //     ? "N"
@@ -312,6 +308,7 @@ class Quiz {
         // secondAnswerKey,
         // thridAnswerKey,
         // fourthAnswerKey,
+
       ].join("");
       console.log({ answerString });
       const resultData = this.RESULT.find(
