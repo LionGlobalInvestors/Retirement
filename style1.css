@@ -46,7 +46,6 @@
     /* aspect-ratio: 65/45; */
     object-fit: cover;
     object-position: center center;
-    z-index: 0;
 }
 
 .lets-begin-info {
