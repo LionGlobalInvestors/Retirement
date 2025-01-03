@@ -12,10 +12,10 @@ class Quiz {
         answers: {
           // Sensing: `Admire the orchid’s details and colours`,
           // Intuition: `Think about what the orchid symbolises`,
-          Capital: `Pack everything you might need`,
           Wealth: `Bring the bare minimum`,
-          Income: `Pack half and buy the rest there`,
+          Capital: `Pack everything you might need`,
           Legacy: `Pack half and wash there`,
+          Income: `Pack half and buy the rest there`,
         },
       },
       {
@@ -26,9 +26,9 @@ class Quiz {
           // Introversion: `Prefer to explore the market quietly, soaking in the sights and sounds`,
           // Extroversion: `Engage with the vendors and make every interaction a part of the experience`,
           Capital: `2 - 3 friends to split cost`,
+          Legacy: `Bring the whole kampong`,
           Wealth: `Traveling solo for adventure`,
           Income: `Join a tour group for convenience`,
-          Legacy: `Bring the whole kampong`,
         },
       },
       {
@@ -38,10 +38,10 @@ class Quiz {
         answers: {
           // Thinking: `Examine the lantern and wonder how it works`,
           // Feeling: `Focus on the magical and emotional experience`,
-          Capital: `Leave 3 hours early because kiasu`,
-          Wealth: `Leave 1 hour before your flight`,
-          Income: `Leave 2 hours before to be just right on time`,
           Legacy: `Leave 3 hours early to go shopping/eating`,
+          Capital: `Leave 3 hours early because kiasu`,
+          Income: `Leave 2 hours before to be just right on time`,
+          Wealth: `Leave 1 hour before your flight`,
         },
       },
       {
@@ -52,9 +52,9 @@ class Quiz {
           // Judging: `Avoid the peacock and stay cautious of your surroundings `,
           // Perceiving: `Observe the peacock’s behaviour and adapt to the unfolding situation`,
           Capital: `Let them cut in front of you hoping that someone else will speak up`,
+          Legacy: `Ask them nicely to join the queue behind you`,
           Wealth: `Speak loudly to get them to join the queue`,
           Income: `Let them cut in front of you to avoid creating a scene`,
-          Legacy: `Ask them nicely to join the queue behind you`,
         },
       },
       {
@@ -64,9 +64,9 @@ class Quiz {
         answers: {
           // Sensing: `Find the size of the dragon amusing`,
           // Intuition: `Think about the significance of the dragon appearing now`,
-          Capital: `Wait for the delayed flight`,
-          Wealth: `Create a ruckus`,
           Income: `Pay extra to get onto the next available flight`,
+          Wealth: `Create a ruckus`,
+          Capital: `Wait for the delayed flight`,
           Legacy: `Claim full compensation from insurance happily`,
         },
       },
@@ -77,10 +77,10 @@ class Quiz {
         answers: {
           // Introversion: `Find a quiet spot to relax and catch your breath`,
           // Extroversion: `Seek out other visitors in the area to learn more about the temple`,
-          Capital: `Wait for the in-flight meal`,
           Wealth: `Eat at a restaurant at the transit area`,
-          Income: `Buy a takeaway at transit area and eat on the aircraft`,
+          Capital: `Wait for the in-flight meal`,
           Legacy: `Get a snack at the convenience store`,
+          Income: `Buy a takeaway at transit area and eat on the aircraft`,
         },
       },
       {
@@ -90,10 +90,10 @@ class Quiz {
         answers: {
           // Thinking: `Assess your surroundings and wonder where everyone is`,
           // Feeling: `Relish the moment and enjoy the serene setting by the pool`,
-          Capital: `Lower the shade halfway so you can still enjoy the view`,
           Wealth: `Continue enjoying the view with the shade up`,
-          Income: `Leave the shade up until they ask you to close it`,
           Legacy: `Pull down the window shade fully`,
+          Capital: `Lower the shade halfway so you can still enjoy the view`,
+          Income: `Leave the shade up until they ask you to close it`,
         },
       },
       {
@@ -103,25 +103,25 @@ class Quiz {
         answers: {
           // Judging: `Follow a planned route to visit the main attractions`,
           // Perceiving: `Wander the gorge freely, enjoying unexpected discoveries`,
+          Legacy: `Offer to help them`,
+          Income: `Take your luggage and walk away`,
           Capital: `Look around to see if anyone else is offering help`,
           Wealth: `Take their luggage for them`,
-          Income: `Take your luggage and walk away`,
-          Legacy: `Offer to help them`,
         },
       },
-      { //only show when got tie-breaker
-        image: `quiz-Q9.png`,
-        transition: ``,
-        question: `When you are at the Northern Lights, for your first picture, do you: `,
-        answers: {
-          // Sensing: `Get drawn to the sights, sounds and smells`,
-          // Intuition: `Wonder if night markets will always exist and what they represent`,
-          Capital: `Take a selfie`,
-          Wealth: `Ask someone to take pictures of you`,
-          Income: `Take pictures of the scenery`,
-          Legacy: `Live in the moment and enjoy it without taking pictures`,
-        },
-      },
+      // { //only show when got tie-breaker
+      //   image: `quiz-Q9.png`,
+      //   transition: ``,
+      //   question: `When you are at the Northern Lights, for your first picture, do you: `,
+      //   answers: {
+      //     // Sensing: `Get drawn to the sights, sounds and smells`,
+      //     // Intuition: `Wonder if night markets will always exist and what they represent`,
+      //     Capital: `Take a selfie`,
+      //     Wealth: `Ask someone to take pictures of you`,
+      //     Income: `Take pictures of the scenery`,
+      //     Legacy: `Live in the moment and enjoy it without taking pictures`,
+      //   },
+      // },
     ].map((v, i) => ({ ...v, id: i + 1 }));
 
     this.RESULT = [
@@ -163,7 +163,7 @@ class Quiz {
       const isLastQuiz = quizID >= this.QUIZ.length;
 
       if (quizData) {
-        document.title = `Retirement Quiz ${quizID} | LGI`;
+        document.title = `Retirement Quiz ${quizID} | Lion Global Investors`;
 
         const quizRender = document.getElementById("quiz-render");
 
@@ -171,13 +171,8 @@ class Quiz {
           quizRender.innerHTML = `
                     <div class="uk-card quiz-card" data-id="${quizData.id}">
                         <div class="ans-banner-container">
-                            <img class="quiz-cover-image" src="${this.imagePatch}${quizData.image}" alt="Quiz Cover Image">
-                            <img src="pics/logo.png" class="ans-overlay" alt="LGI Overlay Logo">
+                            <img class="quiz-cover-image" src="pic/${quizData.image}" alt="Quiz Cover Image">
                         </div>
-                        ${quizData.transition ? `
-                        <div class="quiz-info">
-                            <p class="quiz-transition" uk-scrollspy="cls: uk-animation-slide-bottom; repeat: false">${quizData.transition}</p>
-                        </div>` : ""}
                         <div class="quiz-info">
                             <p class="quiz-desc" uk-scrollspy="cls: uk-animation-slide-bottom; repeat: false; delay: 500">${quizData.question}</p>
                             <div class="quiz-options">
@@ -247,36 +242,38 @@ class Quiz {
       function countElements(value) {
         return answerArray.filter((x) => x === value).length;
       }
-      console.log("A", countElements("A"));
-      console.log("----------------");
-      console.log("B", countElements("B"));
-      console.log("----------------");
-      console.log("C", countElements("C"));
-      console.log("----------------");
-      console.log("D", countElements("D"));
-      console.log("----------------");
+      // console.log("Capital", countElements("Capital"));
+      // console.log("----------------");
+      // console.log("Wealth", countElements("Wealth"));
+      // console.log("----------------");
+      // console.log("Income", countElements("Income"));
+      // console.log("----------------");
+      // console.log("Legacy", countElements("Legacy"));
+      // console.log("----------------");
 
       // ALLOCATING TO EACH QUESTIONS' ANSWER TO RETIREMENT GOAL (PUT ALL HERE) !!CHECK
-      if (countElements("A") > countElements("B") && countElements("A") > countElements("C") && countElements("A") > countElements("D")){
-          let fistAnswerKey = "A";
-          console.log({ fistAnswerKey });
+      if (countElements("Capital") > countElements("Wealth") && countElements("Capital") > countElements("Income") && countElements("Capital") > countElements("Legacy")){
+          // let fistAnswerKey = "Capital";
+          // console.log({ fistAnswerKey });
+        // document.location.href = "result-capital-preservation.html";
+        location.href = resultData.url;
       }  
-      else if (countElements("B") > countElements("A") && countElements("B") > countElements("C") && countElements("B") > countElements("D")){
-        let secondAnswerKey = "B";
-        console.log({ fistAnswerKey });
+      else if (countElements("Wealth") > countElements("Capital") && countElements("Wealth") > countElements("Income") && countElements("Wealth") > countElements("Legacy")){
+        let secondAnswerKey = "Wealth";
+        console.log({ secondAnswerKey });
       }
-      else if (countElements("C") > countElements("A") && countElements("C") > countElements("B") && countElements("C") > countElements("D")){
-        let thridAnswerKey = "C";
-        console.log({ fistAnswerKey });
+      else if (countElements("Income") > countElements("Capital") && countElements("Income") > countElements("Wealth") && countElements("Income") > countElements("Legacy")){
+        let thridAnswerKey = "Income";
+        console.log({ thridAnswerKey });
       }
-      else if (countElements("D") > countElements("A") && countElements("D") > countElements("B") && countElements("D") > countElements("C")){
-        let fourthAnswerKey = "D";
-        console.log({ fistAnswerKey });
+      else if (countElements("Legacy") > countElements("Capital") && countElements("Legacy") > countElements("Wealth") && countElements("Legacy") > countElements("Income")){
+        let fourthAnswerKey = "Legacy";
+        console.log({ fourthAnswerKey });
       }
       
       // let fistAnswerKey =
-      //   countElements("A") > countElements("B")
-      //     ? "A"
+      //   countElements("Capital") > countElements("Wealth")
+      //     ? "Capital"
       //     : countElements("I") > countElements("E")
       //       ? "I"
       //       : "E";
@@ -303,21 +300,21 @@ class Quiz {
       //       : "P";
       // console.log({ fourthAnswerKey });
 
-      let answerString = [
-        fistAnswerKey,
-        // secondAnswerKey,
-        // thridAnswerKey,
-        // fourthAnswerKey,
-
-      ].join("");
-      console.log({ answerString });
-      const resultData = this.RESULT.find(
-        (r) => r.formatCheck === answerString
-      );
-      console.log({ resultData });
-      if (resultData) {
-        location.href = resultData.url;
-      }
+      // let answerString = [
+      //   fistAnswerKey,
+      //   secondAnswerKey,
+      //   thridAnswerKey,
+      //   fourthAnswerKey,
+      // ]
+      // // ].join("");
+      // // console.log({ answerString });
+      // const resultData = this.RESULT.find(
+      //   (r) => r.formatCheck === answerString
+      // );
+      // console.log({ resultData });
+      // if (resultData) {
+      //   location.href = resultData.url;
+      // }
     }
   }
 }

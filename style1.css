@@ -2,7 +2,7 @@
     max-width: 650px;
 }
 
-@font-face {
+/* @font-face {
     font-family: 'OpenSans-Bold';
     src: url("public/fonts/OpenSans-Bold.ttf") format("ttf"), url("public/fonts/OpenSans-Bold.otf") format("otf"), url("public/fonts/OpenSans-Bold.eot") format("eot"), url("public/fonts/OpenSans-Bold.svg") format("svg"), url("public/fonts/OpenSans-Bold.woff") format("woff"), url("public/fonts/OpenSans-Bold.woff2") format("woff2");
 }
@@ -20,7 +20,7 @@
 @font-face {
     font-family: 'OpenSans-Regular';
     src: url("public/fonts/OpenSans-Regular.ttf") format("ttf"), url("public/fonts/OpenSans-Regular.otf") format("otf"), url("public/fonts/OpenSans-Regular.eot") format("eot"), url("public/fonts/OpenSans-Regular.svg") format("svg"), url("public/fonts/OpenSans-Regular.woff") format("woff"), url("public/fonts/OpenSans-Regular.woff2") format("woff2");
-}
+} */
 
 /*********************/
 /** Index Page CSS **/
@@ -150,15 +150,15 @@
     /* background-size: cover;
     background-position: top; */
     width: 100%;
-    aspect-ratio: 65/45;
+    /* aspect-ratio: 65/45; */
     object-fit: cover;
     object-position: center center;
 }
 
-.quiz-info {
+/* .quiz-info {
     padding-left: 15px;
     padding-right: 15px;
-}
+} */
 
 .quiz-transition {
     font-family: 'OpenSans-Regular', sans-serif;
