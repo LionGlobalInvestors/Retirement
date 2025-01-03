@@ -1,8 +1,6 @@
 class Quiz {
   constructor() {
     this.imagePatch = `pics`;
-    // this.imagePatch = `public/images/quiz/`;
-    // this.imagePatch = `public/images/`;
 
     this.QUIZ = [
       {
@@ -10,8 +8,6 @@ class Quiz {
         transition: ``,
         question: `As you prepare to embark on a long journey, you pack your bag. <br> How do you pack?`,
         answers: {
-          // Sensing: `Admire the orchid’s details and colours`,
-          // Intuition: `Think about what the orchid symbolises`,
           Wealth: `Bring the bare minimum`,
           Capital: `Pack everything you might need`,
           Legacy: `Pack half and wash there`,
@@ -23,8 +19,6 @@ class Quiz {
         transition: ``,
         question: `Who is accompanying you to see the Northern Lights?`,
         answers: {
-          // Introversion: `Prefer to explore the market quietly, soaking in the sights and sounds`,
-          // Extroversion: `Engage with the vendors and make every interaction a part of the experience`,
           Capital: `2 - 3 friends to split cost`,
           Legacy: `Bring the whole kampong`,
           Wealth: `Traveling solo for adventure`,
@@ -36,8 +30,6 @@ class Quiz {
         transition: ``,
         question: `It's time to head to the airport. <br> How early do you leave?`,
         answers: {
-          // Thinking: `Examine the lantern and wonder how it works`,
-          // Feeling: `Focus on the magical and emotional experience`,
           Legacy: `Leave 3 hours early to go shopping/eating`,
           Capital: `Leave 3 hours early because kiasu`,
           Income: `Leave 2 hours before to be just right on time`,
@@ -49,8 +41,6 @@ class Quiz {
         transition: ``,
         question: `While queuing to check in your luggage, someone tries to cut in front of you. <br> Do you:`,
         answers: {
-          // Judging: `Avoid the peacock and stay cautious of your surroundings `,
-          // Perceiving: `Observe the peacock’s behaviour and adapt to the unfolding situation`,
           Capital: `Let them cut in front of you hoping that someone else will speak up`,
           Legacy: `Ask them nicely to join the queue behind you`,
           Wealth: `Speak loudly to get them to join the queue`,
@@ -62,8 +52,6 @@ class Quiz {
         transition: ``,
         question: `At the check in counter, you're told that your flight is delayed. What do you do first?`,
         answers: {
-          // Sensing: `Find the size of the dragon amusing`,
-          // Intuition: `Think about the significance of the dragon appearing now`,
           Income: `Pay extra to get onto the next available flight`,
           Wealth: `Create a ruckus`,
           Capital: `Wait for the delayed flight`,
@@ -75,8 +63,6 @@ class Quiz {
         transition: ``,
         question: `You still have 30 minutes before your flight and you're feeling hungry. What do you do?`,
         answers: {
-          // Introversion: `Find a quiet spot to relax and catch your breath`,
-          // Extroversion: `Seek out other visitors in the area to learn more about the temple`,
           Wealth: `Eat at a restaurant at the transit area`,
           Capital: `Wait for the in-flight meal`,
           Legacy: `Get a snack at the convenience store`,
@@ -88,8 +74,6 @@ class Quiz {
         transition: ``,
         question: `Seated at the window seat, you're enjoying the view when you notice the person next to you is sleeping. What do you do?`,
         answers: {
-          // Thinking: `Assess your surroundings and wonder where everyone is`,
-          // Feeling: `Relish the moment and enjoy the serene setting by the pool`,
           Wealth: `Continue enjoying the view with the shade up`,
           Legacy: `Pull down the window shade fully`,
           Capital: `Lower the shade halfway so you can still enjoy the view`,
@@ -101,8 +85,6 @@ class Quiz {
         transition: ` `,
         question: `At the baggage claim, you notice someone struggling to lift their luggage. Do you:`,
         answers: {
-          // Judging: `Follow a planned route to visit the main attractions`,
-          // Perceiving: `Wander the gorge freely, enjoying unexpected discoveries`,
           Legacy: `Offer to help them`,
           Income: `Take your luggage and walk away`,
           Capital: `Look around to see if anyone else is offering help`,
@@ -163,7 +145,7 @@ class Quiz {
       const isLastQuiz = quizID >= this.QUIZ.length;
 
       if (quizData) {
-        document.title = `Retirement Quiz ${quizID} | Lion Global Investors`;
+        document.title = `Retirement Quiz | Lion Global Investors`;
 
         const quizRender = document.getElementById("quiz-render");
 
