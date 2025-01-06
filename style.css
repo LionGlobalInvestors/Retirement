@@ -1,0 +1,415 @@
+.uk-container {
+    max-width: 650px;
+}
+
+/* @font-face {
+    font-family: 'OpenSans-Regular';
+    src: url("public/fonts/OpenSans-Regular.ttf") format("ttf"), url("public/fonts/OpenSans-Regular.otf") format("otf"), url("public/fonts/OpenSans-Regular.eot") format("eot"), url("public/fonts/OpenSans-Regular.svg") format("svg"), url("public/fonts/OpenSans-Regular.woff") format("woff"), url("public/fonts/OpenSans-Regular.woff2") format("woff2");
+} */
+
+/*********************/
+/** Index Page CSS **/
+/*********************/
+.center-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+/* hold image and text */
+.uk-card {
+    display: inline-block;
+    max-width: 100%;
+}
+
+.uk-card-body {
+    position: relative;
+}
+
+.cover-img {
+    width: 100%;
+    /* aspect-ratio: 65/45; */
+    object-fit: cover;
+    object-position: center center;
+}
+
+.lets-begin-info {
+    padding-left: 15px;
+    padding-right: 15px;
+    /* margin-bottom: 100px; */
+}
+
+.lets-begin-desc {
+    font-family: 'OpenSans-Regular', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #000000;
+    margin: 0 auto;
+    display: block;
+    padding: 40px 0px 40px 0px;
+    position: absolute;
+    top: 11%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2; /* Ensure the div appears above the image */
+    text-align: center;
+    width: 70%; /* Optional: adjust if you need to set a max width */
+}
+
+.lets-begin-button-link,
+.lets-begin-button-link:hover {
+    text-decoration: none;
+    font-family: 'OpenSans-Regular', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #000000;
+    margin: 0 auto;
+    display: block;
+    position: absolute;
+    top: 24%;
+    left: 61%;
+    transform: translate(-50%, -50%);
+    z-index: 2; /* Ensure the div appears above the image */
+    text-align: center;
+    width: 220px; /* Optional: adjust if you need to set a max width */
+}
+
+.lets-begin-button {
+    /* width: 92%; */
+
+    border-radius: 12px;
+    background-color: #000000;
+    color: #FFFFFF;
+    border: none;
+
+    display: flex;
+    /* margin: 0 auto; */
+    justify-content: center;
+    align-items: center;
+    /* margin-bottom: 70px; */
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    font-family: 'OpenSans-SemiBold', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 21.79px;
+    letter-spacing: 0.5px;
+    text-align: center;
+    text-transform: none;
+    padding: 12px;
+
+    z-index: 2;
+    position: relative;
+}
+
+.lets-begin-button:hover {
+    background-color: #b30000;
+    transform: scale(1.05);
+}
+
+/****************************/
+/** End of Index Page CSS **/
+/****************************/
+
+
+/****************************/
+/** WYS Quiz QN Page CSS ***/
+/****************************/
+.quiz-container {
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 30px;
+}
+
+.quiz-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 0;
+    align-items: center;
+}
+
+.quiz-cover-image {
+    opacity: 1;
+    /* background-size: cover;
+    background-position: top; */
+    width: 100%;
+    /* aspect-ratio: 65/45; */
+    object-fit: cover;
+    object-position: center center;
+}
+
+.quiz-desc {
+    text-decoration: none;
+    font-family: 'OpenSans-Regular', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #000000;
+    display: block;
+    position: absolute;
+    top: 24%;
+    left: 61%;
+    transform: translate(-50%, -50%);
+    z-index: 2; /* Ensure the div appears above the image */
+    text-align: center;
+    width: 300px; /* Optional: adjust if you need to set a max width */
+}
+
+.quiz-options {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 250px;
+    /* padding-left: 580px; */
+    width: 200px;
+    height: 200px;
+}
+
+.quiz-info {
+    font-family: 'OpenSans-Regular', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #000000;
+    display: block;
+    position: absolute;
+    top: 10%;
+    left: 43%;
+    transform: translate(-50%, -50%);
+    z-index: 2; /* Ensure the div appears above the image */
+    text-align: center;
+    width: 70%; /* Optional: adjust if you need to set a max width */
+}
+
+.quiz-option {
+    display: flex;
+    align-items: center;
+}
+
+.quiz-option input {
+    display: none;
+}
+
+.quiz-option label {
+    display: block;
+    width: 100%;
+    font-family: 'OpenSans-SemiBold', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    /* line-height: 21.79px; */
+    letter-spacing: .5px;
+    color: #FFFFFF;
+    background: #000;
+    border-radius: 10px;
+    padding: 10px;
+    transition: all .3s ease;
+    cursor: pointer;
+    text-align: center;
+}
+
+.quiz-option label:hover {
+    background: #c00;
+}
+
+.quiz-option input:checked+label {
+    background: #c00;
+}
+
+.quiz-option input:disabled:not(:checked)+label {
+    opacity: .75;
+    cursor: default;
+}
+
+/***********************************/
+/** End of WYS Quiz QN Page CSS ***/
+/***********************************/
+
+
+/*****************************/
+/** WYS Quiz Ans Page CSS ***/
+/****************************/
+
+.ans-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+.ans-banner-img {
+    opacity: 1;
+    width: 100%;
+    /* aspect-ratio: 65/45; 
+    object-fit: cover;
+    object-position: center center; */
+}
+
+.ans-banner-container {
+    position: relative;
+    display: inline-block;
+}
+
+.ans-banner-container .main-img {
+    /* display: block; */
+    width: 100%;
+    height: auto;
+}
+
+.ans-overlay {
+    position: absolute;
+    top: 7.33%;
+    right: 0;
+    width: 33.3%;
+}
+
+.capital-img {
+    background-image: url('pic/capital.png');
+}
+
+.wealth-img {
+    background-image: url('pic/wealth.png');
+}
+
+.income-img {
+    background-image: url('pic/income.png');
+}
+
+.legacy-img {
+    background-image: url('pic/legacy.png');
+}
+
+.quiz-ans-content {
+    background-color: #000000;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.quiz-ans-title {
+    font-family: 'OpenSans-Bold', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 48px;
+    text-align: center;
+    color: #FFFFFF;
+    padding-top: 30px;
+}
+
+.quiz-ans-desc {
+    font-family: 'OpenSans-Regular', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.hash-tag {
+    font-family: 'OpenSans-SemiBold', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    text-align: center;
+    color: #000000;
+}
+
+.share-results {
+    font-family: 'OpenSans-SemiBold', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    text-align: center;
+    color: #000000;
+}
+
+.social-media-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 0 auto;
+    width: 70%;
+}
+
+.social-media-icons img {
+    /* width: 100%; */
+    width: 81px !important;
+    cursor: pointer;
+    transition: opacity 0.3s;
+    opacity: 1;
+}
+
+.social-media-icons img:hover {
+    opacity: 0.7;
+}
+
+
+/************************************/
+/** End of WYS Quiz Ans Page CSS ***/
+/***********************************/
+
+
+/**************************************/
+/******* Mobile Responsive CSS *******/
+/*************************************/
+
+@media screen and (max-width: 1920px) {
+    .uk-container {
+        width: 27%;
+    }
+
+    .cover-img {
+        width: 100%;
+        /* aspect-ratio: 65/45; */
+        object-fit: cover;
+        object-position: center center;
+    }
+
+    .lets-begin-button {
+        width: 100%;
+    }
+
+    .quiz-radio-button {
+        width: 100%;
+    }
+
+    .quiz-options {
+        /* padding-left: 580px; */
+        transform: translate(-50%,-50%);
+        left: 66%;
+    }
+}
+
+@media screen and (max-width: 959px) {
+    .uk-container {
+        width: 100%;
+    }
+
+    .cover-img {
+        width: 100%;
+        object-fit: cover;
+        object-position: center center;
+    }
+
+    .lets-begin-button {
+        width: 100%;
+    }
+
+    .quiz-radio-button {
+        width: 100%;
+    }
+
+    .quiz-options {
+        /* padding-left: 130px; */
+        transform: translate(-50%,-50%);
+        left: 85%;
+        margin-top: 250px;
+    }
+}
+
+
+/**************************************/
+/*** End of Mobile Responsive CSS ****/
+/*************************************/
