@@ -65,7 +65,7 @@ class Quiz {
       },
       {
         image: `quiz-Q1.png`,
-        question: `Seated at the window seat, you're enjoying the view <br> when you notice the person next to you is sleeping. <br> What do you do?`,
+        question: `Seated at the window seat, you're enjoying the view when you notice the person next to you is sleeping. <br> What do you do?`,
         answers: {
           Wealth: `Continue enjoying the view with the shade up`,
           Legacy: `Pull down the window shade fully`,
@@ -145,7 +145,7 @@ class Quiz {
                             <img class="quiz-cover-image" src="pic/${quizData.image}" alt="Quiz Cover Image">
                         </div>
                         <div class="quiz-info">
-                            
+                            <p class="quiz-desc" >${quizData.question}</p>
                             <div class="quiz-options">
                                 ${Object.entries(quizData.answers).map(([key, value]) => `
                                 <div class="quiz-option">
@@ -231,7 +231,7 @@ class Quiz {
               </div>
               <div class="quiz-info">
                 <p class="quiz-desc">
-                  
+                ${tiebreakerQuiz.question}
                 </p>
                 <div class="quiz-options">
                   ${Object.entries(filteredAnswers)
