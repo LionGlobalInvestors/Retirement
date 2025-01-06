@@ -389,6 +389,10 @@
     .quiz-option label {
         padding: 15px;
     }
+    
+    .quiz-desc {
+        font-size: 18px;
+    }
 }
 
 @media screen and (max-width: 1920px) {
