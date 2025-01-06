@@ -388,10 +388,12 @@
 
     .quiz-option label {
         padding: 15px;
+        font-size: 15px;
     }
     
     .quiz-desc {
-        font-size: 18px;
+        font-size: 25px;
+        width: 450px;
     }
 }
 
@@ -419,7 +421,18 @@
         /* padding-left: 580px; */
         transform: translate(-50%,-50%);
         left: 66%;
-        margin-top: 250px;
+        margin-top: 270px;
+    }
+
+    .quiz-option label {
+        padding: 15px;
+        font-size: 15px;
+    }
+
+    .quiz-desc {
+        top: 70px;
+        font-size: 18px;
+        width: 320px;
     }
 }
 
@@ -450,9 +463,15 @@
         width: 180px;
     }
 
+    .quiz-option label {
+        padding: 15px;
+        font-size: 12px;
+    }
+
     .quiz-desc {
         top: 50px;
         font-size: 15px;
+        width: 250px;
     }
 }
 
