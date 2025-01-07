@@ -41,7 +41,7 @@
 }
 
 .lets-begin-desc {
-    /* font-family: 'OpenSans-Regular', sans-serif; */
+    font-family: 'Arial', sans-serif;
     font-size: 18px;
     font-weight: 400;
     color: #000000;
@@ -60,7 +60,7 @@
 .lets-begin-button-link,
 .lets-begin-button-link:hover {
     text-decoration: none;
-    /* font-family: 'OpenSans-Regular', sans-serif; */
+    font-family: 'Arial', sans-serif;
     font-size: 18px;
     font-weight: 400;
     color: #c4306d;
@@ -91,7 +91,7 @@
     cursor: pointer;
     transition: all 0.3s ease;
 
-    /* font-family: 'OpenSans-SemiBold', sans-serif; */
+    font-family: 'Arial', sans-serif;
     font-size: 16px;
     font-weight: 600;
     line-height: 21.79px;
@@ -147,7 +147,7 @@
 
 .quiz-desc {
     text-decoration: none;
-    /* font-family: 'OpenSans-Regular', sans-serif; */
+    font-family: 'Arial', sans-serif;
     font-size: 18px;
     font-weight: 400;
     color: #000000;
@@ -174,7 +174,7 @@
 }
 
 .quiz-info {
-    /* font-family: 'OpenSans-Regular', sans-serif; */
+    font-family: 'Arial', sans-serif;
     font-size: 18px;
     font-weight: 400;
     color: #000000;
@@ -200,7 +200,7 @@
 .quiz-option label {
     display: block;
     width: 100%;
-    /* font-family: 'OpenSans-SemiBold', sans-serif; */
+    font-family: 'Arial', sans-serif;
     font-size: 12px;
     font-weight: 600;
     /* line-height: 21.79px; */
@@ -292,7 +292,7 @@
 }
 
 .quiz-ans-title {
-    /* font-family: 'OpenSans-Bold', sans-serif; */
+    font-family: 'Arial', sans-serif;
     font-size: 32px;
     font-weight: 700;
     line-height: 48px;
@@ -302,7 +302,7 @@
 }
 
 .quiz-ans-desc {
-    /* font-family: 'OpenSans-Regular', sans-serif; */
+    font-family: 'Arial', sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
@@ -311,7 +311,7 @@
 }
 
 .hash-tag {
-    /* font-family: 'OpenSans-SemiBold', sans-serif; */
+    font-family: 'Arial', sans-serif;
     font-size: 16px;
     font-weight: 600;
     line-height: 24px;
@@ -320,7 +320,7 @@
 }
 
 .share-results {
-    /* font-family: 'OpenSans-SemiBold', sans-serif; */
+    font-family: 'Arial', sans-serif;
     font-size: 16px;
     font-weight: 600;
     line-height: 24px;

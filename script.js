@@ -14,7 +14,7 @@ class Quiz {
         },
       },
       {
-        image: `quiz-Q1.png`,
+        image: `quiz-Q2.png`,
         question: `Who is accompanying you to see the Northern Lights?`,
         answers: {
           Capital: `2 - 3 friends to split cost`,
@@ -24,7 +24,7 @@ class Quiz {
         },
       },
       {
-        image: `quiz-Q1.png`,
+        image: `quiz-Q3.png`,
         question: `It's time to head to the airport. <br> How early do you leave?`,
         answers: {
           Legacy: `Leave 3 hours early to go shopping/eating`,
@@ -34,7 +34,7 @@ class Quiz {
         },
       },
       {
-        image: `quiz-Q1.png`,
+        image: `quiz-Q4.png`,
         question: `While queuing to check in your luggage, someone tries to cut in front of you. <br> Do you:`,
         answers: {
           Capital: `Let them cut in front of you hoping that someone else will speak up`,
@@ -44,7 +44,7 @@ class Quiz {
         },
       },
       {
-        image: `quiz-Q1.png`,
+        image: `quiz-Q5.png`,
         question: `At the check in counter, you're told that your flight is delayed. <br> What do you do first?`,
         answers: {
           Income: `Pay extra to get onto the next available flight`,
@@ -54,7 +54,7 @@ class Quiz {
         },
       },
       {
-        image: `quiz-Q1.png`,
+        image: `quiz-Q6.png`,
         question: `You still have 30 minutes before your flight and you're feeling hungry. <br> What do you do?`,
         answers: {
           Wealth: `Eat at a restaurant at the transit area`,
@@ -64,7 +64,7 @@ class Quiz {
         },
       },
       {
-        image: `quiz-Q1.png`,
+        image: `quiz-Q7.png`,
         question: `Seated at the window seat, you're enjoying the view when you notice the person next to you is sleeping. <br> What do you do?`,
         answers: {
           Wealth: `Continue enjoying the view with the shade up`,
@@ -74,7 +74,7 @@ class Quiz {
         },
       },
       {
-        image: `quiz-Q1.png`,
+        image: `quiz-Q8.png`,
         question: `At the baggage claim, you notice someone struggling to lift their luggage. <br> Do you:`,
         answers: {
           Legacy: `Offer to help them`,
@@ -84,7 +84,7 @@ class Quiz {
         },
       },
       { //only show when got tie-breaker
-        image: `quiz-Q1.png`,
+        image: `quiz-Q9.png`,
         question: `When you are at the Northern Lights, for your first picture, do you: `,
         answers: {
           Capital: `Take a selfie`,
@@ -145,7 +145,7 @@ class Quiz {
                             <img class="quiz-cover-image" src="pic/${quizData.image}" alt="Quiz Cover Image">
                         </div>
                         <div class="quiz-info">
-                            <p class="quiz-desc" >${quizData.question}</p>
+                            
                             <div class="quiz-options">
                                 ${Object.entries(quizData.answers).map(([key, value]) => `
                                 <div class="quiz-option">
@@ -231,7 +231,7 @@ class Quiz {
               </div>
               <div class="quiz-info">
                 <p class="quiz-desc">
-                ${tiebreakerQuiz.question}
+                
                 </p>
                 <div class="quiz-options">
                   ${Object.entries(filteredAnswers)
