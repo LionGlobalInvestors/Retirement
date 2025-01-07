@@ -143,6 +143,7 @@
     /* aspect-ratio: 65/45; */
     object-fit: cover;
     object-position: center center;
+    image-rendering: auto;
 }
 
 .quiz-desc {
