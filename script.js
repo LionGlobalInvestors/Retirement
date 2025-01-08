@@ -15,7 +15,7 @@ class Quiz {
       },
       {
         image: `quiz-Q2.png`,
-        question: `Who is accompanying you to see the Northern Lights?`,
+        question: `Who is coming with you on your trip?`,
         answers: {
           Capital: `2 - 3 friends to split cost`,
           Legacy: `Bring the whole kampong`,
@@ -25,7 +25,7 @@ class Quiz {
       },
       {
         image: `quiz-Q3.png`,
-        question: `It's time to head to the airport. <br> How early do you leave?`,
+        question: `It's time to head to the airport. <br> When do you leave?`,
         answers: {
           Legacy: `Leave 3 hours early to go shopping/eating`,
           Capital: `Leave 3 hours early because kiasu`,
@@ -38,17 +38,17 @@ class Quiz {
         question: `While queuing to check in your luggage, someone tries to cut in front of you. <br> Do you:`,
         answers: {
           Capital: `Let them cut in front of you hoping that someone else will speak up`,
-          Legacy: `Ask them nicely to join the queue behind you`,
-          Wealth: `Speak loudly to get them to join the queue`,
+          Legacy: `Ask them to join the queue behind you`,
+          Wealth: `Attempt to block their way`,
           Income: `Let them cut in front of you to avoid creating a scene`,
         },
       },
       {
         image: `quiz-Q5.png`,
-        question: `At the check in counter, you're told that your flight is delayed. <br> What do you do first?`,
+        question: `You're told that your flight is delayed. <br> What do you do first?`,
         answers: {
           Income: `Pay extra to get onto the next available flight`,
-          Wealth: `Create a ruckus`,
+          Wealth: `Demand for the next available flight`,
           Capital: `Wait for the delayed flight`,
           Legacy: `Claim full compensation from insurance happily`,
         },

@@ -143,7 +143,6 @@
     /* aspect-ratio: 65/45; */
     object-fit: cover;
     object-position: center center;
-    image-rendering: auto;
 }
 
 .quiz-desc {
@@ -473,6 +472,15 @@
         top: 50px;
         font-size: 15px;
         width: 250px;
+    }
+}
+
+@media (hover:hover) {
+    .lets-begin-button:hover {
+        background-color: #c4306d;
+        color: #FFFFFF;
+        border: 3px solid #721d40;
+        transform: scale(1.05);
     }
 }
 
