@@ -31,7 +31,7 @@
         <div class="share-results">
           <p>Share your quiz results!</p>
           <div class="social-media-icons">
-            <a href="https://instagram.com/api/v1/media/upload/" class="share-links instagram" target="_blank">
+            <a href="#" id="shareInstagram" class="share-links instagram" target="_blank">
               <img src="pic/instagram.png" alt="Instagram" />
             </a>
             <!-- <a href="#" class="share-links facebook" target="_blank">
@@ -49,3 +49,29 @@
 </body>
 
 </html>
+
+<script>
+  document.getElementById("shareInstagram").addEventListener("click", async (event) => {
+    event.preventDefault();
+    const mainImage = document.querySelector('.ans-banner-img');
+    if (mainImage && mainImage.getAttribute('src')) {
+      const URL = mainImage.getAttribute('src');
+      const response = await fetch(URL.toString());
+      const blob = await response.blob();
+      const filesArray = [
+        new File([blob], `pic/capital.png`, {
+          type: 'image/png',
+          lastModified: new Date().getTime(),
+        }),
+      ];
+      const shareData = {
+        files: filesArray,
+      };
+      if (navigator.canShare && navigator.canShare(shareData)) {
+        await navigator.share(shareData);
+      } else {
+        alert(`navigator.share doesn't support in your device`);
+      }
+    }
+  });
+</script>
