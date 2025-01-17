@@ -67,7 +67,7 @@
     margin: 0 auto;
     display: block;
     position: absolute;
-    top: 24%;
+    top: 26%;
     left: 61%;
     transform: translate(-50%, -50%);
     z-index: 2; /* Ensure the div appears above the image */
@@ -338,7 +338,8 @@
 
 .social-media-icons img {
     /* width: 100%; */
-    width: 81px !important;
+    /* width: 81px !important; */
+    width: 50px;
     cursor: pointer;
     transition: opacity 0.3s;
     opacity: 1;
@@ -421,7 +422,7 @@
         /* padding-left: 580px; */
         transform: translate(-50%,-50%);
         left: 66%;
-        margin-top: 270px;
+        margin-top: 240px;
     }
 
     .quiz-option label {
@@ -448,6 +449,7 @@
     }
 
     .lets-begin-button {
+        top: 20%;
         width: 100%;
     }
 
