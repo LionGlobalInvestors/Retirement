@@ -68,11 +68,10 @@
     display: block;
     position: absolute;
     top: 25.5%;
-    left: 102%;
+    left: 82%;
     transform: translate(-50%, -50%);
     z-index: 2; /* Ensure the div appears above the image */
     text-align: center;
-    width: 220px; /* Optional: adjust if you need to set a max width */
 }
 
 .lets-fly-button {
