@@ -235,13 +235,14 @@
     opacity: 1;
     /* background-size: cover;
     background-position: top; */
-    width: 100%;
+    width: 90%;
+    height: 90%;
     /* aspect-ratio: 65/45; */
     object-fit: cover;
     object-position: center center;
 }
 
-.quiz-desc {
+/* .quiz-desc {
     text-decoration: none;
     font-family: 'Arial', sans-serif;
     font-size: 18px;
@@ -249,14 +250,13 @@
     color: #000000;
     display: block;
     position: absolute;
-    /* top: 24%; */
     top: 90px;
     left: 61%;
     transform: translate(-50%, -50%);
-    z-index: 2; /* Ensure the div appears above the image */
+    z-index: 2; 
     text-align: center;
-    width: 300px; /* Optional: adjust if you need to set a max width */
-}
+    width: 300px; 
+} */
 
 .quiz-options {
     position: absolute;
@@ -339,15 +339,16 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(#c4306d, #721d40);
-    color: #ffffff;
+    /* background: linear-gradient(#c4306d, #721d40); */
+    color: #000000;
     text-align: center;
+    font-family: 'Arial', sans-serif;
   }
   
   /* Spinner Icon */
   .spinner-icon {
     border: 5px solid rgba(255, 255, 255, 0.2);
-    border-top-color: #ffffff;
+    border-top-color: #000000;
     border-radius: 50%;
     width: 60px;
     height: 60px;
@@ -403,7 +404,7 @@
 
 .ans-banner-container .main-img {
     /* display: block; */
-    width: 100%;
+    width: 90%;
     height: auto;
 }
 
@@ -482,9 +483,7 @@
 }
 
 .social-media-icons img {
-    /* width: 100%; */
-    /* width: 81px !important; */
-    width: 50px;
+    width: 40px;
     cursor: pointer;
     transition: opacity 0.3s;
     opacity: 1;
@@ -573,11 +572,12 @@
         transform: translate(-50%,-50%);
         left: 66%;
         margin-top: 240px;
+        width: 180px;
     }
 
     .quiz-option label {
         padding: 15px;
-        font-size: 15px;
+        font-size: 11px;
     }
 
     .quiz-desc {
@@ -628,11 +628,11 @@
 }
 
 @media (hover:hover) {
-    .lets-begin-button:hover {
-        background-color: #c4306d;
+    .quiz-options:hover {
+        /* background-color: #c4306d; */
         color: #FFFFFF;
-        border: 3px solid #721d40;
-        transform: scale(1.05);
+        /* border: 3px solid #721d40; */
+        /* transform: scale(1.05); */
     }
 }
 
