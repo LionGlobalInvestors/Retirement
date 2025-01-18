@@ -18,7 +18,11 @@
 </head>
 
 <body>
-  <div id="loading-screen" style="display: flex; justify-content: center; align-items: center; height: 100px; background: url('icon/loading.gif') no-repeat center center;">
+  <!-- <div id="loading-screen" style="display: flex; justify-content: center; align-items: center; max-height: 200px; max-width: 200px; background: url('loading.gif') no-repeat center center;">
+    <h1>Calculating your results...</h1>
+  </div> -->
+  <div id="loading-screen" class="spinner">
+    <div class="spinner-icon"></div>
     <h1>Calculating your results...</h1>
   </div>
   <div class="ans-wrapper">
@@ -54,7 +58,11 @@
 <script>
   setTimeout(() => {
     document.getElementById('loading-screen').style.display = 'none';
-    document.getElementById('ans-wrapper').style.display = 'block';
+    const ansWrapper = document.querySelector('.ans-wrapper');
+    ansWrapper.style.display = 'flex';
+    ansWrapper.style.justifyContent = 'center';
+    ansWrapper.style.alignItems = 'flex-start';
+    ansWrapper.style.marginTop = '20px';
   }, 3000);
   document.getElementById("shareResult").addEventListener("click", async (event) => {
     event.preventDefault();

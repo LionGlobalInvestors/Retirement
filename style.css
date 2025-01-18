@@ -332,12 +332,61 @@
 /** WYS Quiz Ans Page CSS ***/
 /****************************/
 
-.ans-wrapper {
+/* Spinner Wrapper */
+.spinner {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
-    margin-top: 20px;
-}
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(#c4306d, #721d40);
+    color: #ffffff;
+    text-align: center;
+  }
+  
+  /* Spinner Icon */
+  .spinner-icon {
+    border: 5px solid rgba(255, 255, 255, 0.2);
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s ease-in-out infinite;
+    margin-bottom: 20px;
+  }
+  
+  /* Keyframes for Spinner Animation */
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Loading Text Styling */
+  .loading-text {
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    animation: fadeIn 1.5s ease-in-out infinite alternate;
+  }
+  
+  /* Fade-in Text Animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0.5;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Hide ans-wrapper initially */
+  .ans-wrapper {
+    display: none;
+  }
 
 .ans-banner-img {
     opacity: 1;
