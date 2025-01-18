@@ -20,6 +20,9 @@
 </head>
 
 <body>
+  <div id="loading-screen" style="display: flex; justify-content: center; align-items: center; height: 100vh; background: url('spinner.gif') no-repeat center center;">
+    <h1>Calculating your results...</h1>
+  </div>
   <div class="ans-wrapper">
     <div class="uk-container uk-container-small">
       <div class="uk-card uk-card-default uk-card-body quiz-ans-card">
@@ -51,6 +54,10 @@
 </html>
 
 <script>
+  setTimeout(() => {
+    document.getElementById('loading-screen').style.display = 'none';
+    document.getElementById('ans-wrapper').style.display = 'block';
+  }, 3000);
   document.getElementById("shareResult").addEventListener("click", async (event) => {
     event.preventDefault();
     const mainImage = document.querySelector('.ans-banner-img');
