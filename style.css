@@ -79,9 +79,9 @@
     /* width: 92%; */
 
     border-radius: 12px;
-    background-color: #FFFFFF;
-    color: #000000;
-    border: 3px solid #c2cddf;
+    /* background-color: #FFFFFF; */
+    /* color: #000000; */
+    /* border: 1px solid #c2cddf; */
 
     display: flex;
     /* margin: 0 auto; */
@@ -98,14 +98,16 @@
     letter-spacing: 0.5px;
     text-align: center;
     text-transform: none;
-    padding: 20px;
+    /* padding: 20px; */
 
     z-index: 2;
     position: relative;
-    border-radius: 20px;
+    border-radius: 50px;
 
     /* pulse animation */
     animation: pulse 1s infinite;
+
+    width: 50px;
 }
 
 @keyframes pulse {
