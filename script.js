@@ -14,7 +14,7 @@ class Quiz {
         },
       },
       {
-        image: `quiz-Q2.png`,
+        image: `qns 2.jpg`,
         question: `Who is coming with you on your trip?`,
         answers: {
           Capital: `2 - 3 friends to split cost`,
@@ -24,7 +24,7 @@ class Quiz {
         },
       },
       {
-        image: `quiz-Q3.png`,
+        image: `qns 3.jpg`,
         question: `It's time to head to the airport. <br> When do you leave?`,
         answers: {
           Legacy: `Leave 3 hours early to go shopping/eating`,
