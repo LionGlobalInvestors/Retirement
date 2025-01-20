@@ -493,6 +493,31 @@
     opacity: 0.7;
 }
 
+.link-to-fund-centre {
+    /* justify-content: center;
+    margin: auto;
+    display: block;
+    position: absolute; */
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.result-button {
+    font-family: 'Arial', sans-serif;
+    font-weight: 600;
+    background-color: grey;
+    font-size: 11px;
+    border: none;
+    width: 140px;
+    height: 50px;
+    border-radius: 10px;
+
+    /* pulse animation */
+    /* animation: pulse 1s infinite; */
+}
+
 
 /************************************/
 /** End of WYS Quiz Ans Page CSS ***/
@@ -603,6 +628,21 @@
         width: 90%;
         height: auto;
         margin-left: 20px;
+    }
+
+    .result-wealth {
+        color: #e1763e;
+        
+        display: block;
+        position: absolute;
+        /* margin-left: 135px; */
+    }
+
+    .result-wealth:hover {
+        background-color: #c4306d;
+        color: #FFFFFF;
+        border: 2px solid #721d40;
+        transform: scale(1.05);
     }
 }
 
