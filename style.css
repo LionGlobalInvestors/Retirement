@@ -540,6 +540,13 @@
         font-size: 25px;
         width: 450px;
     }
+
+    .ans-banner-container .main-img {
+        /* display: block; */
+        width: 90%;
+        height: auto;
+        margin-left: 35px;
+    }
 }
 
 @media screen and (max-width: 1920px) {
@@ -590,6 +597,13 @@
         width: 90%;
         height: 90%;
     }
+
+    .ans-banner-container .main-img {
+        /* display: block; */
+        width: 90%;
+        height: auto;
+        margin-left: 20px;
+    }
 }
 
 @media screen and (max-width: 959px) {
@@ -634,6 +648,13 @@
     .quiz-cover-image {
         width: 100%;
         height: 100%;
+    }
+
+    .ans-banner-container .main-img {
+        /* display: block; */
+        width: 90%;
+        height: auto;
+        margin-left: 15px;
     }
 }
 
