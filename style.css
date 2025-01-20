@@ -517,6 +517,12 @@
     /* pulse animation */
     /* animation: pulse 1s infinite; */
 }
+.result-button:hover {
+    background-color: #c4306d;
+    color: #FFFFFF;
+    border: 2px solid #721d40;
+    transform: scale(1.05);
+}
 
 
 /************************************/
@@ -638,12 +644,6 @@
         /* margin-left: 135px; */
     }
 
-    .result-wealth:hover {
-        background-color: #c4306d;
-        color: #FFFFFF;
-        border: 2px solid #721d40;
-        transform: scale(1.05);
-    }
 }
 
 @media screen and (max-width: 959px) {
