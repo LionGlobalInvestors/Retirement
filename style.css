@@ -507,15 +507,17 @@
 .result-button {
     font-family: 'Arial', sans-serif;
     font-weight: 600;
-    background-color: grey;
+    background-color: white;
     font-size: 11px;
     border: none;
-    width: 140px;
-    height: 50px;
-    border-radius: 10px;
+    width: 138px;
+    height: 44px;
+    border-radius: 7px;
+
+    z-index: 2;
 
     /* pulse animation */
-    /* animation: pulse 1s infinite; */
+    animation: pulse 1s infinite;
 }
 .result-button:hover {
     background-color: #c4306d;
@@ -636,12 +638,33 @@
         margin-left: 20px;
     }
 
+    .result-button {
+        top: 46.5%;
+        right: 33.3%;
+    }
+
     .result-wealth {
         color: #e1763e;
-        
         display: block;
         position: absolute;
-        /* margin-left: 135px; */
+    }
+
+    .result-capital {
+        color: #c4306d;
+        display: block;
+        position: absolute;
+    }
+
+    .result-income {
+        color: #438e20;
+        display: block;
+        position: absolute;
+    }
+
+    .result-legacy {
+        color: #0078be;
+        display: block;
+        position: absolute;
     }
 
 }
