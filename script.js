@@ -4,7 +4,7 @@ class Quiz {
 
     this.QUIZ = [
       {
-        image: `quiz-Q1.png`,
+        image: `quiz-Q1.jpg`,
         question: `As you prepare to embark on a long journey, you pack your bag. <br> How do you pack?`,
         answers: {
           Wealth: `Bring the bare minimum`,
@@ -14,7 +14,7 @@ class Quiz {
         },
       },
       {
-        image: `qns 2.jpg`,
+        image: `quiz-Q2.jpg`,
         question: `Who is coming with you on your trip?`,
         answers: {
           Capital: `2 - 3 friends to split cost`,
@@ -24,7 +24,7 @@ class Quiz {
         },
       },
       {
-        image: `qns 3.jpg`,
+        image: `quiz-Q3.jpg`,
         question: `It's time to head to the airport. <br> When do you leave?`,
         answers: {
           Legacy: `Leave 3 hours early to go shopping/eating`,
@@ -34,7 +34,7 @@ class Quiz {
         },
       },
       {
-        image: `quiz-Q4.png`,
+        image: `quiz-Q4.jpg`,
         question: `While queuing to check in your luggage, someone tries to cut in front of you. <br> Do you:`,
         answers: {
           Capital: `Let them cut in front of you hoping that someone else will speak up`,
@@ -44,7 +44,7 @@ class Quiz {
         },
       },
       {
-        image: `quiz-Q5.png`,
+        image: `quiz-Q5.jpg`,
         question: `You're told that your flight is delayed. <br> What do you do first?`,
         answers: {
           Income: `Pay extra to get onto the next available flight`,
@@ -54,7 +54,7 @@ class Quiz {
         },
       },
       {
-        image: `quiz-Q6.png`,
+        image: `quiz-Q6.jpg`,
         question: `You still have 30 minutes before your flight and you're feeling hungry. <br> What do you do?`,
         answers: {
           Wealth: `Eat at a restaurant at the transit area`,
@@ -64,7 +64,7 @@ class Quiz {
         },
       },
       {
-        image: `quiz-Q7.png`,
+        image: `quiz-Q7.jpg`,
         question: `Seated at the window seat, you're enjoying the view when you notice the person next to you is sleeping. <br> What do you do?`,
         answers: {
           Wealth: `Continue enjoying the view with the shade up`,
@@ -74,7 +74,7 @@ class Quiz {
         },
       },
       {
-        image: `quiz-Q8.png`,
+        image: `quiz-Q8.jpg`,
         question: `At the baggage claim, you notice someone struggling to lift their luggage. <br> Do you:`,
         answers: {
           Legacy: `Offer to help them`,
@@ -84,7 +84,7 @@ class Quiz {
         },
       },
       { //only show when got tie-breaker
-        image: `quiz-Q9.png`,
+        image: `quiz-Q9.jpg`,
         question: `When you are at the Northern Lights, for your first picture, do you: `,
         answers: {
           Capital: `Take a selfie`,
