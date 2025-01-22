@@ -71,7 +71,7 @@ class Quiz {
         },
       },
       {
-        image: `transition_2.jpg`,
+        image: `departure.gif`,
         isTransition2: true,
         question: ``,
         answers: {

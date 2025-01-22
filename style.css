@@ -526,6 +526,30 @@
     transform: scale(1.05);
 }
 
+.result-wealth {
+    color: #e1763e;
+    display: block;
+    position: absolute;
+}
+
+.result-capital {
+    color: #c4306d;
+    display: block;
+    position: absolute;
+}
+
+.result-income {
+    color: #438e20;
+    display: block;
+    position: absolute;
+}
+
+.result-legacy {
+    color: #0078be;
+    display: block;
+    position: absolute;
+}
+
 .boarding-pass-image {
     position: fixed;
     bottom: -100%; /* Start off-screen */
@@ -545,7 +569,8 @@
 
   .transition2 {
     position: absolute !important;
-    top: 76.2% !important;
+    /* top: 76.2% !important; */
+    z-index: 2;
   }
 
 
@@ -675,34 +700,15 @@
         right: 34.3%;
     }
 
-    .result-wealth {
-        color: #e1763e;
-        display: block;
-        position: absolute;
-    }
-
-    .result-capital {
-        color: #c4306d;
-        display: block;
-        position: absolute;
-    }
-
-    .result-income {
-        color: #438e20;
-        display: block;
-        position: absolute;
-    }
-
-    .result-legacy {
-        color: #0078be;
-        display: block;
-        position: absolute;
-    }
-
     .boarding-pass-image.animate {
         bottom: 21.6%; /* Adjust this to control how far up the image slides */
         left: 50.5%;
-      }
+    }
+
+    .transition2 {
+        top: 72%;
+        right: 40%;
+    }
 
 }
 
