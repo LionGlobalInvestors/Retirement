@@ -12,3 +12,5 @@ continue-to-airport.jpg
 - landing
 
 continue-to-results.jpg
+
+transition_1 + boarding_pass
