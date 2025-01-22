@@ -531,7 +531,8 @@
     bottom: -100%; /* Start off-screen */
     left: 58%;
     transform: translateX(-50%);
-    height: 800px;
+    /* height: 800px; */
+    height: 730px;
     transition: transform 1s ease-in-out, bottom 1s ease-in-out;
     z-index: 3;
   }
@@ -539,6 +540,7 @@
   /* Final position after the slide-up animation */
   .boarding-pass-image.animate {
     bottom: 17.5%; /* Adjust this to control how far up the image slides */
+    /* left: 50%; */
   }
 
   .transition2 {
@@ -696,6 +698,11 @@
         display: block;
         position: absolute;
     }
+
+    .boarding-pass-image.animate {
+        bottom: 21.6%; /* Adjust this to control how far up the image slides */
+        left: 50.5%;
+      }
 
 }
 
