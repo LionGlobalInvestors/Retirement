@@ -63,6 +63,11 @@ class Quiz {
           Income: `Buy a takeaway at transit area and eat on the aircraft`,
         },
       },
+      // transition_1
+
+      // transition_2 -> click next
+
+      // gif of plane taking off
       {
         image: `quiz-Q7.jpg`,
         question: `Seated at the window seat, you're enjoying the view when you notice the person next to you is sleeping. <br> What do you do?`,
@@ -73,6 +78,9 @@ class Quiz {
           Income: `Leave the shade up until they ask you to close it`,
         },
       },
+
+      // gif of plane landing
+
       {
         image: `quiz-Q8.jpg`,
         question: `At the baggage claim, you notice someone struggling to lift their luggage. <br> Do you:`,

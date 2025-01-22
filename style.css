@@ -689,6 +689,11 @@
         object-position: center center;
     }
 
+    .lets-fly-button {
+        top: 25.5%;
+        left: 73%;
+    }
+
     .lets-begin-button {
         top: 20%;
         width: 100%;
