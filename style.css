@@ -526,6 +526,26 @@
     transform: scale(1.05);
 }
 
+.boarding-pass-image {
+    position: fixed;
+    bottom: -100%; /* Start off-screen */
+    left: 58%;
+    transform: translateX(-50%);
+    height: 800px;
+    transition: transform 1s ease-in-out, bottom 1s ease-in-out;
+    z-index: 3;
+  }
+  
+  /* Final position after the slide-up animation */
+  .boarding-pass-image.animate {
+    bottom: 17.5%; /* Adjust this to control how far up the image slides */
+  }
+
+  .transition2 {
+    position: absolute !important;
+    top: 76.2% !important;
+  }
+
 
 /************************************/
 /** End of WYS Quiz Ans Page CSS ***/

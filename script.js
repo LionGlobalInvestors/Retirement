@@ -63,9 +63,20 @@ class Quiz {
           Income: `Buy a takeaway at transit area and eat on the aircraft`,
         },
       },
-      // transition_1 + boarding pass
-
-      // transition_2 -> click next
+      {
+        image: `transition_1.jpg`,
+        isTransition1: true,
+        question: ``,
+        answers: {
+        },
+      },
+      {
+        image: `transition_2.jpg`,
+        isTransition2: true,
+        question: ``,
+        answers: {
+        },
+      },
 
       // departure gif
       {
@@ -185,15 +196,50 @@ class Quiz {
                       this.showResult();
                     } else {
                       this.renderQuiz(quizID + 1);
+                      this.currentQuizID = quizID + 1;
                     }
                   }, 500);
                 }
               });
             });
           }
+          if (quizData.isTransition1) {
+            this.slideUpBoardingPass();
+          }
+          else if (quizData.isTransition2) {
+            this.pulsingPlaneButton();
+          }
         }
       }
     }
+  }
+
+  slideUpBoardingPass() {
+    // make the boarding pass png element
+    const boardingPassImage = document.createElement("img");
+    boardingPassImage.src = "pic/boarding_pass.png";
+    boardingPassImage.classList.add("boarding-pass-image");
+    const quizRender = document.getElementById("quiz-render");
+    quizRender.appendChild(boardingPassImage);
+    // give it animate class that is in styles.css
+    setTimeout(() => {
+      boardingPassImage.classList.add("animate");
+    }, 100);
+    setTimeout(() => {
+      // destroy the boardingPass + move on after 3500ms/3.5s
+      boardingPassImage.remove();
+      this.renderQuiz(this.currentQuizID + 1);
+    }, 3500);
+  }
+
+  pulsingPlaneButton() {
+    // make the plane icon png element
+    const pulsingPlane = document.createElement("img");
+    pulsingPlane.src = "icon/plane.png";
+    pulsingPlane.classList.add("lets-fly-button");
+    pulsingPlane.classList.add("transition2");
+    const quizRender = document.getElementById("quiz-render");
+    quizRender.appendChild(pulsingPlane);
   }
 
   showResult() {
