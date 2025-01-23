@@ -230,6 +230,7 @@ class Quiz {
       // destroy the boardingPass + move on after 3500ms/3.5s
       boardingPassImage.remove();
       this.renderQuiz(this.currentQuizID + 1);
+      this.currentQuizID += 1
     }, 3500);
   }
 
@@ -240,8 +241,8 @@ class Quiz {
     pulsingPlane.classList.add("lets-fly-button");
     pulsingPlane.classList.add("transition2");
     pulsingPlane.addEventListener("click", () => {
-      this.currentQuizID += 1
       this.renderQuiz(this.currentQuizID + 1);
+      this.currentQuizID += 1
     });
     const quizRender = document.getElementById("quiz-render");
     quizRender.appendChild(pulsingPlane);
