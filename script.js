@@ -148,6 +148,7 @@ class Quiz {
   }
 
   renderQuiz(quizID) {
+    console.log(quizID + ", " + this.currentQuizID)
     if (quizID && !isNaN(quizID)) {
       const quizData = this.QUIZ.find((v) => v.id === quizID);
       const isLastQuiz = quizID >= this.QUIZ.length-1;
