@@ -28,6 +28,7 @@
 }
 
 .cover-img {
+    display: block;
     width: 100%;
     /* aspect-ratio: 65/45; */
     object-fit: cover;
@@ -156,10 +157,11 @@
     position: absolute;
     /* top: 25.5%; */
     top: 95.5%;
-    left: 80%;
+    left: 90%;
     transform: translate(-50%, -50%);
     z-index: 2; /* Ensure the div appears above the image */
     text-align: center;
+    pointer-events: none;
 }
 
 @keyframes pulse {
