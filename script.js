@@ -238,6 +238,10 @@ class Quiz {
     pulsingPlane.src = "icon/plane.png";
     pulsingPlane.classList.add("lets-fly-button");
     pulsingPlane.classList.add("transition2");
+    pulsingPlane.addEventListener("click", () => {
+      this.currentQuizID += 1
+      this.renderQuiz(this.currentQuizID + 1);
+    });
     const quizRender = document.getElementById("quiz-render");
     quizRender.appendChild(pulsingPlane);
   }
