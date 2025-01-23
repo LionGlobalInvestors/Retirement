@@ -70,15 +70,13 @@ class Quiz {
         answers: {
         },
       },
-      {
+      { // plane departure
         image: `departure.gif`,
         isTransition2: true,
         question: ``,
         answers: {
         },
       },
-
-      // departure gif
       {
         image: `quiz-Q7.jpg`,
         question: `Seated at the window seat, you're enjoying the view when you notice the person next to you is sleeping. <br> What do you do?`,
@@ -89,9 +87,14 @@ class Quiz {
           Income: `Leave the shade up until they ask you to close it`,
         },
       },
-
       // landing gif
-
+      {
+        image: `landing.gif`,
+        isTransition3: true,
+        question: ``,
+        answers: {
+        },
+      },
       {
         image: `quiz-Q8.jpg`,
         question: `At the baggage claim, you notice someone struggling to lift their luggage. <br> Do you:`,
@@ -208,7 +211,10 @@ class Quiz {
             this.slideUpBoardingPass();
           }
           else if (quizData.isTransition2) {
-            this.pulsingPlaneButton();
+            this.pulsingPlaneButton1();
+          }
+          else if (quizData.isTransition3) {
+            this.pulsingPlaneButton2();
           }
         }
       }
@@ -234,7 +240,21 @@ class Quiz {
     }, 3500);
   }
 
-  pulsingPlaneButton() {
+  pulsingPlaneButton1() {
+    // make the plane icon png element
+    const pulsingPlane = document.createElement("img");
+    pulsingPlane.src = "icon/plane.png";
+    pulsingPlane.classList.add("lets-fly-button");
+    pulsingPlane.classList.add("transition2");
+    pulsingPlane.addEventListener("click", () => {
+      this.renderQuiz(this.currentQuizID + 1);
+      this.currentQuizID += 1
+    });
+    const quizRender = document.getElementById("quiz-render");
+    quizRender.appendChild(pulsingPlane);
+  }
+
+  pulsingPlaneButton2() {
     // make the plane icon png element
     const pulsingPlane = document.createElement("img");
     pulsingPlane.src = "icon/plane.png";

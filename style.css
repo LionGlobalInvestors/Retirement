@@ -74,7 +74,7 @@
     text-align: center;
 }
 
-.lets-fly-button {
+.lets-fly-button{
     /* width: 92%; */
 
     border-radius: 12px;
@@ -109,6 +109,59 @@
     width: 50px;
 }
 
+.next-button{
+    /* width: 92%; */
+
+    border-radius: 12px;
+    /* background-color: #FFFFFF; */
+    /* color: #000000; */
+    /* border: 1px solid #c2cddf; */
+
+    display: flex;
+    /* margin: 0 auto; */
+    justify-content: center;
+    align-items: center;
+    /* margin-bottom: 70px; */
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 21.79px;
+    letter-spacing: 0.5px;
+    text-align: center;
+    text-transform: none;
+    /* padding: 20px; */
+
+    z-index: 2;
+    position: relative;
+    border-radius: 50px;
+
+    /* pulse animation */
+    animation: pulse 1s infinite;
+
+    width: 50px;
+}
+
+.next-button-link,
+.next-button-link:hover {
+    text-decoration: none;
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #c4306d;
+    margin: 0 auto;
+    display: block;
+    position: absolute;
+    /* top: 25.5%; */
+    top: 95.5%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+    z-index: 2; /* Ensure the div appears above the image */
+    text-align: center;
+}
+
 @keyframes pulse {
     0% {
         transform: scale(1);
@@ -123,7 +176,8 @@
     }
 }
 
-.lets-fly-button:hover {
+.lets-fly-button:hover,
+.next-button:hover {
     background-color: #c4306d;
     color: #FFFFFF;
     border: 3px solid #721d40;
@@ -567,7 +621,7 @@
     /* left: 50%; */
   }
 
-  .transition2 {
+  .transition2{
     position: absolute !important;
     /* top: 76.2% !important; */
     z-index: 2;
@@ -705,9 +759,13 @@
         left: 50.5%;
     }
 
-    .transition2 {
+    .transition2{
         top: 72%;
         right: 40%;
+    }
+
+    .next-button {
+        top: 70%;
     }
 
 }
