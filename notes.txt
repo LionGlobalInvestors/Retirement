@@ -14,3 +14,7 @@ continue-to-airport.jpg
 continue-to-results.jpg
 
 transition_1 + boarding_pass
+
+desktop images to be bigger > mobile
+
+transition gifs -> make whole screen clickable instead, will be easier for older people
