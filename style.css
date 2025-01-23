@@ -161,7 +161,6 @@
     transform: translate(-50%, -50%);
     z-index: 2; /* Ensure the div appears above the image */
     text-align: center;
-    pointer-events: none;
 }
 
 @keyframes pulse {
@@ -179,7 +178,7 @@
 }
 
 .lets-fly-button:hover,
-.next-button:hover {
+.next-button:active {
     background-color: #c4306d;
     color: #FFFFFF;
     border: 3px solid #721d40;
