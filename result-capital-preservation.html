@@ -35,10 +35,7 @@
       </div>
     </section>
   </div>
-  <!-- <div id="loading-screen" class="spinner">
-    <div class="spinner-icon"></div>
-    <h1>Calculating your results...</h1>
-  </div> -->
+  
   <div class="ans-wrapper">
     <div class="uk-container uk-container-small">
       <div class="uk-card uk-card-default uk-card-body quiz-ans-card">
@@ -101,8 +98,8 @@
       const response = await fetch(URL.toString());
       const blob = await response.blob();
       const filesArray = [
-        new File([blob], `pic/capital.png`, {
-          type: 'image/png',
+        new File([blob], `pic/capital.jpg`, {
+          type: 'image/jpg',
           lastModified: new Date().getTime(),
         }),
       ];

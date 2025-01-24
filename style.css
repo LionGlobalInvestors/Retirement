@@ -58,8 +58,7 @@
     width: 70%; /* Optional: adjust if you need to set a max width */
 }
 
-.lets-fly-button-link,
-.lets-fly-button-link:hover {
+.lets-fly-button-link {
     text-decoration: none;
     font-family: 'Arial', sans-serif;
     font-size: 18px;
@@ -145,8 +144,7 @@
     width: 50px;
 }
 
-.next-button-link,
-.next-button-link:hover {
+.next-button-link {
     text-decoration: none;
     font-family: 'Arial', sans-serif;
     font-size: 18px;
@@ -179,9 +177,9 @@
 
 .lets-fly-button:hover,
 .next-button:active {
-    background-color: #c4306d;
-    color: #FFFFFF;
-    border: 3px solid #721d40;
+    /* background-color: #c4306d; */
+    /* color: #FFFFFF; */
+    /* border: 3px solid #721d40; */
     transform: scale(1.05);
 }
 
@@ -214,7 +212,7 @@
     font-family: 'Arial', sans-serif;
     font-size: 18px;
     font-weight: 400;
-    color: #c4306d;
+    /* color: #c4306d; */
     margin: 0 auto;
     display: block;
     position: absolute;
@@ -256,9 +254,9 @@
 }
 
 .lets-begin-button:hover {
-    background-color: #c4306d;
+    /* background-color: #c4306d;
     color: #FFFFFF;
-    border: 3px solid #721d40;
+    border: 3px solid #721d40; */
     transform: scale(1.05);
 }
 
@@ -457,12 +455,6 @@
     display: inline-block;
 }
 
-.ans-banner-container .main-img {
-    /* display: block; */
-    width: 90%;
-    height: auto;
-}
-
 .ans-overlay {
     position: absolute;
     top: 7.33%;
@@ -524,7 +516,7 @@
     font-family: 'Arial', sans-serif;
     font-size: 16px;
     font-weight: 600;
-    line-height: 24px;
+    /* line-height: 24px; */
     text-align: center;
     color: #000000;
 }
@@ -682,27 +674,32 @@
 
     .ans-banner-container .main-img {
         /* display: block; */
-        width: 90%;
+        width: 100%;
         height: auto;
         margin-left: 35px;
     }
 }
 
-@media screen and (max-width: 1920px) {
+@media screen and (max-width: 1920px) {    
+    
+    .center-wrapper {
+        margin-top: 10px;
+    }
+    
     .uk-container {
         width: 27%;
     }
 
     .cover-img {
-        width: 90%;
+        width: 100%;
         /* aspect-ratio: 65/45; */
         object-fit: cover;
         object-position: center center;
     }
 
     .lets-fly-button {
-        top: 25.5%;
-        /* left: 52%; */
+        top: 26%;
+        left: 55%;
     }
 
     .lets-begin-button {
@@ -721,8 +718,8 @@
     .quiz-options {
         /* padding-left: 580px; */
         transform: translate(-50%,-50%);
-        left: 66%;
-        margin-top: 220px;
+        left: 67%;
+        margin-top: 245px;
         width: 180px;
     }
 
@@ -738,35 +735,44 @@
     }
 
     .quiz-cover-image {
-        width: 90%;
-        height: 90%;
+        width: 100%;
+        height: 100%;
     }
 
     .ans-banner-container .main-img {
         /* display: block; */
-        width: 90%;
+        width: 100%;
         height: auto;
         margin-left: 20px;
+        margin-top: 0;
     }
 
     .result-button {
         /* top: 46.5%; */
         top: 29.3%;
-        right: 34.3%;
+        right: 28.5%;
     }
 
     .boarding-pass-image.animate {
-        bottom: 21.6%; /* Adjust this to control how far up the image slides */
-        left: 50.5%;
+        /* bottom: 21.6%; Adjust this to control how far up the image slides */
+        bottom: 6.7%;
+        left: 52%;
     }
 
     .transition2{
-        top: 72%;
-        right: 40%;
+        top: 86.5%;
+        left: 59%;
     }
 
     .next-button {
-        top: 70%;
+        top: 70.5%;
+        left: 5%;
+        /* right: 70%; */
+    }
+
+    .share-results {
+        margin-left: 45px;
+        margin-right: auto;
     }
 
 }
@@ -799,9 +805,9 @@
     .quiz-options {
         /* padding-left: 130px; */
         transform: translate(-50%,-50%);
-        left: 85%;
-        margin-top: 250px;
-        width: 180px;
+        left: 87%;
+        margin-top: 240px;
+        width: 200px;
     }
 
     .quiz-option label {
@@ -825,6 +831,27 @@
         width: 90%;
         height: auto;
         margin-left: 15px;
+    }
+
+    .transition2{
+        top: 74.5%;
+        left: 80%;
+    }
+    
+    .result-button {
+        top: 29.3%;
+        right: 34.5%;
+    }
+
+    .share-results {
+        margin-left: auto;
+        margin-right: 15px;
+    }
+
+    .boarding-pass-image.animate {
+        /* bottom: 21.6%; Adjust this to control how far up the image slides */
+        bottom: 19.6%;
+        left: 52%;
     }
 }
 
