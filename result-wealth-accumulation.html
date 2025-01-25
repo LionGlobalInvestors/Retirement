@@ -39,7 +39,7 @@
       <div class="uk-card uk-card-default uk-card-body quiz-ans-card">
 
         <div class="ans-banner-container">
-          <img class="main-img ans-banner-img" src="pic/wealth.jpg" alt="Wealth Accumulation">
+          <img id="result-img" class="main-img ans-banner-img" src="pic/wealth.jpg" alt="Wealth Accumulation">
           <a href="https://www.lionglobalinvestors.com/en/fund-centre.html?&retire_goals=Wealth%20Accumulation" class="link-to-fund-centre">
             <button class="result-button result-wealth">Wealth Accumulation</button>
           </a>
@@ -82,8 +82,14 @@
         ansWrapper.style.justifyContent = 'center';
         ansWrapper.style.alignItems = 'flex-start';
         ansWrapper.style.marginTop = '20px';
-        currentState = 'results';
+        // currentState = 'results';
+        currentState = 'companyPage';
         break;
+
+      case 'companyPage':
+        window.open(URL, "https://www.lionglobalinvestors.com/en/fund-centre.html?&retire_goals=Wealth%20Accumulation");
+      break;
+
     }
   });
 
