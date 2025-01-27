@@ -19,7 +19,7 @@
 
 <body>
 
-  <div class="center-wrapper">
+  <div id="centerWrapper" class="center-wrapper">
     <section class="uk-container uk-container-small">
       <div class="uk-card uk-card-default uk-card-body">
         <img id="loading" src="pic/loading2.jpg" alt="Cover" class="uk-width-1-1 cover-img">
@@ -83,6 +83,7 @@
         // Hide animation and show results
         document.getElementById('plane-button').style.display = 'none';
         document.getElementById('result-anim').style.display = 'none';
+        document.getElementById('centerWrapper').style.display = 'none';
         const ansWrapper = document.querySelector('.ans-wrapper');
         ansWrapper.style.display = 'flex';
         ansWrapper.style.justifyContent = 'center';

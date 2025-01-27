@@ -19,7 +19,7 @@
 
 <body>
 
-  <div class="center-wrapper">
+  <div id="centerWrapper" class="center-wrapper">
     <section class="uk-container uk-container-small">
       <div class="uk-card uk-card-default uk-card-body">
         <img id="loading" src="pic/loading2.jpg" alt="Cover" class="uk-width-1-1 cover-img">
@@ -78,6 +78,7 @@
         // Hide animation and show results
         document.getElementById('plane-button').style.display = 'none';
         document.getElementById('result-anim').style.display = 'none';
+        document.getElementById('centerWrapper').style.display = 'none';
         const ansWrapper = document.querySelector('.ans-wrapper');
         ansWrapper.style.display = 'flex';
         ansWrapper.style.justifyContent = 'center';
@@ -97,56 +98,30 @@
       //       }
       //     });
       // break;
-
-      case 'results':
-      document.getElementById("shareResult").addEventListener("click", async (event) => {
-        event.preventDefault();
-        const mainImage = document.querySelector('.ans-banner-img');
-        if (mainImage && mainImage.getAttribute('src')) {
-          const URL = mainImage.getAttribute('src');
-          const response = await fetch(URL.toString());
-          const blob = await response.blob();
-          const filesArray = [
-            new File([blob], `pic/capital.jpg`, {
-              type: 'image/jpg',
-              lastModified: new Date().getTime(),
-            }),
-          ];
-          const shareData = {
-            files: filesArray,
-          };
-          if (navigator.canShare && navigator.canShare(shareData)) {
-            await navigator.share(shareData);
-          } else {
-            alert(`navigator.share doesn't support in your device`);
-          }
-        }
-      });
-      break;
     }
   });
 
-  // document.getElementById("shareResult").addEventListener("click", async (event) => {
-  //   event.preventDefault();
-  //   const mainImage = document.querySelector('.ans-banner-img');
-  //   if (mainImage && mainImage.getAttribute('src')) {
-  //     const URL = mainImage.getAttribute('src');
-  //     const response = await fetch(URL.toString());
-  //     const blob = await response.blob();
-  //     const filesArray = [
-  //       new File([blob], `pic/capital.jpg`, {
-  //         type: 'image/jpg',
-  //         lastModified: new Date().getTime(),
-  //       }),
-  //     ];
-  //     const shareData = {
-  //       files: filesArray,
-  //     };
-  //     if (navigator.canShare && navigator.canShare(shareData)) {
-  //       await navigator.share(shareData);
-  //     } else {
-  //       alert(`navigator.share doesn't support in your device`);
-  //     }
-  //   }
-  // });
+  document.getElementById("shareResult").addEventListener("click", async (event) => {
+    event.preventDefault();
+    const mainImage = document.querySelector('.ans-banner-img');
+    if (mainImage && mainImage.getAttribute('src')) {
+      const URL = mainImage.getAttribute('src');
+      const response = await fetch(URL.toString());
+      const blob = await response.blob();
+      const filesArray = [
+        new File([blob], `pic/capital.jpg`, {
+          type: 'image/jpg',
+          lastModified: new Date().getTime(),
+        }),
+      ];
+      const shareData = {
+        files: filesArray,
+      };
+      if (navigator.canShare && navigator.canShare(shareData)) {
+        await navigator.share(shareData);
+      } else {
+        alert(`navigator.share doesn't support in your device`);
+      }
+    }
+  });
 </script>
