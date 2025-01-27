@@ -97,30 +97,56 @@
       //       }
       //     });
       // break;
+
+      case 'results':
+      document.getElementById("shareResult").addEventListener("click", async (event) => {
+        event.preventDefault();
+        const mainImage = document.querySelector('.ans-banner-img');
+        if (mainImage && mainImage.getAttribute('src')) {
+          const URL = mainImage.getAttribute('src');
+          const response = await fetch(URL.toString());
+          const blob = await response.blob();
+          const filesArray = [
+            new File([blob], `pic/capital.jpg`, {
+              type: 'image/jpg',
+              lastModified: new Date().getTime(),
+            }),
+          ];
+          const shareData = {
+            files: filesArray,
+          };
+          if (navigator.canShare && navigator.canShare(shareData)) {
+            await navigator.share(shareData);
+          } else {
+            alert(`navigator.share doesn't support in your device`);
+          }
+        }
+      });
+      break;
     }
   });
 
-  document.getElementById("shareResult").addEventListener("click", async (event) => {
-    event.preventDefault();
-    const mainImage = document.querySelector('.ans-banner-img');
-    if (mainImage && mainImage.getAttribute('src')) {
-      const URL = mainImage.getAttribute('src');
-      const response = await fetch(URL.toString());
-      const blob = await response.blob();
-      const filesArray = [
-        new File([blob], `pic/capital.jpg`, {
-          type: 'image/jpg',
-          lastModified: new Date().getTime(),
-        }),
-      ];
-      const shareData = {
-        files: filesArray,
-      };
-      if (navigator.canShare && navigator.canShare(shareData)) {
-        await navigator.share(shareData);
-      } else {
-        alert(`navigator.share doesn't support in your device`);
-      }
-    }
-  });
+  // document.getElementById("shareResult").addEventListener("click", async (event) => {
+  //   event.preventDefault();
+  //   const mainImage = document.querySelector('.ans-banner-img');
+  //   if (mainImage && mainImage.getAttribute('src')) {
+  //     const URL = mainImage.getAttribute('src');
+  //     const response = await fetch(URL.toString());
+  //     const blob = await response.blob();
+  //     const filesArray = [
+  //       new File([blob], `pic/capital.jpg`, {
+  //         type: 'image/jpg',
+  //         lastModified: new Date().getTime(),
+  //       }),
+  //     ];
+  //     const shareData = {
+  //       files: filesArray,
+  //     };
+  //     if (navigator.canShare && navigator.canShare(shareData)) {
+  //       await navigator.share(shareData);
+  //     } else {
+  //       alert(`navigator.share doesn't support in your device`);
+  //     }
+  //   }
+  // });
 </script>
