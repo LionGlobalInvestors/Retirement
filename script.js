@@ -389,7 +389,46 @@ class Quiz {
 
 }
 
+function prefetchImages(folderPath, fileNames) {
+  const baseURL = window.location.origin + window.location.pathname.replace(/\/[^/]*$/, '');
+
+  fileNames.forEach(fileName => {
+      const link = document.createElement('link');
+      link.rel = 'prefetch';
+      link.href = `${baseURL}${folderPath}${fileName}`;
+      document.head.appendChild(link);
+  });
+}
+
 document.addEventListener("DOMContentLoaded", function () {
+  const imageFiles = [
+    "answers.png",
+    "boarding_pass.png",
+    "capital.jpg",
+    "departure.gif",
+    "income.jpg",
+    "landing.gif",
+    "legacy.jpg",
+    "loading.jpg",
+    "loading2.jpg",
+    "pilot.jpg",
+    "quiz-Q1.jpg",
+    "quiz-Q2.jpg",
+    "quiz-Q3.jpg",
+    "quiz-Q4.jpg",
+    "quiz-Q5.jpg",
+    "quiz-Q6.jpg",
+    "quiz-Q7.jpg",
+    "quiz-Q8.jpg",
+    "quiz-Q9.jpg",
+    "results-anim.gif",
+    "Retirement Map.png",
+    "start.jpg",
+    "transition_1.jpg",
+    "transition_2.jpg",
+    "wealth.jpg"
+  ];
+  prefetchImages('/pic/', imageFiles);
   const quiz = new Quiz();
   quiz.run();
 });
