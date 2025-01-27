@@ -39,7 +39,7 @@
       <div class="uk-card uk-card-default uk-card-body quiz-ans-card">
 
         <div class="ans-banner-container">
-          <img class="main-img ans-banner-img" src="pic/legacy.jpg" alt="Legacy Planning">
+          <img id="result-img" class="main-img ans-banner-img" src="pic/legacy.jpg" alt="Legacy Planning">
           <a href="https://www.lionglobalinvestors.com/en/fund-centre.html?&retire_goals=Legacy%20Planning" class="link-to-fund-centre">
             <button class="result-button result-legacy">Legacy Planning</button>
           </a>
@@ -87,13 +87,20 @@
         ansWrapper.style.display = 'flex';
         ansWrapper.style.justifyContent = 'center';
         ansWrapper.style.alignItems = 'flex-start';
-        ansWrapper.style.marginTop = '20px';
+        // ansWrapper.style.marginTop = '20px';
         // currentState = 'results';
         currentState = 'companyPage';
         break;
 
       case 'companyPage':
-        window.open("https://www.lionglobalinvestors.com/en/fund-centre.html?&retire_goals=Legacy%20Planning");
+
+        document.addEventListener('click', () => {
+          switch (currentState) {
+            case 'start-img':
+              window.open("https://www.lionglobalinvestors.com/en/fund-centre.html?&retire_goals=Legacy%20Planning");
+            break;
+            }
+        });
       break;
 
     }
