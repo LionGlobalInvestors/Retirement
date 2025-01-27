@@ -224,8 +224,8 @@ class Quiz {
   slideUpBoardingPass() {
     // make the boarding pass png element
     const boardingPassImage = document.createElement("img");
-    boardingPassImage.src = "pic/boarding_pass.png";
-    boardingPassImage.classList.add("boarding-pass-image");
+    // boardingPassImage.src = "pic/boarding_pass.png";
+    // boardingPassImage.classList.add("boarding-pass-image");
     const quizRender = document.getElementById("quiz-render");
     quizRender.appendChild(boardingPassImage);
     // give it animate class that is in styles.css
