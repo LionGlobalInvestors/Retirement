@@ -101,6 +101,12 @@
     }
   });
 
+  document.getElementById("result-img").addEventListener("click", async (event) => {
+    event.preventDefault();
+    //do stuff
+    window.open("https://www.lionglobalinvestors.com/en/fund-centre.html?&retire_goals=Capital%20Preservation");
+  });
+
   document.getElementById("shareResult").addEventListener("click", async (event) => {
     event.preventDefault();
     const mainImage = document.querySelector('.ans-banner-img');
