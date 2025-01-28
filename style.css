@@ -820,10 +820,6 @@
         font-size: 12px;
     }
 
-    .quiz-options label:hover{
-        background-color: #c4306d;
-    }
-
     .quiz-desc {
         top: 50px;
         font-size: 15px;
