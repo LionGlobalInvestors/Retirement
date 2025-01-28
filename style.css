@@ -812,7 +812,7 @@
     }
 
     .quiz-options:active {
-        background-color: #000000;
+        background-color: none;
     }
 
     .quiz-option label {
