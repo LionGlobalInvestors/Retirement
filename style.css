@@ -862,7 +862,7 @@
 
 @media (hover:hover) {
     .quiz-options:hover {
-        /* background-color: #c4306d; */
+        background-color: none;
         color: #FFFFFF;
         /* border: 3px solid #721d40; */
         /* transform: scale(1.05); */
