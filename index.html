@@ -35,14 +35,11 @@
 </html>
 
 <script>
-let currentState = 'start-img'; // Tracks current display state
 
-document.addEventListener('click', () => {
-  switch (currentState) {
-    case 'start-img':
-        window.location.href = "lets-fly.html";
-    break;
-  }
+document.getElementById("start-img").addEventListener("click", async (event) => {
+    event.preventDefault();
+    //do stuff
+    window.location.href = "lets-fly.html";
 });
 
 </script>
