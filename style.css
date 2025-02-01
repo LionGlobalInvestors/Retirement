@@ -364,11 +364,11 @@
 }
 
 .quiz-option label:hover {
-    background: #c4306d;
+    /* background: #c4306d; */
 }
 
 .quiz-option input:checked+label {
-    background: #c4306d;
+    /* background: #c4306d; */
 }
 
 .quiz-option input:disabled:not(:checked)+label {
