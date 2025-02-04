@@ -3,18 +3,14 @@ if want to see question, add in script js:
     line 234: ${tiebreakerQuiz.question}
 
 
-next.jpg
-- transition_2
-- departure
-- loading
+Qns 1:
+A: Bring the bare minimum of 2 sets of clothes as you think you can wash them daily
 
-continue-to-airport.jpg
-- landing
+or 
 
-continue-to-results.jpg
+A: Bring 2 - 3 sets of clothes only
 
-transition_1 + boarding_pass
-
-desktop images to be bigger > mobile
-
-transition gifs -> make whole screen clickable instead, will be easier for older people
+Low 1 - Capital Preservation
+Low 2 - Legacy
+High 3 - Income Generation
+High 4 - Wealth Accumulation
