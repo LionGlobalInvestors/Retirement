@@ -253,10 +253,12 @@ class Quiz {
     // const quizRender = document.getElementById("quiz-render");
     // quizRender.appendChild(pulsingPlane);
 
-    document.addEventListener("click", () => {
+    const nextQuiz = () => {
       this.renderQuiz(this.currentQuizID + 1);
       this.currentQuizID += 1;
-    });
+      document.removeEventListener("click", nextQuiz);
+    };
+    document.addEventListener("click", nextQuiz);
   }
 
   pulsingPlaneButton2() {
@@ -272,10 +274,12 @@ class Quiz {
     // const quizRender = document.getElementById("quiz-render");
     // quizRender.appendChild(pulsingPlane);
     
-    document.addEventListener("click", () => {
+    const nextQuiz = () => {
       this.renderQuiz(this.currentQuizID + 1);
       this.currentQuizID += 1;
-    });
+      document.removeEventListener("click", nextQuiz);
+    };
+    document.addEventListener("click", nextQuiz);
   }
 
   showResult() {
