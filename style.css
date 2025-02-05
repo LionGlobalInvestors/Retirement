@@ -541,12 +541,16 @@
 }
 
 .social-media-icons {
+    position: absolute;
     display: flex;
     justify-content: center;
     margin: 0 auto;
     /* width: 70%; */
     z-index: 2;
-    top: 0;
+    top: 200px;
+    left: 290px;
+
+    animation: pulse 1s infinite;
 }
 
 .social-media-icons img {
@@ -584,7 +588,7 @@
     z-index: 2;
 
     /* pulse animation */
-    animation: pulse 1s infinite;
+    /* animation: pulse 1s infinite; */
 }
 .result-button:hover {
     background-color: #c4306d;
