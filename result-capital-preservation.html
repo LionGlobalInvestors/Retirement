@@ -87,17 +87,6 @@
         currentState = 'results';
         // currentState = 'companyPage';
         break;
-
-      // case 'companyPage':
-
-      //   document.addEventListener('click', () => {
-      //     switch (currentState) {
-      //       case 'start-img':
-      //         window.open("https://www.lionglobalinvestors.com/en/fund-centre.html?&retire_goals=Capital%20Preservation");
-      //       break;
-      //       }
-      //     });
-      // break;
     }
   });
 
@@ -110,6 +99,16 @@
   document.getElementById("shareResult").addEventListener("click", async (event) => {
     event.preventDefault();
     const mainImage = document.querySelector('.ans-banner-img');
+    
+    // copy link to clipboard
+    const shareMessage = `https://lionglobalinvestors.github.io/Retirement/`;
+        navigator.clipboard.writeText(shareMessage).then(() => {
+            alert('Link copied to clipboard!');
+        }).catch(err => {
+            alert('Failed to copy link. Please try again.');
+        });
+
+    // sharing of image to application of choice
     if (mainImage && mainImage.getAttribute('src')) {
       const URL = mainImage.getAttribute('src');
       const response = await fetch(URL.toString());

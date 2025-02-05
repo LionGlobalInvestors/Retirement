@@ -33,6 +33,8 @@
     /* aspect-ratio: 65/45; */
     object-fit: cover;
     object-position: center center;
+    transform: translate(0%, 0%);
+    /* margin: 0; */
 }
 
 .lets-fly-info {
@@ -696,6 +698,7 @@
         object-fit: cover;
         object-position: center center;
         transform: translate(0%, 0%);
+        margin: 0;
     }
 
     .lets-fly-button {
@@ -726,7 +729,7 @@
 
     .quiz-option label {
         padding: 12px;
-        font-size: 10px;
+        font-size: 11px;
         text-align: center;
     }
 
