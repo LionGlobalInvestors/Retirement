@@ -59,6 +59,13 @@
 
 </body>
 
+<footer>
+  <div class="footer">
+    <p class="disclaimer">This is for information and illustration only, and does not have regard to your specific investment objectives, financial situation, tax position or needs. The information herein is not intended to be and does not constitute financial advice or an offer or solicitation for the purchase or sale of units in any fund. Not all investment ideas are suitable for all investors and no recommendation is given as to the suitability of any funds for any particular investor. Prior to making any investment, you should make your own evaluation or seek independent advice as to whether such investment is suitable for you. LGI does not accept any liability for any damages or loss, including loss of profit, whether direct, indirect, economic or consequential, arising from reliance on any information, opinion or estimate herein.</p>
+  </div>
+
+</footer>
+
 </html>
 
 <script>
@@ -87,17 +94,6 @@
         // currentState = 'companyPage';
         break;
 
-      // case 'companyPage':
-
-      //   document.addEventListener('click', () => {
-      //     switch (currentState) {
-      //       case 'start-img':
-      //         window.open("https://www.lionglobalinvestors.com/en/fund-centre.html?&retire_goals=Wealth%20Accumulation");
-      //       break;
-      //       }
-      //     });
-      // break;
-
     }
   });
 
@@ -110,6 +106,15 @@
   document.getElementById("shareResult").addEventListener("click", async (event) => {
     event.preventDefault();
     const mainImage = document.querySelector('.ans-banner-img');
+
+    // copy link to clipboard
+    const shareMessage = `https://lionglobalinvestors.github.io/Retirement/`;
+      navigator.clipboard.writeText(shareMessage).then(() => {
+          alert('Link copied to clipboard!');
+      }).catch(err => {
+          alert('Failed to copy link. Please try again.');
+      });
+
     if (mainImage && mainImage.getAttribute('src')) {
       const URL = mainImage.getAttribute('src');
       const response = await fetch(URL.toString());
