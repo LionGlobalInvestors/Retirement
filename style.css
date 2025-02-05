@@ -538,6 +538,8 @@
     text-align: justify;
     font-weight: 100;
     color: white;
+    bottom: 0;
+    top: 0;
 }
 
 .social-media-icons {
@@ -749,7 +751,7 @@
     .quiz-options {
         /* padding-left: 580px; */
         transform: translate(-50%,-50%);
-        left: 65%;
+        left: 67%;
         margin-top: 220px;
         width: 180px;
     }
@@ -898,6 +900,10 @@
         /* bottom: 21.6%; Adjust this to control how far up the image slides */
         bottom: 22.2%;
         left: 52%;
+    }
+
+    .disclaimer {
+        font-size: 9px;
     }
 
     .social-media-icons {
