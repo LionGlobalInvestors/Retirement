@@ -825,6 +825,7 @@
         width: 100%;
         object-fit: cover;
         object-position: center center;
+        margin: 0;
     }
 
     .lets-fly-button {
@@ -868,6 +869,7 @@
     .quiz-cover-image {
         width: 100%;
         height: 100%;
+        margin: 0;
     }
 
     .ans-banner-container .main-img {
@@ -896,6 +898,11 @@
         /* bottom: 21.6%; Adjust this to control how far up the image slides */
         bottom: 22.2%;
         left: 52%;
+    }
+
+    .social-media-icons {
+        top: 190px;
+        left: 270px;
     }
 }
 
