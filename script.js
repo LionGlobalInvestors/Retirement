@@ -242,30 +242,40 @@ class Quiz {
 
   pulsingPlaneButton1() {
     // make the plane icon png element
-    const pulsingPlane = document.createElement("img");
-    pulsingPlane.src = "icon/plane.png";
-    pulsingPlane.classList.add("lets-fly-button");
-    pulsingPlane.classList.add("transition2");
-    pulsingPlane.addEventListener("click", () => {
+    // const pulsingPlane = document.createElement("img");
+    // pulsingPlane.src = "icon/plane.png";
+    // pulsingPlane.classList.add("lets-fly-button");
+    // pulsingPlane.classList.add("transition2");
+    // pulsingPlane.addEventListener("click", () => {
+    //   this.renderQuiz(this.currentQuizID + 1);
+    //   this.currentQuizID += 1
+    // });
+    // const quizRender = document.getElementById("quiz-render");
+    // quizRender.appendChild(pulsingPlane);
+
+    document.addEventListener("click", () => {
       this.renderQuiz(this.currentQuizID + 1);
-      this.currentQuizID += 1
+      this.currentQuizID += 1;
     });
-    const quizRender = document.getElementById("quiz-render");
-    quizRender.appendChild(pulsingPlane);
   }
 
   pulsingPlaneButton2() {
     // make the plane icon png element
-    const pulsingPlane = document.createElement("img");
-    pulsingPlane.src = "icon/plane.png";
-    pulsingPlane.classList.add("lets-fly-button");
-    pulsingPlane.classList.add("transition2");
-    pulsingPlane.addEventListener("click", () => {
+    // const pulsingPlane = document.createElement("img");
+    // pulsingPlane.src = "icon/plane.png";
+    // pulsingPlane.classList.add("lets-fly-button");
+    // pulsingPlane.classList.add("transition2");
+    // pulsingPlane.addEventListener("click", () => {
+    //   this.renderQuiz(this.currentQuizID + 1);
+    //   this.currentQuizID += 1
+    // });
+    // const quizRender = document.getElementById("quiz-render");
+    // quizRender.appendChild(pulsingPlane);
+    
+    document.addEventListener("click", () => {
       this.renderQuiz(this.currentQuizID + 1);
-      this.currentQuizID += 1
+      this.currentQuizID += 1;
     });
-    const quizRender = document.getElementById("quiz-render");
-    quizRender.appendChild(pulsingPlane);
   }
 
   showResult() {
