@@ -64,15 +64,8 @@
 </body>
 
 <footer>
-  <!-- <input type="checkbox"> -->
-    <!-- <button onclick="myFunction()" class="dropBtn">Disclaimer</button> -->
-    <!-- <label>Disclaimer</label>
-    <ul id="dropDown" class="dropDown-content">
-      <p class="disclaimer">This is for information and illustration only, and does not have regard to your specific investment objectives, financial situation, tax position or needs. The information herein is not intended to be and does not constitute financial advice or an offer or solicitation for the purchase or sale of units in any fund. Not all investment ideas are suitable for all investors and no recommendation is given as to the suitability of any funds for any particular investor. Prior to making any investment, you should make your own evaluation or seek independent advice as to whether such investment is suitable for you. LGI does not accept any liability for any damages or loss, including loss of profit, whether direct, indirect, economic or consequential, arising from reliance on any information, opinion or estimate herein.</p>
-    </ul> -->
-
     <div class="dropDown">
-      <button onclick="myFunction()" class="dropBtn">Disclaimer</button>
+      <button onclick="disclaimerOpen()" class="dropBtn">Disclaimer</button>
       <div id="dropBar" class="dropDown-content">
         <p class="bar-item dropBtn" id="disclaimer">This is for information and illustration only, and does not have regard to your specific investment objectives, financial situation, tax position or needs. The information herein is not intended to be and does not constitute financial advice or an offer or solicitation for the purchase or sale of units in any fund. Not all investment ideas are suitable for all investors and no recommendation is given as to the suitability of any funds for any particular investor. Prior to making any investment, you should make your own evaluation or seek independent advice as to whether such investment is suitable for you. LGI does not accept any liability for any damages or loss, including loss of profit, whether direct, indirect, economic or consequential, arising from reliance on any information, opinion or estimate herein.</p>
     
@@ -85,33 +78,6 @@
 </html>
 
 <script>
-  // let currentState = 'loading'; // Tracks current display state
-
-  // document.getElementById("loading").addEventListener('click', () => {
-  //   switch (currentState) {
-  //     case 'loading':
-  //       // Hide loading image and show animation        
-  //       document.getElementById('loading').style.display = 'none';
-  //       document.getElementById('result-anim').style.display = 'block';
-  //       currentState = 'animation';
-  //       break;
-
-  //     case 'animation':
-  //       // Hide animation and show results
-  //       document.getElementById('plane-button').style.display = 'none';
-  //       document.getElementById('result-anim').style.display = 'none';
-  //       document.getElementById('centerWrapper').style.display = 'none';
-  //       const ansWrapper = document.querySelector('.ans-wrapper');
-  //       ansWrapper.style.display = 'flex';
-  //       ansWrapper.style.justifyContent = 'center';
-  //       ansWrapper.style.alignItems = 'flex-start';
-  //       // ansWrapper.style.marginTop = '20px';
-  //       currentState = 'results';
-  //       // currentState = 'companyPage';
-  //       break;
-  //   }
-  // });
-
   document.getElementById("loading").addEventListener('click', () => {
       // Hide loading image and show animation        
       document.getElementById('loading').style.display = 'none';
@@ -175,20 +141,16 @@
 
   document.getElementById("disclaimer").style.display = 'none';
 
-  function myFunction() {
+  function disclaimerOpen() {
+    var dropBar = document.getElementById("dropBar");
+    var disclaimer = document.getElementById("disclaimer");
+    disclaimer.classList.toggle("show");
 
-    // var x = document.getElementById("dropBar");
-
-    document.getElementById("dropBar").addEventListener("click", async (event) => {
-      document.getElementById("disclaimer").style.display = 'block';
-    });
-
-    // if (x.className.indexOf("show") == -1) {
-    //   x.className += " show";
-    // }
-    // else {
-    //   x.className = x.className.replace (" show", "");
-    // }
-  }
+    if (disclaimer.style.display === 'none') {
+        disclaimer.style.display = 'block';
+    } else {
+        disclaimer.style.display = 'none';
+    }
+}
 
 </script>

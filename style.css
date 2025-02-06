@@ -533,6 +533,21 @@
     top: 0;
 }
 
+.dropBtn {
+    width: -webkit-fill-available; /* Full screen width */
+    background-color: #721d40; /* Dark maroon color */
+    color: white; /* Text color */
+    font-size: 16px; /* Readable font size */
+    font-weight: 600; /* Slightly bold */
+    padding: 15px 20px; /* Comfortable padding */
+    border: none; /* Remove default border */
+    cursor: pointer; /* Indicate clickable button */
+    text-align: center; /* Center text */
+    display: block; /* Ensure it takes full width */
+    outline: none; /* Remove focus outline */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
 .social-media-icons {
     position: absolute;
     display: flex;
