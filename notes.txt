@@ -14,3 +14,30 @@ Low 1 - Capital Preservation
 Low 2 - Legacy
 High 3 - Income Generation
 High 4 - Wealth Accumulation
+
+To do:
+1. disclaimer as drop down (for all page?)
+2. new art for 2 pages
+
+qns 1: where is your next holiday destination?
+A: trekking in africa (Accumulation)
+B: DIY travek in asia pacific (Preservation)
+C: family ski holiday (legacy)
+D: join a tour to visit europe (income)
+
+shift all questions down by 1, remove queuing qns
+
+qns 7: what type of movie will you select while on the plane
+or what show do you watch on the plane
+A: disney movie - legacy
+B: watch the show that was downloaded on your device - income
+C: latest blockbuster - Preservation
+D: action/thriller movie - wealth 
+
+qns 9: you are at the end of your trip, what souvenirs do you bring home
+A: just the photos/memories - Preservation
+B: popular local specialities purchased during the guided tour - income
+C: unique collectibles / local crafts - wealth 
+D: buy local snacks for family and friends - legacy 
+
+disclaimer font size 14px
