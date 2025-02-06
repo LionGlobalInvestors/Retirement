@@ -5,6 +5,16 @@ class Quiz {
     this.QUIZ = [
       {
         image: `quiz-Q1.jpg`,
+        question: `Where is your next holiday destination?`,
+        answers: {
+          Wealth: `Trekking in Africa`,
+          Capital: `DIY travel in Asia Pacific`,
+          Legacy: `Family ski holiday`,
+          Income: `Join a tour to visit Europe`,
+        },
+      },
+      {
+        image: `quiz-Q1.jpg`,
         question: `As you prepare to embark on a 14 days trip, you pack your bag. <br> How much clothing do you pack?`,
         answers: {
           Wealth: `Bring 2 - 3 sets of clothes only`,
@@ -34,18 +44,8 @@ class Quiz {
         },
       },
       {
-        image: `quiz-Q4.jpg`,
-        question: `While queuing to check in your luggage, someone tries to cut in front of you. <br> Do you:`,
-        answers: {
-          Income: `Let them cut in front of you hoping that someone else will speak up`,
-          Legacy: `Ask them nicely to join the queue behind you`,
-          Wealth: `Close the gap and block them from joining the queue in front of you`,
-          Capital: `Let them cut in front of you as you think they may be in a hurry`,
-        },
-      },
-      {
         image: `quiz-Q5.jpg`,
-        question: `You're told that your flight wiill be delayed overnight. <br> What do you do first?`,
+        question: `You're told that your flight will be delayed overnight. <br> What do you do first?`,
         answers: {
           Income: `Pay extra to get onto the next available flight`,
           Wealth: `Request for accommodation and meal allowance from the airline company`,
@@ -79,12 +79,12 @@ class Quiz {
       },
       {
         image: `quiz-Q7.jpg`,
-        question: `Seated at the window seat, you're enjoying the view when you notice the person next to you is sleeping. <br> What do you do?`,
+        question: `What show do you watch on the plane?`,
         answers: {
-          Wealth: `Continue enjoying the view with the shade up`,
-          Legacy: `Pull down the window shade fully`,
-          Capital: `Lower the shade halfway so you can still enjoy the view`,
-          Income: `Leave the shade up until they ask you to pull it down`,
+          Wealth: `Action/Thriller`,
+          Legacy: `Disney movie`,
+          Capital: `Latest Blockbuster`,
+          Income: `Watch downloaded show on your device`,
         },
       },
       // landing gif
@@ -107,12 +107,12 @@ class Quiz {
       },
       { //only show when got tie-breaker
         image: `quiz-Q9.jpg`,
-        question: `When you are at the Northern Lights, for your first picture, do you: `,
+        question: `You are at the end of your trip, what souvenirs do you bring home? `,
         answers: {
-          Capital: `Take a selfie`,
-          Wealth: `Ask someone to take pictures of you`,
-          Income: `Take pictures of the scenery`,
-          Legacy: `Live in the moment and enjoy it without taking pictures`,
+          Capital: `Just the photos/memories`,
+          Wealth: `Unique collectibles / local crafts`,
+          Income: `Popular local specialties purchased during the tour`,
+          Legacy: `Local snacks for family and friends`,
         },
       },
     ].map((v, i) => ({ ...v, id: i + 1 }));

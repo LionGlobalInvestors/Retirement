@@ -64,43 +64,73 @@
 </body>
 
 <footer>
-  <div class="footer">
-    <button onclick="myFunction()" class="dropBtn">Disclaimer</button>
-    <div id="dropDown" class="dropDown-content">
+  <!-- <input type="checkbox"> -->
+    <!-- <button onclick="myFunction()" class="dropBtn">Disclaimer</button> -->
+    <!-- <label>Disclaimer</label>
+    <ul id="dropDown" class="dropDown-content">
       <p class="disclaimer">This is for information and illustration only, and does not have regard to your specific investment objectives, financial situation, tax position or needs. The information herein is not intended to be and does not constitute financial advice or an offer or solicitation for the purchase or sale of units in any fund. Not all investment ideas are suitable for all investors and no recommendation is given as to the suitability of any funds for any particular investor. Prior to making any investment, you should make your own evaluation or seek independent advice as to whether such investment is suitable for you. LGI does not accept any liability for any damages or loss, including loss of profit, whether direct, indirect, economic or consequential, arising from reliance on any information, opinion or estimate herein.</p>
+    </ul> -->
+
+    <div class="dropDown">
+      <button onclick="myFunction()" class="dropBtn">Disclaimer</button>
+      <div id="dropBar" class="dropDown-content">
+        <p class="bar-item dropBtn" id="disclaimer">This is for information and illustration only, and does not have regard to your specific investment objectives, financial situation, tax position or needs. The information herein is not intended to be and does not constitute financial advice or an offer or solicitation for the purchase or sale of units in any fund. Not all investment ideas are suitable for all investors and no recommendation is given as to the suitability of any funds for any particular investor. Prior to making any investment, you should make your own evaluation or seek independent advice as to whether such investment is suitable for you. LGI does not accept any liability for any damages or loss, including loss of profit, whether direct, indirect, economic or consequential, arising from reliance on any information, opinion or estimate herein.</p>
+    
+      </div>
+
     </div>
-  </div>
 
 </footer>
 
 </html>
 
 <script>
-  let currentState = 'loading'; // Tracks current display state
+  // let currentState = 'loading'; // Tracks current display state
 
-  document.addEventListener('click', () => {
-    switch (currentState) {
-      case 'loading':
-        // Hide loading image and show animation        
-        document.getElementById('loading').style.display = 'none';
-        document.getElementById('result-anim').style.display = 'block';
-        currentState = 'animation';
-        break;
+  // document.getElementById("loading").addEventListener('click', () => {
+  //   switch (currentState) {
+  //     case 'loading':
+  //       // Hide loading image and show animation        
+  //       document.getElementById('loading').style.display = 'none';
+  //       document.getElementById('result-anim').style.display = 'block';
+  //       currentState = 'animation';
+  //       break;
 
-      case 'animation':
-        // Hide animation and show results
-        document.getElementById('plane-button').style.display = 'none';
-        document.getElementById('result-anim').style.display = 'none';
-        document.getElementById('centerWrapper').style.display = 'none';
-        const ansWrapper = document.querySelector('.ans-wrapper');
-        ansWrapper.style.display = 'flex';
-        ansWrapper.style.justifyContent = 'center';
-        ansWrapper.style.alignItems = 'flex-start';
-        // ansWrapper.style.marginTop = '20px';
-        currentState = 'results';
-        // currentState = 'companyPage';
-        break;
-    }
+  //     case 'animation':
+  //       // Hide animation and show results
+  //       document.getElementById('plane-button').style.display = 'none';
+  //       document.getElementById('result-anim').style.display = 'none';
+  //       document.getElementById('centerWrapper').style.display = 'none';
+  //       const ansWrapper = document.querySelector('.ans-wrapper');
+  //       ansWrapper.style.display = 'flex';
+  //       ansWrapper.style.justifyContent = 'center';
+  //       ansWrapper.style.alignItems = 'flex-start';
+  //       // ansWrapper.style.marginTop = '20px';
+  //       currentState = 'results';
+  //       // currentState = 'companyPage';
+  //       break;
+  //   }
+  // });
+
+  document.getElementById("loading").addEventListener('click', () => {
+      // Hide loading image and show animation        
+      document.getElementById('loading').style.display = 'none';
+      document.getElementById('result-anim').style.display = 'block';
+      currentState = 'animation';
+
+  });
+
+  document.getElementById("result-anim").addEventListener('click', () => {
+      document.getElementById('plane-button').style.display = 'none';
+      document.getElementById('result-anim').style.display = 'none';
+      document.getElementById('centerWrapper').style.display = 'none';
+      const ansWrapper = document.querySelector('.ans-wrapper');
+      ansWrapper.style.display = 'flex';
+      ansWrapper.style.justifyContent = 'center';
+      ansWrapper.style.alignItems = 'flex-start';
+      // ansWrapper.style.marginTop = '20px';
+      currentState = 'results';
+
   });
 
   document.getElementById("result-img").addEventListener("click", async (event) => {
@@ -143,23 +173,22 @@
     }
   });
 
-  /* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
+  document.getElementById("disclaimer").style.display = 'none';
 
-// Close the dropdown menu if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropBtn')) {
-    var dropdowns = document.getElementsByClassName("dropDown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
+  function myFunction() {
+
+    // var x = document.getElementById("dropBar");
+
+    document.getElementById("dropBar").addEventListener("click", async (event) => {
+      document.getElementById("disclaimer").style.display = 'block';
+    });
+
+    // if (x.className.indexOf("show") == -1) {
+    //   x.className += " show";
+    // }
+    // else {
+    //   x.className = x.className.replace (" show", "");
+    // }
   }
-}
+
 </script>
