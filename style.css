@@ -553,13 +553,13 @@
 }
 
 .dropBtn::after {
-    content: "   ▼"; /* Default down arrow */
+    content: "▼"; /* Default down arrow */
     display: inline-block;
     transition: transform 0.3s ease;
 }
 
 .dropBtn.active::after {
-    content: "   ▲"; /* Change to up arrow */
+    content: "▲"; /* Change to up arrow */
     transform: rotate(360deg); /* Rotate animation */
 }
 
