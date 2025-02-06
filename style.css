@@ -524,13 +524,17 @@
 }
 
 .disclaimer {
-    /* width: 90%; */
-    font-size: 10px;
-    text-align: justify;
-    font-weight: 100;
-    color: white;
-    bottom: 0;
-    top: 0;
+    width: -webkit-fill-available; /* Full screen width */
+    background-color: #721d40; /* Dark maroon color */
+    color: white; /* Text color */
+    font-size: 16px; /* Readable font size */
+    font-weight: 600; /* Slightly bold */
+    padding: 15px 20px; /* Comfortable padding */
+    border: none; /* Remove default border */
+    text-align: center; /* Center text */
+    display: block; /* Ensure it takes full width */
+    outline: none; /* Remove focus outline */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
 }
 
 .dropBtn {
@@ -546,6 +550,17 @@
     display: block; /* Ensure it takes full width */
     outline: none; /* Remove focus outline */
     transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.dropBtn::after {
+    content: "   ▼"; /* Default down arrow */
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.dropBtn.active::after {
+    content: "   ▲"; /* Change to up arrow */
+    transform: rotate(360deg); /* Rotate animation */
 }
 
 .social-media-icons {
