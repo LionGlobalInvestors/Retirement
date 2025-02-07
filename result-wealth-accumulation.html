@@ -60,10 +60,12 @@
 </body>
 
 <footer>
-  <div class="footer">
-    <p class="disclaimer">This is for information and illustration only, and does not have regard to your specific investment objectives, financial situation, tax position or needs. The information herein is not intended to be and does not constitute financial advice or an offer or solicitation for the purchase or sale of units in any fund. Not all investment ideas are suitable for all investors and no recommendation is given as to the suitability of any funds for any particular investor. Prior to making any investment, you should make your own evaluation or seek independent advice as to whether such investment is suitable for you. LGI does not accept any liability for any damages or loss, including loss of profit, whether direct, indirect, economic or consequential, arising from reliance on any information, opinion or estimate herein.</p>
+  <div class="dropDown">
+    <button onclick="disclaimerOpen()" class="dropBtn">Disclaimer  </button> <!-- Spacing behind Disclaimer is needed -->
+    <div id="dropBar" class="dropDown-content">
+      <p class="disclaimer" id="disclaimer">This is for information and illustration only, and does not have regard to your specific investment objectives, financial situation, tax position or needs. The information herein is not intended to be and does not constitute financial advice or an offer or solicitation for the purchase or sale of units in any fund. Not all investment ideas are suitable for all investors and no recommendation is given as to the suitability of any funds for any particular investor. Prior to making any investment, you should make your own evaluation or seek independent advice as to whether such investment is suitable for you. LGI does not accept any liability for any damages or loss, including loss of profit, whether direct, indirect, economic or consequential, arising from reliance on any information, opinion or estimate herein.</p>
+    </div>
   </div>
-
 </footer>
 
 </html>
@@ -135,4 +137,19 @@
       }
     }
   });
+
+  function disclaimerOpen() {
+    var dropBar = document.getElementById("dropBar");
+    var disclaimer = document.getElementById("disclaimer");
+    var dropBtn = document.querySelector(".dropBtn");
+    disclaimer.classList.toggle("show");
+
+    if (disclaimer.style.display === "none") {
+        disclaimer.style.display = "block";
+        dropBtn.classList.add("active"); // Add active class for arrow change
+    } else {
+        disclaimer.style.display = "none";
+        dropBtn.classList.remove("active"); // Remove active class for arrow change
+    }
+}
 </script>

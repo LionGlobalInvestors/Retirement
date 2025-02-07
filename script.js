@@ -4,7 +4,7 @@ class Quiz {
 
     this.QUIZ = [
       {
-        image: `quiz-Q1.jpg`,
+        image: `quiz-Q0.jpg`,
         question: `Where is your next holiday destination?`,
         answers: {
           Wealth: `Trekking in Africa`,

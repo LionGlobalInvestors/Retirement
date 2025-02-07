@@ -41,3 +41,13 @@ C: unique collectibles / local crafts - wealth
 D: buy local snacks for family and friends - legacy 
 
 disclaimer font size 14px
+
+colour:
+#e18698
+#89264f
+#315c81
+#a2c3d0
+#435364
+#697582
+#005d6c
+#478895
