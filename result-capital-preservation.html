@@ -76,7 +76,7 @@
 
 <script>
   document.getElementById('disclaimerBtn').style.display = 'none';
-
+  document.getElementById("disclaimer").style.display = 'none';
   document.getElementById("loading").addEventListener('click', () => {
       // Hide loading image and show animation        
       document.getElementById('loading').style.display = 'none';
@@ -94,7 +94,7 @@
       ansWrapper.style.justifyContent = 'center';
       ansWrapper.style.alignItems = 'flex-start';
       // currentState = 'results';
-
+      document.getElementById('disclaimerBtn').style.display = 'block';
   });
 
 
@@ -137,8 +137,6 @@
       }
     }
   });
-
-  document.getElementById("disclaimer").style.display = 'none';
 
   function disclaimerOpen() {
     var dropBar = document.getElementById("dropBar");
