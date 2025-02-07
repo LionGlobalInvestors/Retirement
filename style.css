@@ -181,7 +181,7 @@
 .next-button:active {
     /* background-color: #c4306d; */
     /* color: #FFFFFF; */
-    /* border: 3px solid #721d40; */
+    /* border: 3px solid #89264f; */
     transform: scale(1.05);
 }
 
@@ -258,7 +258,7 @@
 .lets-begin-button:hover {
     /* background-color: #c4306d;
     color: #FFFFFF;
-    border: 3px solid #721d40; */
+    border: 3px solid #89264f; */
     transform: scale(1.05);
 }
 
@@ -394,7 +394,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    /* background: linear-gradient(#c4306d, #721d40); */
+    /* background: linear-gradient(#c4306d, #89264f); */
     color: #000000;
     text-align: center;
     font-family: 'Arial', sans-serif;
@@ -525,7 +525,7 @@
 
 .disclaimer {
     width: -webkit-fill-available; /* Full screen width */
-    background-color: grey; /* Dark maroon color */
+    background-color: #e18698; /* Dark maroon color */
     color: white; /* Text color */
     font-size: 16px; /* Readable font size */
     font-weight: 600; /* Slightly bold */
@@ -536,11 +536,16 @@
     outline: none; /* Remove focus outline */
     transition: background-color 0.3s ease; /* Smooth hover effect */
     margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+footer {
+    bottom: 0;
 }
 
 .dropBtn {
     width: -webkit-fill-available; /* Full screen width */
-    background-color: #721d40; /* Dark maroon color */
+    background-color: #89264f; /* Dark maroon color */
     color: white; /* Text color */
     font-size: 16px; /* Readable font size */
     font-weight: 600; /* Slightly bold */
@@ -551,7 +556,8 @@
     display: block; /* Ensure it takes full width */
     outline: none; /* Remove focus outline */
     transition: background-color 0.3s ease; /* Smooth hover effect */
-    bottom: 0;
+    /* height: 40px;
+    margin: 25px 0 0 0; */
 }
 
 .dropBtn::after {
@@ -619,7 +625,7 @@
 .result-button:hover {
     background-color: #c4306d;
     color: #FFFFFF;
-    border: 2px solid #721d40;
+    border: 2px solid #89264f;
     transform: scale(1.05);
 }
 
@@ -945,7 +951,7 @@
     .quiz-options:hover {
         background-color: none;
         color: #FFFFFF;
-        /* border: 3px solid #721d40; */
+        /* border: 3px solid #89264f; */
         /* transform: scale(1.05); */
     }
 }

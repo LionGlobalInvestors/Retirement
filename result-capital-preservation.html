@@ -65,7 +65,7 @@
 
 <footer>
     <div class="dropDown">
-      <button onclick="disclaimerOpen()" class="dropBtn">Disclaimer  </button> <!-- Spacing behind Disclaimer is needed -->
+      <button id="disclaimerBtn" onclick="disclaimerOpen()" class="dropBtn">Disclaimer  </button> <!-- Spacing behind Disclaimer is needed -->
       <div id="dropBar" class="dropDown-content">
         <p class="disclaimer" id="disclaimer">This is for information and illustration only, and does not have regard to your specific investment objectives, financial situation, tax position or needs. The information herein is not intended to be and does not constitute financial advice or an offer or solicitation for the purchase or sale of units in any fund. Not all investment ideas are suitable for all investors and no recommendation is given as to the suitability of any funds for any particular investor. Prior to making any investment, you should make your own evaluation or seek independent advice as to whether such investment is suitable for you. LGI does not accept any liability for any damages or loss, including loss of profit, whether direct, indirect, economic or consequential, arising from reliance on any information, opinion or estimate herein.</p>
       </div>
@@ -75,26 +75,28 @@
 </html>
 
 <script>
+  document.getElementById('disclaimerBtn').style.display = 'none';
+
   document.getElementById("loading").addEventListener('click', () => {
       // Hide loading image and show animation        
       document.getElementById('loading').style.display = 'none';
       document.getElementById('result-anim').style.display = 'block';
-      currentState = 'animation';
+      // currentState = 'animation';
 
   });
 
   document.getElementById("result-anim").addEventListener('click', () => {
-      document.getElementById('plane-button').style.display = 'none';
+      // document.getElementById('plane-button').style.display = 'none';
       document.getElementById('result-anim').style.display = 'none';
       document.getElementById('centerWrapper').style.display = 'none';
       const ansWrapper = document.querySelector('.ans-wrapper');
       ansWrapper.style.display = 'flex';
       ansWrapper.style.justifyContent = 'center';
       ansWrapper.style.alignItems = 'flex-start';
-      // ansWrapper.style.marginTop = '20px';
-      currentState = 'results';
+      // currentState = 'results';
 
   });
+
 
   document.getElementById("result-img").addEventListener("click", async (event) => {
     event.preventDefault();
