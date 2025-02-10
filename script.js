@@ -4,16 +4,6 @@ class Quiz {
 
     this.QUIZ = [
       {
-        image: `quiz-Q0.jpg`,
-        question: `Where is your next holiday destination?`,
-        answers: {
-          Wealth: `Trekking in Africa`,
-          Capital: `DIY travel in Asia Pacific`,
-          Legacy: `Family ski holiday`,
-          Income: `Join a tour to visit Europe`,
-        },
-      },
-      {
         image: `quiz-Q1.jpg`,
         question: `As you prepare to embark on a 14 days trip, you pack your bag. <br> How much clothing do you pack?`,
         answers: {
@@ -79,12 +69,12 @@ class Quiz {
       },
       {
         image: `quiz-Q7.jpg`,
-        question: `What show do you watch on the plane?`,
+        question: `How do you keep yourself entertained on the flight?`,
         answers: {
-          Wealth: `Action/Thriller`,
-          Legacy: `Disney movie`,
-          Capital: `Latest Blockbuster`,
-          Income: `Watch downloaded show on your device`,
+          Wealth: `Binge-watch a whole season of a show`,
+          Legacy: `Listen to music`,
+          Capital: `Read a book`,
+          Income: `Sleep throughout the whole flight`,
         },
       },
       // landing gif
@@ -93,6 +83,16 @@ class Quiz {
         isTransition3: true,
         question: ``,
         answers: {
+        },
+      },
+      {
+        image: `quiz-Q0.jpg`,
+        question: `The plane has landed, and everyone is rushing to get out. What do you do?`,
+        answers: {
+          Wealth: `Stand up quickly to get ahead of the line`,
+          Legacy: `Wait for everyone to get out before you do`,
+          Capital: `Stay seated and wait patiently for the line to move`,
+          Income: `Join the crowd but move at a steady pace`,
         },
       },
       {
