@@ -366,7 +366,8 @@
 }
 
 .quiz-option label:hover {
-    background: #c4306d;
+    /* background: #c4306d; */
+    background-color: none;
 }
 
 /* .quiz-option input:checked+label {
@@ -525,13 +526,13 @@
 
 .disclaimer {
     width: -webkit-fill-available; /* Full screen width */
-    background-color: #e18698; /* Dark maroon color */
-    color: white; /* Text color */
+    background-color: #c7cbd0; /* Dark maroon color */
+    color: black; /* Text color */
     font-size: 16px; /* Readable font size */
-    font-weight: 600; /* Slightly bold */
-    padding: 15px 20px; /* Comfortable padding */
+    font-weight: 200; /* Slightly bold */
+    padding: 10px 20px; /* Comfortable padding */
     border: none; /* Remove default border */
-    text-align: center; /* Center text */
+    text-align: justify; /* Center text */
     display: block; /* Ensure it takes full width */
     outline: none; /* Remove focus outline */
     transition: background-color 0.3s ease; /* Smooth hover effect */
@@ -545,11 +546,11 @@ footer {
 
 .dropBtn {
     width: -webkit-fill-available; /* Full screen width */
-    background-color: #89264f; /* Dark maroon color */
+    background-color: #697582; /* Dark maroon color */
     color: white; /* Text color */
     font-size: 16px; /* Readable font size */
     font-weight: 600; /* Slightly bold */
-    padding: 15px 20px; /* Comfortable padding */
+    padding: 10px 5px; /* Comfortable padding */
     border: none; /* Remove default border */
     cursor: pointer; /* Indicate clickable button */
     text-align: center; /* Center text */
@@ -811,7 +812,7 @@ footer {
         height: auto;
         margin-left: 20px;
         margin-top: 0;
-        border: 1px solid black;
+        /* border: 1px solid black; */
     }
 
     .result-button {
@@ -885,6 +886,7 @@ footer {
     }
 
     .quiz-options:active {
+        /* background-color: #e18698; */
         background-color: none;
     }
 

@@ -3,13 +3,6 @@ if want to see question, add in script js:
     line 234: ${tiebreakerQuiz.question}
 
 
-Qns 1:
-A: Bring the bare minimum of 2 sets of clothes as you think you can wash them daily
-
-or 
-
-A: Bring 2 - 3 sets of clothes only
-
 Low 1 - Capital Preservation
 Low 2 - Legacy
 High 3 - Income Generation
@@ -19,7 +12,7 @@ To do:
 1. disclaimer as drop down (for all page?)
 2. new art for 2 pages
 
-qns 1: where is your next holiday destination?
+qns 1: where is your next holiday destination? -> change it
 A: trekking in africa (Accumulation)
 B: DIY travek in asia pacific (Preservation)
 C: family ski holiday (legacy)
@@ -51,3 +44,4 @@ colour:
 #697582
 #005d6c
 #478895
+#c7cbd0
