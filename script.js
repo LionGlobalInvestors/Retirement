@@ -291,6 +291,13 @@ class Quiz {
       document.removeEventListener("click", nextQuiz);
     };
     document.addEventListener("click", nextQuiz);
+
+    const audio = new Audio('audio/landing_edit.mp3');
+    audio.loop = false;
+    audio.volume = 0.5;
+    
+
+    audio.play();
   }
 
   showResult() {
