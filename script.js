@@ -91,7 +91,7 @@ class Quiz {
         answers: {
           Wealth: `Stand up quickly to get ahead of the line`,
           Legacy: `Wait for everyone to get out before you do`,
-          Capital: `Stay seated and wait patiently for the line to move`,
+          Capital: `Stay seated and wait for the line to move before joining`,
           Income: `Join the crowd but move at a steady pace`,
         },
       },
