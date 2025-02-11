@@ -68,7 +68,8 @@ class Quiz {
         },
       },
       {
-        image: `quiz-Q7.jpg`,
+        isTransition2: false,
+        image: `quiz-Q0.jpg`,
         question: `How do you keep yourself entertained on the flight?`,
         answers: {
           Wealth: `Binge-watch a whole season of a show`,
@@ -86,7 +87,7 @@ class Quiz {
         },
       },
       {
-        image: `quiz-Q0.jpg`,
+        image: `quiz-Q7.jpg`,
         question: `The plane has landed, and everyone is rushing to get out. What do you do?`,
         answers: {
           Wealth: `Stand up quickly to get ahead of the line`,
@@ -259,6 +260,16 @@ class Quiz {
       document.removeEventListener("click", nextQuiz);
     };
     document.addEventListener("click", nextQuiz);
+
+    // var audio = new Audio("audio/takeoff_edit.mp3");
+
+    const audio = new Audio('audio/takeoff_edit.mp3');
+    audio.loop = false;
+    audio.volume = 0.5;
+    
+
+    audio.play();
+
   }
 
   pulsingPlaneButton2() {
