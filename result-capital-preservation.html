@@ -40,17 +40,14 @@
 
         <div class="ans-banner-container">
           <img id="result-img" class="main-img ans-banner-img" src="pic/capital.jpg" alt="Capital Preservation">
-          <!-- <a href="https://www.lionglobalinvestors.com/en/fund-centre.html?&retire_goals=Capital%20Preservation"
-            class="link-to-fund-centre">
-            <button class="result-button result-capital">Capital Preservation</button>
-          </a> -->
+
         </div>
 
         <div class="share-results">
           <!-- <p>Share your quiz results!</p> -->
           <div class="social-media-icons">
             <a href="#" id="shareResult" class="share-links instagram" target="_blank">
-              <img src="icon/share_clear.png" alt="social-media" />
+              <img src="icon/share_black.png" alt="social-media" />
             </a>
           </div>
         </div>
@@ -109,7 +106,7 @@
     const mainImage = document.querySelector('.ans-banner-img');
     
     // copy link to clipboard
-    const shareMessage = `https://lionglobalinvestors.github.io/Retirement/`;
+    // const shareMessage = `https://lionglobalinvestors.github.io/Retirement/`;
       navigator.clipboard.writeText(shareMessage).then(() => {
           alert('Link copied to clipboard!');
       }).catch(err => {
@@ -119,7 +116,7 @@
     // sharing of image to application of choice
     if (mainImage && mainImage.getAttribute('src')) {
       const URL = mainImage.getAttribute('src');
-      const response = await fetch(URL.toString());
+      const response = await fetch(URL);
       const blob = await response.blob();
       const filesArray = [
         new File([blob], `pic/capital.jpg`, {
