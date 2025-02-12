@@ -579,14 +579,14 @@ footer {
     margin: 0 auto;
     /* width: 70%; */
     z-index: 2;
-    top: 200px;
-    left: 290px;
+    top: 520px;
+    left: 295px;
 
     animation: pulse 1s infinite;
 }
 
 .social-media-icons img {
-    width: 40px;
+    width: 30px;
     cursor: pointer;
     transition: opacity 0.3s;
     opacity: 1;
