@@ -579,8 +579,10 @@ footer {
     margin: 0 auto;
     /* width: 70%; */
     z-index: 2;
-    top: 520px;
-    left: 295px;
+    /* top: 520px; */
+    /* left: 295px; */
+    top: 72.5vh;
+    left: 41vh;
 
     animation: pulse 1s infinite;
 }
@@ -940,8 +942,10 @@ footer {
     }
 
     .social-media-icons {
-        top: 472px;
-        left: 265px;
+        /* top: 472px; */
+        top: 55.6vh;
+        left: 31vh;
+        /* left: 265px; */
     }
 
     label {
