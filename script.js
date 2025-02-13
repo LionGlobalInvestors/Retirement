@@ -327,7 +327,7 @@ class Quiz {
           const tiebreakerQuiz = this.QUIZ.find(
             (quiz) =>
               quiz.question ===
-              "When you are at the Northern Lights, for your first picture, do you: "
+              "You are at the end of your trip, what souvenirs do you bring home? "
           );
   
           if (tiebreakerQuiz) {
