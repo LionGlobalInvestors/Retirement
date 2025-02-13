@@ -34,7 +34,7 @@ class Quiz {
         },
       },
       {
-        image: `quiz-Q5.jpg`,
+        image: `quiz-Q4.jpg`,
         question: `You're told that your flight will be delayed overnight. <br> What do you do first?`,
         answers: {
           Income: `Pay extra to get onto the next available flight`,
@@ -44,7 +44,7 @@ class Quiz {
         },
       },
       {
-        image: `quiz-Q6.jpg`,
+        image: `quiz-Q5.jpg`,
         question: `Your flight has started boarding and you're feeling hungry. <br> What do you do?`,
         answers: {
           Wealth: `Eat at a restaurant at the transit area believing you can finish eating in 15 minutes`,
@@ -69,7 +69,7 @@ class Quiz {
       },
       {
         isTransition2: false,
-        image: `quiz-Q0.jpg`,
+        image: `quiz-Q6.jpg`,
         question: `How do you keep yourself entertained on the flight?`,
         answers: {
           Wealth: `Binge-watch a whole season of a show`,
