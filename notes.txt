@@ -35,11 +35,7 @@ D: buy local snacks for family and friends - legacy
 
 disclaimer font size 14px
 
-to remove:
-wealth - "off-beat travel style"
-income - [blank]
-capital - "never misses a sunrise"
-legacy - "loves family vacation" ("always prepared")
+change "let's fly button to black"
 
 colour:
 #e18698
