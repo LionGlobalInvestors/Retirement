@@ -47,7 +47,8 @@
     font-family: 'Arial', sans-serif;
     font-size: 18px;
     font-weight: 400;
-    color: #000000;
+    color: white;
+    background-color: black;
     margin: 0 auto;
     display: block;
     padding: 40px 0px 40px 0px;
@@ -375,7 +376,7 @@
 } */
 
 .quiz-option input:disabled:not(:checked)+label {
-    opacity: .75;
+    opacity: .5;
     cursor: default;
 }
 
