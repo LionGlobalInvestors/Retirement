@@ -581,7 +581,7 @@ footer {
     z-index: 2;
     /* top: 520px; */
     /* left: 295px; */
-    top: 60vh;
+    top: 60.2vh;
     left: 12.3vh;
     width: -webkit-fill-available; /* Full screen width */
 
@@ -944,8 +944,8 @@ footer {
 
     .social-media-icons {
         /* top: 472px; */
-        top: 45.6vh;
-        left: 10vh;
+        top: 50.6vh;
+        left: 12vh;
         /* left: 265px; */
     }
 
