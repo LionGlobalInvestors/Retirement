@@ -375,7 +375,7 @@
 } */
 
 .quiz-option input:disabled:not(:checked)+label {
-    opacity: .75;
+    opacity: .5;
     cursor: default;
 }
 
