@@ -527,11 +527,12 @@
 
 .disclaimer {
     width: -webkit-fill-available; /* Full screen width */
-    background-color: #c7cbd0; /* Dark maroon color */
+    /*background-color: #c7cbd0; */ /* Dark maroon color */
+    background-color: none;
     color: black; /* Text color */
     font-size: 16px; /* Readable font size */
     font-weight: 200; /* Slightly bold */
-    padding: 10px 20px; /* Comfortable padding */
+    padding: 10px 10px; /* Comfortable padding */
     border: none; /* Remove default border */
     text-align: justify; /* Center text */
     display: block; /* Ensure it takes full width */
@@ -539,6 +540,10 @@
     transition: background-color 0.3s ease; /* Smooth hover effect */
     margin: 0;
     font-family: 'Arial', sans-serif;
+}
+
+.disclaimer::-webkit-scrollbar {
+    display: none;
 }
 
 footer {
@@ -847,8 +852,8 @@ footer {
     }
 
     .social-media-icons {
-        bottom: 3.5vw;
-        right: 6.3vw;
+        bottom: 3.7vw;
+        right: 5.6vw;
     }
 
 
