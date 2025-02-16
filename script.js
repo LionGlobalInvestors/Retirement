@@ -1,11 +1,9 @@
 class Quiz {
   constructor() {
-    // this.imagePatch = `pics`;
-
+    this.audio = null;
     this.QUIZ = [
       {
         image: `quiz-Q1.jpg`,
-        playMusic: true,
         question: `As you prepare to embark on a 14 days trip, you pack your bag. <br> How much clothing do you pack?`,
         answers: {
           Wealth: `Bring 2 - 3 sets of clothes only`,
@@ -148,6 +146,7 @@ class Quiz {
 
   run() {
     if (this.QUIZ && this.QUIZ.length && this.RESULT && this.RESULT.length) {
+      this.playMusic();
       this.renderQuiz(this.currentQuizID);
     }
   }
@@ -225,13 +224,26 @@ class Quiz {
   }
 
   playMusic() {
-    var audio = new Audio('audio/bgm.mp3');
-    audio.loop = true;
-    // bgm.volume = 0.7;
-    
-  audio.play();
+    if (!this.audio) {
+      this.audio = new Audio('audio/bgm.mp3');
+      this.audio.loop = true;
+      this.audio.volume = 0.7;
+  
+      // Try to autoplay immediately
+      this.audio.play().catch(err => {
+        console.warn("Autoplay blocked, waiting for user interaction.");
+  
+        // Listen for first user interaction to play the music
+        const playOnUserInteraction = () => {
+          this.audio.play().catch(err => console.error("Audio play still blocked:", err));
+          document.removeEventListener("click", playOnUserInteraction);
+        };
+  
+        document.addEventListener("click", playOnUserInteraction);
+      });
+    }
   }
-
+  
   slideUpBoardingPass() {
     // make the boarding pass png element
     const boardingPassImage = document.createElement("img");
