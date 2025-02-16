@@ -5,6 +5,7 @@ class Quiz {
     this.QUIZ = [
       {
         image: `quiz-Q1.jpg`,
+        playMusic: true,
         question: `As you prepare to embark on a 14 days trip, you pack your bag. <br> How much clothing do you pack?`,
         answers: {
           Wealth: `Bring 2 - 3 sets of clothes only`,
@@ -152,6 +153,7 @@ class Quiz {
   }
 
   renderQuiz(quizID) {
+
     console.log(quizID + ", " + this.currentQuizID)
     if (quizID && !isNaN(quizID)) {
       const quizData = this.QUIZ.find((v) => v.id === quizID);
@@ -222,6 +224,14 @@ class Quiz {
     }
   }
 
+  playMusic() {
+    var audio = new Audio('audio/bgm.mp3');
+    audio.loop = true;
+    // bgm.volume = 0.7;
+    
+  audio.play();
+  }
+
   slideUpBoardingPass() {
     // make the boarding pass png element
     const boardingPassImage = document.createElement("img");
@@ -242,26 +252,12 @@ class Quiz {
   }
 
   pulsingPlaneButton1() {
-    // make the plane icon png element
-    // const pulsingPlane = document.createElement("img");
-    // pulsingPlane.src = "icon/plane.png";
-    // pulsingPlane.classList.add("lets-fly-button");
-    // pulsingPlane.classList.add("transition2");
-    // pulsingPlane.addEventListener("click", () => {
-    //   this.renderQuiz(this.currentQuizID + 1);
-    //   this.currentQuizID += 1
-    // });
-    // const quizRender = document.getElementById("quiz-render");
-    // quizRender.appendChild(pulsingPlane);
-
     const nextQuiz = () => {
       this.renderQuiz(this.currentQuizID + 1);
       this.currentQuizID += 1;
       document.removeEventListener("click", nextQuiz);
     };
     document.addEventListener("click", nextQuiz);
-
-    // var audio = new Audio("audio/takeoff_edit.mp3");
 
     const audio = new Audio('audio/takeoff_edit.mp3');
     audio.loop = false;
@@ -273,18 +269,6 @@ class Quiz {
   }
 
   pulsingPlaneButton2() {
-    // make the plane icon png element
-    // const pulsingPlane = document.createElement("img");
-    // pulsingPlane.src = "icon/plane.png";
-    // pulsingPlane.classList.add("lets-fly-button");
-    // pulsingPlane.classList.add("transition2");
-    // pulsingPlane.addEventListener("click", () => {
-    //   this.renderQuiz(this.currentQuizID + 1);
-    //   this.currentQuizID += 1
-    // });
-    // const quizRender = document.getElementById("quiz-render");
-    // quizRender.appendChild(pulsingPlane);
-    
     const nextQuiz = () => {
       this.renderQuiz(this.currentQuizID + 1);
       this.currentQuizID += 1;
@@ -441,8 +425,6 @@ document.addEventListener("DOMContentLoaded", function () {
     "income.jpg",
     "landing.gif",
     "legacy.jpg",
-    "loading.jpg",
-    "loading2.jpg",
     "pilot.jpg",
     "quiz-Q1.jpg",
     "quiz-Q2.jpg",

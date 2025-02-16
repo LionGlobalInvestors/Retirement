@@ -192,23 +192,6 @@
     /* margin-bottom: 100px; */
 }
 
-.lets-begin-desc {
-    font-family: 'Arial', sans-serif;
-    font-size: 18px;
-    font-weight: 400;
-    color: #000000;
-    margin: 0 auto;
-    display: block;
-    padding: 40px 0px 40px 0px;
-    position: absolute;
-    top: 11%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2; /* Ensure the div appears above the image */
-    text-align: center;
-    width: 70%; /* Optional: adjust if you need to set a max width */
-}
-
 .lets-begin-button-link,
 .lets-begin-button-link:hover {
     text-decoration: none;
@@ -231,9 +214,9 @@
     /* width: 92%; */
 
     border-radius: 12px;
-    background-color: #FFFFFF;
-    color: #000000;
-    border: 3px solid #c2cddf;
+    background-color: black;
+    color: white;
+    /* border: 3px solid #c2cddf; */
 
     display: flex;
     /* margin: 0 auto; */
@@ -254,6 +237,8 @@
 
     z-index: 2;
     position: relative;
+
+    /* top: 280px; */
 }
 
 .lets-begin-button:hover {
@@ -776,7 +761,8 @@ footer {
     }
 
     .lets-begin-button-link {
-        top: 37%;
+        top: 33%;
+        /* left: 65%; */
     }
 
     .quiz-radio-button {

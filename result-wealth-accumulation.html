@@ -121,15 +121,6 @@
         text: shareMessage,
       };
 
-      // const filesArray = [
-      //   new File([blob], `pic/wealth.jpg`, {
-      //     type: 'image/jpg',
-      //     lastModified: new Date().getTime(),
-      //   }),
-      // ];
-      // const shareData = {
-      //   files: filesArray,
-      // };
       if (navigator.canShare && navigator.canShare(shareData)) {
         await navigator.share(shareData);
       } else {
