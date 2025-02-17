@@ -227,7 +227,7 @@ class Quiz {
     if (!this.audio) {
       this.audio = new Audio('audio/bgm.mp3');
       this.audio.loop = true;
-      this.audio.volume = 0.7;
+      this.audio.volume = 0.3;
       this.audio.play().catch(err => {
         console.warn("Autoplay blocked, waiting for user interaction.");
           const playOnUserInteraction = () => {
