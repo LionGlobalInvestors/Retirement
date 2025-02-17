@@ -847,8 +847,8 @@ footer {
 
 @media screen and (max-width: 1024px) {
     .social-media-icons {
-        bottom: 6.4vw;
-        right: 3.4vh;
+        bottom: 4vw;
+        right: 3.9vh;
     }
 
     .social-media-icons img {
@@ -946,8 +946,8 @@ footer {
     }
 
     .social-media-icons {
-        bottom: 17.7vw;
-        right: 16.8vw;
+        bottom: 11.6vw;
+        right: 18vw;
     }
 
     .social-media-icons img {
@@ -961,8 +961,8 @@ footer {
 
 @media screen and (max-width: 820px) { 
     .social-media-icons {
-        bottom: 19.8vw;
-        right: 18.5vw;
+        bottom: 12.8vw;
+        right: 20vw;
     }
 
     .social-media-icons img {
@@ -972,8 +972,8 @@ footer {
 
 @media screen and (max-width: 780px) { 
     .social-media-icons {
-        bottom: 21vw;
-        right: 19.8vw;
+        bottom: 13vw;
+        right: 21.8vw;
     }
 
     .social-media-icons img {
@@ -1005,8 +1005,8 @@ footer {
 
 @media screen and (max-width: 540px) { 
     .social-media-icons {
-        bottom: 23.6vw;
-        right: 16vh;
+        bottom: 14.6vw;
+        right: 23.2vw;
     }
 
     .social-media-icons img {
@@ -1016,8 +1016,8 @@ footer {
 
 @media screen and (max-width: 480px) { 
     .social-media-icons {
-        bottom: 23.6vw;
-        right: 20.5vw;
+        bottom: 14.6vw;
+        right: 22vw;
     }
 
     .social-media-icons img {
@@ -1027,8 +1027,8 @@ footer {
 
 @media screen and (max-width: 414px) { 
     .social-media-icons {
-        bottom: 23.6vw;
-        right: 20.5vw;
+        bottom: 14.6vw;
+        right: 22.5vw;
     }
 
     .social-media-icons img {
@@ -1038,8 +1038,8 @@ footer {
 
 @media screen and (max-width: 390px) { 
     .social-media-icons {
-        bottom: 23.6vw;
-        right: 20.2vw;
+        bottom: 14.6vw;
+        right: 22vw;
     }
 
     .social-media-icons img {
@@ -1049,8 +1049,8 @@ footer {
 
 @media screen and (max-width: 375px) { 
     .social-media-icons {
-        bottom: 23.6vw;
-        right: 20.3vw;
+        bottom: 14.6vw;
+        right: 21.5vw;
     }
 
     .social-media-icons img {
@@ -1060,8 +1060,8 @@ footer {
 
 @media screen and (max-width: 360px) { 
     .social-media-icons {
-        bottom: 23.6vw;
-        right: 19.5vw;
+        bottom: 14.6vw;
+        right: 21.5vw;
     }
 
     .social-media-icons img {
@@ -1071,8 +1071,8 @@ footer {
 
 @media screen and (max-width: 320px) { 
     .social-media-icons {
-        bottom: 23.6vw;
-        right: 19vw;
+        bottom: 14.6vw;
+        right: 20.5vw;
     }
 
     .social-media-icons img {
