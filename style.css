@@ -216,7 +216,7 @@
     border-radius: 12px;
     background-color: black;
     color: white;
-    /* border: 3px solid #c2cddf; */
+    border: 0.5px solid black;
 
     display: flex;
     /* margin: 0 auto; */
