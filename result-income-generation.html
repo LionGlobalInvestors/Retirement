@@ -102,12 +102,12 @@
     const mainImage = document.querySelector('.ans-banner-img');
 
     // copy link to clipboard
-    const shareMessage = `https://lionglobalinvestors.github.io/Retirement/`;
-      navigator.clipboard.writeText(shareMessage).then(() => {
-          alert('Link copied to clipboard!');
-      }).catch(err => {
-          alert('Failed to copy link. Please try again.');
-      });
+    // const shareMessage = `https://lionglobalinvestors.github.io/Retirement/`;
+    //   navigator.clipboard.writeText(shareMessage).then(() => {
+    //       alert('Link copied to clipboard!');
+    //   }).catch(err => {
+    //       alert('Failed to copy link. Please try again.');
+    //   });
 
       if (mainImage && mainImage.getAttribute('src')) {
       const URL = mainImage.getAttribute('src');
