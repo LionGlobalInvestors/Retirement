@@ -574,8 +574,10 @@ footer {
 }
 
 .social-media-icons img {
-    width: 6vw;
-    max-width: 35px;
+    /* width: 6vw; */
+    width: 15vw;
+    /* max-width: 35px; */
+    max-width: 150px;
     cursor: pointer;
     transition: opacity 0.3s;
     opacity: 1;
@@ -609,7 +611,7 @@ footer {
     z-index: 2;
 
     /* pulse animation */
-    /* animation: pulse 1s infinite; */
+    animation: pulse 1s infinite;
 }
 
 .result-button:hover {
@@ -838,8 +840,10 @@ footer {
     }
 
     .social-media-icons {
-        bottom: 4vw;
-        right: 6.2vw;
+        /* bottom: 4vw; */
+        /* right: 6.2vw; */
+        bottom: 2vw;
+        right: -2vw;
     }
 
 
