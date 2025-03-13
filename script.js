@@ -6,8 +6,8 @@ class Quiz {
         image: `quiz-Q1.jpg`,
         question: `As you prepare to embark on a 14 days trip, you pack your bag. <br> How much clothing do you pack?`,
         answers: {
-          Wealth: `Bring 2 - 3 sets of clothes only`,
-          Capital: `Pack extra clothing in case of weather changes`,
+          Wealth: `Bring only 2 - 3 sets of clothes`,
+          Capital: `Pack extra clothing for weather changes`,
           Legacy: `Pack an outfit for each day`,
           Income: `Pack half and buy the rest there`,
         },
@@ -16,7 +16,7 @@ class Quiz {
         image: `quiz-Q2.jpg`,
         question: `Who is coming with you on your trip?`,
         answers: {
-          Capital: `2 - 3 friends to split cost`,
+          Capital: `2 - 3 friends to split the cost`,
           Legacy: `Bring the whole kampong of family and / or friends`,
           Wealth: `Traveling solo for adventure`,
           Income: `Join a tour group for convenience`,
@@ -29,7 +29,7 @@ class Quiz {
           Legacy: `3 hours early to go shopping/eating`,
           Capital: `3 hours early because kiasu`,
           Income: `2 hours before to be just right on time`,
-          Wealth: `1 hour before your flight`,
+          Wealth: `1 hour before the flight`,
         },
       },
       {
@@ -37,19 +37,19 @@ class Quiz {
         question: `You're told that your flight will be delayed overnight. <br> What do you do first?`,
         answers: {
           Income: `Pay extra to get onto the next available flight`,
-          Wealth: `Request for accommodation and meal allowance from the airline company`,
-          Capital: `Wait for the delayed flight patiently`,
-          Legacy: `Start checking how much can be claimed from travel insurance`,
+          Wealth: `Request accommodation and meal allowance from the airline`,
+          Capital: `Wait patiently for the delayed flight`,
+          Legacy: `Check how much can be claimed from travel insurance`,
         },
       },
       {
         image: `quiz-Q5.jpg`,
         question: `Your flight has started boarding and you're feeling hungry. <br> What do you do?`,
         answers: {
-          Wealth: `Eat at a restaurant at the transit area believing you can finish eating in 15 minutes`,
+          Wealth: `Eat at a restaurant in the transit area believing you can finish in 15 minutes`,
           Capital: `Wait for the in-flight meal`,
-          Legacy: `Get a snack at the convenience store and eat while waiting to board the plane`,
-          Income: `Queue to buy a takeaway at transit area and eat on the aircraft once you board`,
+          Legacy: `Get a snack at the convenience store and eat while waiting to board`,
+          Income: `Queue to buy a takeaway in the transit area and eat on the aircraft`,
         },
       },
       {
