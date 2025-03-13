@@ -840,10 +840,10 @@ footer {
     }
 
     .social-media-icons {
-        /* bottom: 4vw; */
-        /* right: 6.2vw; */
-        bottom: 2vw;
-        right: -2vw;
+        bottom: 4vw;
+        right: 6.2vw;
+        /* bottom: 2vw;
+        right: -2vw; */
     }
 
 
