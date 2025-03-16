@@ -574,11 +574,11 @@ footer {
 }
 
 .social-media-icons img {
-    width: 6vw;
-    max-width: 35px;
+    /* width: 6vw;
+    max-width: 35px; */
 
-    /* width: 15vw; */
-    /* max-width: 150px; */
+    width: 15vw;
+    max-width: 150px;
     cursor: pointer;
     transition: opacity 0.3s;
     opacity: 1;
@@ -605,7 +605,7 @@ footer {
     background-color: white;
     font-size: 11px;
     border: none;
-    width: 138px;
+    width: 160px;
     height: 44px;
     border-radius: 7px;
 
@@ -810,8 +810,8 @@ footer {
 
     .result-button {
         /* top: 46.5%; */
-        top: 29.5%;
-        right: 33.5%;
+        top: 31%;
+        right: 30.5%;
     }
 
     .boarding-pass-image.animate {
@@ -841,10 +841,14 @@ footer {
     }
 
     .social-media-icons {
-        bottom: 4vw;
-        right: 6.2vw;
-        /* bottom: 2vw;
-        right: -2vw; */
+        /* bottom: 4vw;
+        right: 6.2vw; */
+
+        /* bottom: 3.7vw;;
+        right: 5.6vw; */
+
+        bottom: 2vw;
+        right: -2vw;
     }
 
 
