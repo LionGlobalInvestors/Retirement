@@ -729,6 +729,26 @@ footer {
     }
 }
 
+@media screen and (max-width: 2650px) {    
+
+    .social-media-icons {
+        /* bottom: 4vw;
+        right: 6.2vw; */
+
+        /* bottom: 3.7vw;;
+        right: 5.6vw; */
+
+        bottom: 2.2vw;
+        right: 10vw;
+    }
+    .social-media-icons img{
+        max-width: 70%;
+
+        /* width: ; */
+    }
+
+}
+
 @media screen and (max-width: 1920px) {    
     
     .center-wrapper {
@@ -861,7 +881,8 @@ footer {
     }
 
     .social-media-icons img {
-        max-width: 20px;
+        /* max-width: 20px; */
+        max-width: 70%;
     }
 }
 

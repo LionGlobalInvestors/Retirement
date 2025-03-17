@@ -2,6 +2,17 @@
 <html lang="en">
 
 <head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J501KT4J5N"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-J501KT4J5N');
+</script>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Wealth Accumulation | Lion Global Investors</title>
@@ -16,16 +27,6 @@
   <link rel="stylesheet" href="style.css" />
 
 </head>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-J501KT4J5N"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-J501KT4J5N');
-</script>
 
 <body>
 
@@ -119,24 +120,36 @@
     //       alert('Failed to copy link. Please try again.');
     //   });
 
-      if (mainImage && mainImage.getAttribute('src')) {
-      const URL = mainImage.getAttribute('src');
-      const response = await fetch(URL);
-      const blob = await response.blob();
-
-      const file = new File([blob], "result/wealth.jpg", {type: blob.type});
-
-      const shareData = {
-        files: [file],
-        text: shareMessage,
-      };
-
-      if (navigator.canShare && navigator.canShare(shareData)) {
-        await navigator.share(shareData);
-      } else {
-        alert(`navigator.share doesn't support in your device`);
-      }
+    function isFacebookApp() {
+      return navigator.userAgent.includes("FBAN") || navigator.userAgent.includes("FBAV");
     }
+
+    if (isFacebookApp()) {
+      // Facebook-specific logic: Open share link in a new tab
+      const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareMessage)}`;
+      window.open(facebookShareUrl, '_blank');
+    }
+    else {
+      // sharing of image to application of choice
+      if (mainImage && mainImage.getAttribute('src')) {
+        const URL = mainImage.getAttribute('src');
+        const response = await fetch(URL);
+        const blob = await response.blob();
+
+        const file = new File([blob], "results/wealth.jpg", {type: blob.type});
+
+        const shareData = {
+          files: [file],
+          text: shareMessage,
+        };
+        
+        if (navigator.canShare && navigator.canShare(shareData)) {
+          await navigator.share(shareData);
+        } else {
+          alert(`navigator.share doesn't support in your device`);
+        }
+      }
+      }
   });
 
   function disclaimerOpen() {
