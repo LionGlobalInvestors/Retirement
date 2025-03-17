@@ -956,8 +956,14 @@ footer {
     }
     
     .result-button {
+        /* top: 31%;
+        right: 31%; */
+
         top: 31%;
-        right: 31%;
+        right: 34.3%;
+        font-size: 20px;
+        width: 240px;
+        height: 70px;
     }
 
     .share-results {
@@ -976,12 +982,17 @@ footer {
     }
 
     .social-media-icons {
-        bottom: 11.6vw;
-        right: 18vw;
+        /* bottom: 11.6vw;
+        right: 18vw; */
+        bottom: 5vw;
+        right: -5vw;
     }
 
     .social-media-icons img {
-        max-width: 35px;
+        /* max-width: 35px; */
+        max-width: 100%;
+        width: 280px;
+        height: 180px;
     }
 
     label {
@@ -991,56 +1002,83 @@ footer {
 
 @media screen and (max-width: 820px) { 
     .social-media-icons {
-        bottom: 12.8vw;
-        right: 20vw;
+        /* bottom: 12.8vw;
+        right: 20vw; */
+
+        bottom: 6vw;
+        right: -5vw;
     }
 
     .social-media-icons img {
-        max-width: 35px;
+        max-width: 100%;
     }
 }
 
 @media screen and (max-width: 780px) { 
     .social-media-icons {
-        bottom: 13vw;
-        right: 21.8vw;
+        /* bottom: 13vw;
+        right: 21.8vw; */
+
+        bottom: 6vw;
+        right: -5vw;
     }
 
     .social-media-icons img {
-        max-width: 35px;
+        max-width: 92%;
+        max-height: 92%;
     }
 }
 
 @media screen and (max-width: 720px) { 
     .social-media-icons {
-        bottom: 23.6vw;
-        right: 11.3vh;
+        /* bottom: 23.6vw;
+        right: 11.3vh; */
+
+        bottom: 6vw;
+        right: -5vw;
     }
 
     .social-media-icons img {
-        max-width: 35px;
+        max-width: 92%;
+        max-height: 92%;
     }
 }
 
 @media screen and (max-width: 600px) { 
     .social-media-icons {
-        bottom: 23.6vw;
-        right: 11.3vh;
+        /* bottom: 23.6vw;
+        right: 11.3vh; */
+
+        bottom: 6vw;
+        right: -10vw;
     }
 
     .social-media-icons img {
-        max-width: 35px;
+        max-width: 92%;
+        max-height: 92%;
     }
 }
 
 @media screen and (max-width: 540px) { 
     .social-media-icons {
-        bottom: 14.6vw;
-        right: 23.2vw;
+        /* bottom: 14.6vw;
+        right: 23.2vw; */
+
+        bottom: 2vw;
+        right: -10vw;
     }
 
     .social-media-icons img {
-        max-width: 35px;
+        max-width: 84%;
+        max-height: 84%;
+    }
+
+    .result-button {
+        top: 31%;
+        right: 31%;
+        font-size: 20px;
+        width: 220px;
+        height: 60px;
     }
 }
 
