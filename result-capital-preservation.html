@@ -50,7 +50,7 @@
       <div class="uk-card uk-card-default uk-card-body quiz-ans-card">
 
         <div class="ans-banner-container">
-          <img id="result-img" class="main-img ans-banner-img" src="results/capital.jpg" alt="Capital Preservation">
+          <img id="result-img" class="main-img ans-banner-img" src="old/capital.jpg" alt="Capital Preservation">
           <button class="result-button result-capital">Capital Preservation</button>
         </div>
 
@@ -144,7 +144,7 @@
         const response = await fetch(URL);
         const blob = await response.blob();
 
-        const file = new File([blob], "results/capital.jpg", {type: blob.type});
+        const file = new File([blob], "old/capital.jpg", {type: blob.type});
 
         const shareData = {
           files: [file],
