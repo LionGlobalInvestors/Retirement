@@ -810,7 +810,9 @@ footer {
 
     .result-button {
         /* top: 46.5%; */
-        top: 29.5%;
+        /* top: 29.5%; */
+
+        top: 31.5%;
         right: 33.5%;
     }
 
@@ -841,8 +843,8 @@ footer {
     }
 
     .social-media-icons {
-        bottom: 4vw;
-        right: 6.2vw;
+        bottom: 3.7vw;
+        right: 5.6vw;
 
         /* bottom: 3.7vw;;
         right: 5.6vw; */
