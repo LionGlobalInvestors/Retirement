@@ -18,3 +18,12 @@ colour:
 #005d6c
 #478895
 #c7cbd0
+
+To do:
+- one liner of how they end up with that result
+- can add fun and humor to the answers
+- click here to share
+- result page button no link -> put <button> within <a>
+- share button not working for iphone
+- 'press here' / 'click here' to go to next page
+- more animation / interactivity
