@@ -574,11 +574,11 @@ footer {
 }
 
 .social-media-icons img {
-    /* width: 6vw;
-    max-width: 35px; */
+    width: 6vw;
+    max-width: 35px;
 
-    width: 15vw;
-    max-width: 150px;
+    /* width: 15vw;
+    max-width: 150px; */
     cursor: pointer;
     transition: opacity 0.3s;
     opacity: 1;
