@@ -227,7 +227,7 @@ class Quiz {
     if (!this.audio) {
       this.audio = new Audio('audio/bgm.mp3');
       this.audio.loop = true;
-      this.audio.volume = 0.3;
+      this.audio.volume = 0.2;
       this.audio.play().catch(err => {
         console.warn("Autoplay blocked, waiting for user interaction.");
           const playOnUserInteraction = () => {
@@ -249,11 +249,11 @@ class Quiz {
       boardingPassImage.classList.add("animate");
     }, 100);
     setTimeout(() => {
-      // destroy the boardingPass + move on after 3500ms/3.5s
+      // destroy the boardingPass + move on after 2000ms/2s
       boardingPassImage.remove();
       this.renderQuiz(this.currentQuizID + 1);
       this.currentQuizID += 1
-    }, 3500);
+    }, 2000);
   }
 
   pulsingPlaneButton1() {

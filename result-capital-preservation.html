@@ -51,21 +51,31 @@
 
         <div class="ans-banner-container">
           <img id="result-img" class="main-img ans-banner-img" src="results/capital.jpg" alt="Capital Preservation">
-          <a href="https://www.lionglobalinvestors.com/en/fund-centre.html?&retire_goals=Capital%20Preservation">
+          <a href="https://www.lionglobalinvestors.com/en/retirement.html" class="result-button">
 
-            <button class="result-button result-capital">Capital Preservation</button>
+            <!-- <button class="result-button result-capital">Learn More</button> -->
+             Learn more
 
+          </a>
+
+          <a href="#" id="shareResult" class="share-links instagram share-button" target="_blank"> 
+
+            Share my results
+            <!-- <img src="icon/share_black.png" alt="social-media" /> -->
+             <!-- <button class="share-button">Share my results</button> -->
           </a>
         </div>
 
-        <div class="share-results">
-          <!-- <p>Share your quiz results!</p> -->
+        <!-- <div class="share-results">
+          <p>Share your quiz results!</p>
           <div class="social-media-icons">
+          <div>
             <a href="#" id="shareResult" class="share-links instagram" target="_blank">
               <img src="icon/share_black.png" alt="social-media" />
+               <button class="share">Share my results</button>
             </a>
           </div>
-        </div>
+        </div> -->
 
         
       </div>
@@ -110,11 +120,11 @@
   });
 
 
-  document.getElementById("result-img").addEventListener("click", async (event) => {
-    event.preventDefault();
-    //do stuff
-    window.open("https://www.lionglobalinvestors.com/en/fund-centre.html?&retire_goals=Capital%20Preservation");
-  });
+  // document.getElementById("result-img").addEventListener("click", async (event) => {
+  //   event.preventDefault();
+  //   //do stuff
+  //   window.open("https://www.lionglobalinvestors.com/en/fund-centre.html?&retire_goals=Capital%20Preservation");
+  // });
 
   document.getElementById("shareResult").addEventListener("click", async (event) => {
     event.preventDefault();

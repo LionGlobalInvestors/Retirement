@@ -22,7 +22,6 @@ colour:
 To do:
 - one liner of how they end up with that result
 - can add fun and humor to the answers
-- click here to share
 - share button not working for iphone
 - 'press here' / 'click here' to go to next page
 - more animation / interactivity
