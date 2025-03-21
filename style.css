@@ -46,14 +46,16 @@
 .start-button {
     font-family: 'Arial', sans-serif;
     font-size: 18px;
-    font-weight: 400;
+    font-weight: 600;
 
     height: 50px;
     width: 130px;
     border-radius: 12px;
 
-    background-color: white;
+    background-color: #c4306d;
+    color: white;
     border: none;
+    /* border: solid 2px #c4306d; */
 
     animation: pulse 1s infinite;
 }
@@ -901,6 +903,14 @@ footer {
         max-width: 70%;
     } */
 
+    .start-button {
+        height: 40px;
+        width: 90px;
+
+        font-size: 15px;
+        font-weight: 500;
+    }
+
     .result-button,
     .share-button {
         width: 100px;
@@ -935,6 +945,18 @@ footer {
         object-fit: cover;
         object-position: center center;
         margin: 0;
+    }
+
+    .start-button {
+        height: 70px;
+        width: 170px;
+        font-weight: 600;
+
+        font-size: 20px;
+    }
+
+    .link-to-lets-fly {
+        left: 82%;
     }
 
     .lets-fly-button {
@@ -1124,6 +1146,11 @@ footer {
         max-width: 92%;
         max-height: 92%;
     } */
+
+    .start-button {
+        height: 60px;
+        width: 150px;
+    }
 
     .result-button,
     .share-button {
