@@ -50,23 +50,25 @@
       <div class="uk-card uk-card-default uk-card-body quiz-ans-card">
 
         <div class="ans-banner-container">
-          <img id="result-img random-result" class="main-img ans-banner-img" alt="Capital Preservation">
+          <img id="random-result" class="main-img ans-banner-img" alt="Capital Preservation">
           
           <div id="bottom"></div>
 
           <img id="result-img" class="main-img ans-banner-img" src="results/capital_breakdown.jpg" alt="Capital Preservation">
 
-          <!-- to fund centre -->
-          <a href="https://www.lionglobalinvestors.com/en/fund-centre.html?&retire_goals=Capital%20Preservation" id="fundCentre" class="fundCentre-button">
+          <div class="image-btn">
+            <!-- to fund centre -->
+            <a href="https://www.lionglobalinvestors.com/en/fund-centre.html?&retire_goals=Capital%20Preservation" id="fundCentre" class="fundCentre-button">
 
-            Click here to view related funds >
-          </a>
+              Click here to view related funds >
+            </a>
 
-          <!-- share results -->
-          <a href="#" id="shareResult" class="share-links instagram result-button" target="_blank">
+            <!-- share results -->
+            <a href="#" id="shareResult" class="share-links instagram result-button" target="_blank">
 
-            Click here to share >
-          </a>
+              Click here to share >
+            </a>
+        </div>
           
         </div>
         <!-- <div class="share-results">
@@ -204,29 +206,6 @@
     
   });
 
-  // const image_array = [
-  //   'legacy.jpg',
-  //   'income.jpg',
-  //   'wealth.jpg'
-  // ];
-
-  // function get_random_image(){
-  //   const random_index = Math.floor(Math.random() * image_array.length);
-  //   const selected_image = image_array[random_index];
-  //   document.getElementById('result-img').src = './results/$selected_image}';
-  // };
-
-
-  // var pictures = new Array("results/capital.jpg", "results/income.jpg", "results/wealth.jpg");
-
-  // function choosePic(){
-  //   var randomNum = Math.floor(Math.random() * pictures.length);
-  //   document.getElementById('random-result').src = pictures[randomNum];
-
-  //   console.log("Selected Image:", pictures[randomNum]);
-  // }
-
-  // window.onload = choosePic;
 
   document.addEventListener("DOMContentLoaded", function () {
     var pictures = ["results/capital.jpg", "results/income.jpg", "results/wealth.jpg"];

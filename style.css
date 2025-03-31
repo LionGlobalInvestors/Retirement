@@ -553,36 +553,12 @@ footer {
     width: -webkit-fill-available; /* Full screen width */
     height: 8%;
     bottom: 0;
-    background-color: blue;
+    background-color: white;
     position: fixed;
-}
 
-.dropBtn {
-    width: -webkit-fill-available; /* Full screen width */
-    background-color: #697582; /* Dark maroon color */
-    color: white; /* Text color */
-    font-size: 16px; /* Readable font size */
-    font-weight: 600; /* Slightly bold */
-    padding: 10px 5px; /* Comfortable padding */
-    border: none; /* Remove default border */
-    cursor: pointer; /* Indicate clickable button */
-    text-align: center; /* Center text */
-    display: block; /* Ensure it takes full width */
-    outline: none; /* Remove focus outline */
-    transition: background-color 0.3s ease; /* Smooth hover effect */
-    /* height: 40px;
-    margin: 25px 0 0 0; */
-}
-
-.dropBtn::after {
-    content: "▼"; /* Default down arrow */
-    /* display: inline-block; */
-    transition: transform 0.3s ease;
-}
-
-.dropBtn.active::after {
-    content: "▲"; /* Change to up arrow */
-    transform: rotate(360deg); /* Rotate animation */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .social-media-icons {
@@ -624,35 +600,19 @@ footer {
     border: 1px solid #c4306d;
     color: #89264f;
 
-    /* top: 100%; */
-
     text-decoration: none;
     padding: 10px 30px;
 
     text-align: center;
 
-    align-items: center;
-
-    left: 37%;
-    
-    /* bottom: 0; */
-    top: 1vw;
+    place-items: center;
 
     margin-right: 8px;
 
-    /* transform: translate(-50%, -50%); */
-
-    /* z-index: 2; */
-
-    /* pulse animation */
-    /* animation: pulse 1s infinite; */
 }
 
 .scrollDown::after {
     content: "▼";
-
-    /* width: 130px;
-    height: 30px; */
 
     padding: 0 20px;
 }
@@ -662,8 +622,16 @@ footer {
 .scrollDown:hover {
     background-color: #c4306d;
     color: #FFFFFF;
-    /* border: 2px solid #89264f; */
-    /* transform: scale(1.05); */
+
+}
+
+.image-btn {
+    width: -webkit-fill-available; /* Full screen width */
+
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    left: 12vw;
 }
 
 /* .result-wealth {
@@ -711,21 +679,17 @@ footer {
 
   .result-button {
     font-family: 'Arial', sans-serif;
-    font-size: 14px;
+    /* font-size: 14px; */
     z-index: 2;
     position: absolute;
-
     text-decoration: none;
     text-align: left;
-
-    left: 2.1vw;
-    /* bottom: 4.65vw; */
+    /* left: 2.1vw; */
+    bottom: 4.65vw;
     height: 20px;
     width: 138px;
-
     border-radius: 20px;
     padding: 2.3px 6.5px;
-
     color: #FFFFFF;
     background-color: #c4306d;
   }
@@ -735,18 +699,14 @@ footer {
     font-size: 14px;
     z-index: 2;
     position: absolute;
-
     text-decoration: none;
     text-align: left;
-
-    left: 2.1vw;
-    /* bottom: 6.5vw; */
+    /* left: 2.1vw; */
+    bottom: 6.5vw;
     height: 20px;
     width: 215px;
-
     border-radius: 20px;
     padding: 2.5px 6.5px;
-
     color: #FFFFFF;
     background-color: #c4306d;
   }
@@ -984,18 +944,16 @@ footer {
 
     .result-button {
         bottom: 1.6vw;
-
         width: 145px;
-
-        font: 14px;
+        left: 2vw;
+        font-size: 14px;
     }
 
     .fundCentre-button {
         bottom: 3.5vw;
-
-        width: 225px;
-
+        width: 210px;
         font-size: 14px;
+        left: 2vw;
     }
 }
 
@@ -1094,7 +1052,7 @@ footer {
 
         width: 230px;
         height: 30px;
-        font-size: 20px;
+        font-size: 13px;
         padding: 4px 6.5px;
     }
 
@@ -1102,9 +1060,9 @@ footer {
         bottom: 13.7vw;
         left: 3.7vw;
 
-        width: 350px;
+        width: 250px;
         height: 30px;
-        font-size: 20px;
+        font-size: 13px;
         padding: 4px 6.5px;
     }
 

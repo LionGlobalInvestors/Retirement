@@ -50,7 +50,7 @@
       <div class="uk-card uk-card-default uk-card-body quiz-ans-card">
 
         <div class="ans-banner-container">
-          <img id="result-img" class="main-img ans-banner-img" src="results/legacy.jpg" alt="Legacy Planning">
+          <img id="random-result" class="main-img ans-banner-img" src="results/legacy.jpg" alt="Legacy Planning">
           
           <div id="bottom"></div>
           
@@ -199,18 +199,23 @@
       }
   });
 
-  function disclaimerOpen() {
-    var dropBar = document.getElementById("dropBar");
-    var disclaimer = document.getElementById("disclaimer");
-    var dropBtn = document.querySelector(".dropBtn");
-    disclaimer.classList.toggle("show");
+  document.addEventListener("DOMContentLoaded", function () {
+    var pictures = ["results/legacy.jpg", "results/income.jpg", "results/capital.jpg"];
+    
+    function choosePic() {
+        var imgElement = document.getElementById('random-result');
 
-    if (disclaimer.style.display === "none") {
-        disclaimer.style.display = "block";
-        dropBtn.classList.add("active"); // Add active class for arrow change
-    } else {
-        disclaimer.style.display = "none";
-        dropBtn.classList.remove("active"); // Remove active class for arrow change
+        // Ensure the element exists before setting src
+        if (imgElement) {
+            var randomNum = Math.floor(Math.random() * pictures.length);
+            imgElement.src = pictures[randomNum];
+            console.log("Selected Image:", pictures[randomNum]);
+        } else {
+            console.error("Image element not found! Check your HTML.");
+        }
     }
-}
+
+    choosePic();
+});
+
 </script>
