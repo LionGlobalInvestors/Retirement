@@ -50,7 +50,10 @@
       <div class="uk-card uk-card-default uk-card-body quiz-ans-card">
 
         <div class="ans-banner-container">
-          <img id="result-img" class="main-img ans-banner-img" src="results/capital.jpg" alt="Capital Preservation">
+          <img id="result-img random-result" class="main-img ans-banner-img" alt="Capital Preservation">
+          
+          <div id="bottom"></div>
+
           <img id="result-img" class="main-img ans-banner-img" src="results/capital_breakdown.jpg" alt="Capital Preservation">
 
           <!-- to fund centre -->
@@ -111,6 +114,11 @@
         <!-- <button class="share-button">Share my results</button> -->
       </a>
 
+      <a onclick="document.getElementById('bottom').scrollIntoView();" id="scrollButton" class="scrollDown">
+        
+
+      </a>
+
     </div>
 </footer>
 
@@ -140,7 +148,6 @@
       document.getElementById('disclaimer').style.display = 'block';
       document.getElementById('footer-buttons').style.display = 'block';
   });
-
 
   // document.getElementById("result-img").addEventListener("click", async (event) => {
   //   event.preventDefault();
@@ -197,19 +204,47 @@
     
   });
 
-  function disclaimerOpen() {
-    var dropBar = document.getElementById("dropBar");
-    var disclaimer = document.getElementById("disclaimer");
-    var dropBtn = document.querySelector(".dropBtn");
-    disclaimer.classList.toggle("show");
+  // const image_array = [
+  //   'legacy.jpg',
+  //   'income.jpg',
+  //   'wealth.jpg'
+  // ];
 
-    if (disclaimer.style.display === "none") {
-        disclaimer.style.display = "block";
-        dropBtn.classList.add("active"); // Add active class for arrow change
-    } else {
-        disclaimer.style.display = "none";
-        dropBtn.classList.remove("active"); // Remove active class for arrow change
+  // function get_random_image(){
+  //   const random_index = Math.floor(Math.random() * image_array.length);
+  //   const selected_image = image_array[random_index];
+  //   document.getElementById('result-img').src = './results/$selected_image}';
+  // };
+
+
+  // var pictures = new Array("results/capital.jpg", "results/income.jpg", "results/wealth.jpg");
+
+  // function choosePic(){
+  //   var randomNum = Math.floor(Math.random() * pictures.length);
+  //   document.getElementById('random-result').src = pictures[randomNum];
+
+  //   console.log("Selected Image:", pictures[randomNum]);
+  // }
+
+  // window.onload = choosePic;
+
+  document.addEventListener("DOMContentLoaded", function () {
+    var pictures = ["results/capital.jpg", "results/income.jpg", "results/wealth.jpg"];
+    
+    function choosePic() {
+        var imgElement = document.getElementById('random-result');
+
+        // Ensure the element exists before setting src
+        if (imgElement) {
+            var randomNum = Math.floor(Math.random() * pictures.length);
+            imgElement.src = pictures[randomNum];
+            console.log("Selected Image:", pictures[randomNum]);
+        } else {
+            console.error("Image element not found! Check your HTML.");
+        }
     }
-}
+
+    choosePic();
+});
 
 </script>

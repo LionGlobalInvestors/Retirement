@@ -442,6 +442,7 @@ html, body {
   /* Hide ans-wrapper initially */
   .ans-wrapper {
     display: none;
+    scroll-behavior: smooth;
 
     overflow-y: scroll;
     height: 90vh;
@@ -459,10 +460,6 @@ html, body {
     position: relative;
 
     height: 80%;
-}
-
-.ans-banner-container a {
-    display: inline-block;
 }
 
 .ans-overlay {
@@ -579,7 +576,7 @@ footer {
 
 .dropBtn::after {
     content: "▼"; /* Default down arrow */
-    display: inline-block;
+    /* display: inline-block; */
     transition: transform 0.3s ease;
 }
 
@@ -610,12 +607,14 @@ footer {
 }
 
 .learnMore-button,
-.replay-button {
+.replay-button,
+.scrollDown {
     font-family: 'Arial', sans-serif;
     font-weight: 600;
     background-color: white;
     font-size: 13px;
     width: 138px;
+    height: 40px;
     border-radius: 7px;
 
     /* top: 50%; */
@@ -628,17 +627,19 @@ footer {
     /* top: 100%; */
 
     text-decoration: none;
-    padding: 15px 10px;
+    padding: 10px 30px;
 
     text-align: center;
 
     align-items: center;
 
-    left: 40%;
+    left: 37%;
     
-    bottom: 0;
+    /* bottom: 0; */
+    top: 1vw;
 
-    margin-right: 30px;
+    margin-right: 8px;
+
     /* transform: translate(-50%, -50%); */
 
     /* z-index: 2; */
@@ -647,8 +648,18 @@ footer {
     /* animation: pulse 1s infinite; */
 }
 
+.scrollDown::after {
+    content: "▼";
+
+    /* width: 130px;
+    height: 30px; */
+
+    padding: 0 20px;
+}
+
 .learnMore-button:hover, 
-.replay-button:hover {
+.replay-button:hover,
+.scrollDown:hover {
     background-color: #c4306d;
     color: #FFFFFF;
     /* border: 2px solid #89264f; */
@@ -803,7 +814,7 @@ footer {
     .replay-button {
         width: 300px;
         /* left: 1.4vw; */
-        padding: 15px 9px;
+        /* padding: 15px 9px; */
     }
 } 
 

@@ -51,6 +51,9 @@
 
         <div class="ans-banner-container">
           <img id="result-img" class="main-img ans-banner-img" src="results/income.jpg" alt="Income Generation">
+          
+          <div id="bottom"></div>
+          
           <img id="result-img" class="main-img ans-banner-img" src="results/income_breakdown.jpg" alt="Income Generation">
 
           <!-- to fund centre -->
@@ -111,6 +114,11 @@
         <!-- <button class="share-button">Share my results</button> -->
       </a>
 
+      <a onclick="document.getElementById('bottom').scrollIntoView();" id="scrollButton" class="scrollDown">
+        
+
+      </a>
+
     </div>
 </footer>
 
@@ -119,6 +127,7 @@
 <script>
   // document.getElementById('disclaimerBtn').style.display = 'none';
   document.getElementById("disclaimer").style.display = 'none';
+  document.getElementById('footer-buttons').style.display = 'none';
   document.getElementById("loading").addEventListener('click', () => {
       // Hide loading image and show animation        
       document.getElementById('loading').style.display = 'none';
@@ -137,6 +146,7 @@
       ansWrapper.style.alignItems = 'flex-start';
       // currentState = 'results';
       document.getElementById('disclaimer').style.display = 'block';
+      document.getElementById('footer-buttons').style.display = 'block';
   });
 
   document.getElementById("result-img").addEventListener("click", async (event) => {
