@@ -951,7 +951,7 @@ footer {
 
     .fundCentre-button {
         bottom: 3.5vw;
-        width: 210px;
+        /* width: 210px; */
         font-size: 14px;
         left: 2vw;
     }
@@ -1047,22 +1047,20 @@ footer {
     }
 
     .result-button {
-        bottom: 8.6vw;
+        bottom: 4vw;
         left: 3.7vw;
-
         width: 230px;
         height: 30px;
-        font-size: 13px;
+        font-size: 17px;
         padding: 4px 6.5px;
     }
 
     .fundCentre-button {
-        bottom: 13.7vw;
+        bottom: 9vw;
         left: 3.7vw;
-
-        width: 250px;
+        width: 350px;
         height: 30px;
-        font-size: 13px;
+        font-size: 17px;
         padding: 4px 6.5px;
     }
 
@@ -1090,9 +1088,8 @@ footer {
     }
 
     .result-button {
-        bottom: 10vw;
+        bottom: 4vw;
         left: 4.2vw;
-
         width: 230px;
         height: 30px;
         font-size: 20px;
@@ -1100,9 +1097,8 @@ footer {
     }
 
     .fundCentre-button {
-        bottom: 15.7vw;
+        bottom: 10vw;
         left: 4.2vw;
-
         width: 350px;
         height: 30px;
         font-size: 20px;
@@ -1121,9 +1117,8 @@ footer {
     }
 
     .result-button {
-        bottom: 11.3vw;
+        bottom: 5vw;
         left: 4.5vw;
-
         width: 230px;
         height: 30px;
         font-size: 20px;
@@ -1131,9 +1126,8 @@ footer {
     }
 
     .fundCentre-button {
-        bottom: 17.3vw;
+        bottom: 11vw;
         left: 4.5vw;
-
         width: 350px;
         height: 30px;
         font-size: 20px;
@@ -1185,9 +1179,8 @@ footer {
     }
 
     .result-button {
-        bottom: 13.6vw;
+        bottom: 5vw;
         left: 5.5vw;
-
         width: 205px;
         height: 30px;
         font-size: 20px;
@@ -1195,9 +1188,8 @@ footer {
     }
 
     .fundCentre-button {
-        bottom: 21vw;
+        bottom: 12vw;
         left: 5.5vw;
-
         width: 316px;
         height: 30px;
         font-size: 20px;
