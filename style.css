@@ -451,6 +451,7 @@ html, body {
 .ans-banner-img {
     opacity: 1;
     width: 100%;
+    height: auto;
     /* aspect-ratio: 65/45; 
     object-fit: cover;
     object-position: center center; */
@@ -460,6 +461,13 @@ html, body {
     position: relative;
 
     height: 80%;
+    width: 100%;
+}
+
+.ans-banner-container img {
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
 
 .ans-overlay {
