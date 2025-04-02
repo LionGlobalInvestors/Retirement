@@ -1283,10 +1283,14 @@ footer {
 
     .result-button {
         font-size: 13px;
+        width: 160px;
+        height: 25px;
     }
 
     .fundCentre-button {
         font-size: 13px;
+        width: 270px;
+        height: 25px;
     }
 }
 
@@ -1312,21 +1316,25 @@ footer {
 
 @media screen and (max-width: 360px){
     .result-button {
-        font-size: 13px;
+        font-size: 11px;
+        width: 160px;
+        height: 25px;
     }
 
     .fundCentre-button {
-        font-size: 13px;
+        font-size: 11px;
+        width: 240px;
+        height: 25px;
     }
 }
 
 @media screen and (max-width: 320px){
     .result-button {
-        font-size: 13px;
+        font-size: 11px;
     }
 
     .fundCentre-button {
-        font-size: 13px;
+        font-size: 11px;
     }
 }
 
