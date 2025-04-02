@@ -600,29 +600,22 @@ footer {
     width: 138px;
     height: 40px;
     border-radius: 7px;
-
     /* top: 50%; */
     position: relative;
     /* left: 2vw; */
-
     border: 1px solid #c4306d;
     color: #89264f;
-
     text-decoration: none;
-    padding: 10px 30px;
-
+    padding: 14px 30px;
     text-align: center;
-
     place-items: center;
-
     margin-right: 8px;
-
 }
 
 .scrollDown::after {
     content: "▼";
-
     padding: 0 20px;
+    /* padding: 0 20px; */
 }
 
 .learnMore-button:hover, 
@@ -693,14 +686,12 @@ footer {
     z-index: 2;
   }
 
-  .result-button {
+  /* .result-button {
     font-family: 'Arial', sans-serif;
-    /* font-size: 14px; */
     z-index: 2;
     position: absolute;
     text-decoration: none;
     text-align: left;
-    /* left: 2.1vw; */
     bottom: 4.65vw;
     height: 20px;
     width: 138px;
@@ -708,7 +699,7 @@ footer {
     padding: 2.3px 6.5px;
     color: #FFFFFF;
     background-color: #c4306d;
-  }
+  } */
 
   .fundCentre-button {
     font-family: 'Arial', sans-serif;
@@ -719,7 +710,7 @@ footer {
     text-align: left;
     /* left: 2.1vw; */
     bottom: 6.5vw;
-    height: 20px;
+    height: 30px;
     width: 215px;
     border-radius: 20px;
     padding: 2.5px 6.5px;
@@ -882,7 +873,8 @@ footer {
     /* } */
 
     .learnMore-button,
-    .replay-button {
+    .replay-button,
+    .scrollDown {
         width: 200px;
         /* left: 1.3vw; */
     }
@@ -932,7 +924,8 @@ footer {
     }
 
     .learnMore-button,
-    .replay-button {
+    .replay-button,
+    .scrollDown {
         width: 90px;
         /* left: 2vw; */
         font-size: 12px;
@@ -945,7 +938,8 @@ footer {
 
 @media screen and (max-width: 1500px) {
     .learnMore-button,
-    .replay-button {
+    .replay-button,
+    .scrollDown {
         width: 160px;
         /* left: 1.2vw; */
     }
@@ -953,16 +947,10 @@ footer {
 
 @media screen and (max-width: 1600px) {
     .learnMore-button,
-    .replay-button {
+    .replay-button,
+    .scrollDown {
         width: 170px;
         /* left: 1.2vw; */
-    }
-
-    .result-button {
-        bottom: 1.6vw;
-        width: 145px;
-        left: 2vw;
-        font-size: 14px;
     }
 
     .fundCentre-button {
@@ -1055,29 +1043,17 @@ footer {
     }
 
     .learnMore-button,
-    .replay-button {
+    .replay-button,
+    .scrollDown {
         width: 90px;
         /* left: 2vw; */
-
-        font-size: 12px;
-    }
-
-    .result-button {
-        bottom: 4vw;
-        left: 3.7vw;
-        width: 230px;
-        height: 30px;
-        font-size: 17px;
-        padding: 4px 6.5px;
     }
 
     .fundCentre-button {
         bottom: 9vw;
         left: 3.7vw;
-        width: 350px;
-        height: 30px;
-        font-size: 17px;
-        padding: 4px 6.5px;
+        width: 310px;
+        font-size: 20px;
     }
 
     .boarding-pass-image.animate {
@@ -1098,87 +1074,50 @@ footer {
 @media screen and (max-width: 820px) { 
 
     .learnMore-button,
-    .replay-button {
+    .replay-button,
+    .scrollDown {
         width: 270px;
-        /* left: 1.5vw; */
-    }
-
-    .result-button {
-        bottom: 4vw;
-        left: 4.2vw;
-        width: 230px;
-        height: 30px;
-        font-size: 20px;
-        padding: 4px 6.5px;
     }
 
     .fundCentre-button {
         bottom: 10vw;
         left: 4.2vw;
-        width: 350px;
-        height: 30px;
+        width: 310px;
         font-size: 20px;
-        padding: 4px 6.5px;
     }
 }
 
 @media screen and (max-width: 780px) { 
 
     .learnMore-button,
-    .replay-button {
+    .replay-button,
+    .scrollDown {
         width: 270px;
-        /* left: 1.5vw; */
 
-        font-size: 18px;
-    }
-
-    .result-button {
-        bottom: 5vw;
-        left: 4.5vw;
-        width: 230px;
-        height: 30px;
-        font-size: 20px;
-        padding: 4px 6.5px;
+        /* font-size: 18px; */
     }
 
     .fundCentre-button {
         bottom: 11vw;
         left: 4.5vw;
-        width: 350px;
-        height: 30px;
+        width: 310px;
         font-size: 20px;
-        padding: 4px 6.5px;
     }
 }
 
 @media screen and (max-width: 720px) { 
 
     .learnMore-button,
-    .replay-button {
+    .replay-button,
+    .scrollDown {
         width: 270px;
-        /* left: 1.5vw; */
-
-        font-size: 18px;
-    }
-    
-    .result-button {
-        bottom: 12.3vw;
-        left: 4.8vw;
-
-        width: 230px;
-        height: 30px;
-        font-size: 20px;
-        padding: 4px 6.5px;
     }
 
     .fundCentre-button {
         bottom: 18.9vw;
         left: 4.8vw;
-
-        width: 350px;
-        height: 30px;
+        width: 310px;
         font-size: 20px;
-        padding: 4px 6.5px;
     }
 }
 
@@ -1189,27 +1128,16 @@ footer {
     }
 
     .learnMore-button,
-    .replay-button {
+    .replay-button,
+    .scrollDown {
         width: 240px;
-        /* left: 2.5vw; */
-    }
-
-    .result-button {
-        bottom: 5vw;
-        left: 5.5vw;
-        width: 205px;
-        height: 30px;
-        font-size: 20px;
-        padding: 4px 6.5px;
     }
 
     .fundCentre-button {
         bottom: 12vw;
         left: 5.5vw;
-        width: 316px;
-        height: 30px;
-        font-size: 20px;
-        padding: 4px 6.5px;
+        font-size: 18px;
+        width: 270px;
     }
 }
 
@@ -1220,27 +1148,16 @@ footer {
     }
 
     .learnMore-button,
-    .replay-button {
+    .replay-button,
+    .scrollDown {
         width: 240px;
-        /* left: 2.5vw; */
-    }
-
-    .result-button {
-        bottom: 5vw;
-        left: 5.5vw;
-        font-size: 20px;
-        padding: 1.5px 3px;
-        /* width: 160px;
-        height: 25px; */
     }
 
     .fundCentre-button {
         bottom: 12vw;
         left: 5.5vw;
-        font-size: 20px;
-        padding: 1.5px 3px;
-        /* width: 160px;
-        height: 25px; */
+        font-size: 17px;
+        width: 260px;
     }
 }
 
@@ -1251,104 +1168,60 @@ footer {
     }
 
     .learnMore-button,
-    .replay-button {
+    .replay-button,
+    .scrollDown {
         width: 240px;
-        /* left: 2.5vw; */
-    }
-
-    .result-button {
-        bottom: 5vw;
-        left: 5.5vw;
-        font-size: 16px;
-        padding: 1.5px 3px;
-        /* width: 160px;
-        height: 25px; */
     }
 
     .fundCentre-button {
         bottom: 12vw;
         left: 5.5vw;
-        font-size: 16px;
-        padding: 1.5px 3px;
-        /* width: 160px;
-        height: 25px; */
+        font-size: 15px;
+        width: 230px;
     }
 }
 
 @media screen and (max-width: 414px){
     .learnMore-button,
-    .replay-button {
-        padding: 10px 20px;
-    }
-
-    .result-button {
-        font-size: 13px;
-        padding: 1.5px 3px;
-        /* width: 160px;
-        height: 25px; */
+    .replay-button,
+    .scrollDown {
+        padding: 14px 30px;
     }
 
     .fundCentre-button {
-        font-size: 13px;
-        padding: 1.5px 3px;
-        /* width: 270px;
-        height: 25px; */
+        font-size: 14px;
     }
 }
 
 @media screen and (max-width: 390px){
-    .result-button {
-        font-size: 13px;
-        padding: 1.5px 3px;
-    }
 
     .fundCentre-button {
         font-size: 13px;
-        padding: 1.5px 3px;
+        width: 200px;
     }
 }
 
 @media screen and (max-width: 375px){
-    .result-button {
-        font-size: 13px;
-        padding: 1.5px 3px;
-    }
 
     .fundCentre-button {
         font-size: 13px;
-        padding: 1.5px 3px;
+        width: 195px;
     }
 }
 
 @media screen and (max-width: 360px){
-    .result-button {
-        font-size: 11px;
-        /* width: 160px;
-        height: 25px; */
-        padding: 1.5px 3px;
-    }
 
     .fundCentre-button {
         font-size: 11px;
-        /* width: 240px;
-        height: 25px; */
-        padding: 1.5px 3px;
+        width: 165px;
     }
 }
 
 @media screen and (max-width: 320px){
-    .result-button {
-        font-size: 11px;
-        /* width: 145px;
-        height: 20px; */
-        padding: 1.5px 3px;
-    }
 
     .fundCentre-button {
         font-size: 11px;
-        /* width: 200px;
-        height: 20px; */
-        padding: 1.5px 3px;
+        width: 165px;
     }
 }
 
