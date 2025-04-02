@@ -1331,14 +1331,16 @@ footer {
 @media screen and (max-width: 320px){
     .result-button {
         font-size: 11px;
-        width: 145px;
-        height: 20px;
+        /* width: 145px;
+        height: 20px; */
+        padding: 1.5px 3px;
     }
 
     .fundCentre-button {
         font-size: 11px;
-        width: 200px;
-        height: 20px;
+        /* width: 200px;
+        height: 20px; */
+        padding: 1.5px 3px;
     }
 }
 
