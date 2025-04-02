@@ -1228,19 +1228,19 @@ footer {
     .result-button {
         bottom: 5vw;
         left: 5.5vw;
-        width: 205px;
-        height: 30px;
         font-size: 20px;
-        padding: 4px 6.5px;
+        padding: 1.5px 3px;
+        /* width: 160px;
+        height: 25px; */
     }
 
     .fundCentre-button {
         bottom: 12vw;
         left: 5.5vw;
-        width: 316px;
-        height: 30px;
         font-size: 20px;
-        padding: 4px 6.5px;
+        padding: 1.5px 3px;
+        /* width: 160px;
+        height: 25px; */
     }
 }
 
