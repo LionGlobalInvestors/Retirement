@@ -2,10 +2,6 @@
     max-width: 650px;
 }
 
-html, body {
-    overflow: hidden;
-}
-
 /* @font-face {
     font-family: 'OpenSans-Regular';
     src: url("public/fonts/OpenSans-Regular.ttf") format("ttf"), url("public/fonts/OpenSans-Regular.otf") format("otf"), url("public/fonts/OpenSans-Regular.eot") format("eot"), url("public/fonts/OpenSans-Regular.svg") format("svg"), url("public/fonts/OpenSans-Regular.woff") format("woff"), url("public/fonts/OpenSans-Regular.woff2") format("woff2");
@@ -53,55 +49,33 @@ html, body {
     font-weight: 600;
 
     height: 50px;
-    width: 130px;
+    width: 350px;
     border-radius: 12px;
 
     background-color: #c4306d;
     color: white;
-    border: none;
+    border: 1px solid #c4306d;
     /* border: solid 2px #c4306d; */
 
-    animation: pulse 1s infinite;
+    /* animation: pulse 1s infinite; */
+
+    /* position: absolute; */
+    margin-top: 1vh;
+    transform: translateX(15%);
 }
 
-/* TO REMOVE */
-.lets-fly-desc {
-    font-family: 'Arial', sans-serif;
-    font-size: 18px;
-    font-weight: 400;
-    color: white;
-    background-color: black;
-    margin: 0 auto;
-    display: block;
-    padding: 40px 0px 40px 0px;
-    position: absolute;
-    top: 11%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2; /* Ensure the div appears above the image */
-    text-align: center;
-    width: 70%; /* Optional: adjust if you need to set a max width */
-}
-
-/* TO REMOVE */
-.link-to-lets-fly {
-    text-decoration: none;
-    font-family: 'Arial', sans-serif;
-    font-size: 18px;
-    font-weight: 400;
+.start-button:hover {
+    background-color: white;
     color: #c4306d;
-    margin: 0 auto;
-    display: block;
-    position: absolute;
-    /* top: 25.5%;
-    left: 73%; */
 
-    top: 65%;
-    left: 75%;
+    border-color: 1px solid #c4306d;
+}
 
-    transform: translate(-50%, -50%);
-    z-index: 2; /* Ensure the div appears above the image */
-    text-align: center;
+.start-button:active {
+    background-color: #89264f;
+    color: white;
+
+    border-color: 1px solid #89264f;
 }
 
 .lets-fly-button{
@@ -716,6 +690,8 @@ footer {
     padding: 2.5px 6.5px;
     color: #FFFFFF;
     background-color: #c4306d;
+
+    border: none;
   }
 
 
@@ -910,7 +886,67 @@ footer {
         right: 5.6vw;
     }
 
+    .fundCentre-button {
+        bottom: 3.5vw;
+        width: 270px;
+        font-size: 17px;
+        left: 2vw;
+    }
 
+
+}
+
+@media screen and (max-width: 1600px) {
+    .learnMore-button,
+    .replay-button,
+    .scrollDown {
+        width: 170px;
+        /* left: 1.2vw; */
+    }
+
+    .fundCentre-button {
+        bottom: 3.5vw;
+        /* width: 210px; */
+        font-size: 15px;
+        left: 2vw;
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    .learnMore-button,
+    .replay-button,
+    .scrollDown {
+        width: 160px;
+        /* left: 1.2vw; */
+    }
+
+    .fundCentre-button {
+        bottom: 3.5vw;
+        width: 230px;
+        font-size: 14px;
+        left: 2vw;
+    }
+}
+
+
+@media screen and (max-width: 1300px) {
+
+    .fundCentre-button {
+        bottom: 3.5vw;
+        width: 210px;
+        font-size: 13px;
+        left: 2vw;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+
+    .fundCentre-button {
+        bottom: 3.5vw;
+        width: 192px;
+        font-size: 12px;
+        left: 2vw;
+    }
 }
 
 @media screen and (max-width: 1024px) {
@@ -933,31 +969,6 @@ footer {
 
     .disclaimer {
         font-size: 13px;
-    }
-}
-
-@media screen and (max-width: 1500px) {
-    .learnMore-button,
-    .replay-button,
-    .scrollDown {
-        width: 160px;
-        /* left: 1.2vw; */
-    }
-}
-
-@media screen and (max-width: 1600px) {
-    .learnMore-button,
-    .replay-button,
-    .scrollDown {
-        width: 170px;
-        /* left: 1.2vw; */
-    }
-
-    .fundCentre-button {
-        bottom: 3.5vw;
-        /* width: 210px; */
-        font-size: 14px;
-        left: 2vw;
     }
 }
 

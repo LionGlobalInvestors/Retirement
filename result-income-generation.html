@@ -26,6 +26,19 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="style.css" />
 
+  <link rel="prefetch" href="pic/loading.gif">
+  <link rel="prefetch" href="pic/results-anim.gif">
+  <link rel="prefetch" href="results/default_map.jpg">
+
+  <link rel="prefetch" href="results/capital_breakdown.jpg">
+  <link rel="prefetch" href="results/wealth_breakdown.jpg">
+  <link rel="prefetch" href="results/income_breakdown.jpg">
+  <link rel="prefetch" href="results/legacy_breakdown.jpg">
+
+  <link rel="prefetch" href="results/income1.jpg">
+  <link rel="prefetch" href="results/income2.jpg">
+  <link rel="prefetch" href="results/income3.jpg">
+
 </head>
 
 <body>
@@ -58,42 +71,32 @@
 
           <map name="retirementMap">
             <area shape="poly" coords="94,659,113,636,179,603,246,562,277,537,294,481,344,453,392,444,441,451,489,458,534,436,572,415,610,406,648,
-            417,703,445,759,475,795,482,845,475,891,486,933,515,955,554,959,569,822,562,561,629,290,599" title="Capital" onclick="Capital()">
+            417,703,445,759,475,795,482,845,475,891,486,933,515,955,554,959,569,822,562,561,629,290,599" title="" onclick="Capital()">
 
             <area shape="poly" coords="94,664,101,646,127,629,194,594,238,570,275,539,290,496,316,468,341,454,359,447,366,382,378,331,401,268,353,
-            245,311,234,251,234,204,245,155,271,111,313,74,367,34,445,55,678" title="Wealth" onclick="Wealth()">
+            245,311,234,251,234,204,245,155,271,111,313,74,367,34,445,55,678" title="" onclick="Wealth()">
 
             <area shape="poly" coords="357,446,363,393,380,324,404,266,432,220,459,189,484,174,527,174,570,184,599,204,635,238,673,272,693,306,693,
-            338,683,372,678,394,688,426,694,443,627,409,590,410,546,429,513,448,487,461,437,450,394,444" title="Income" onclick="Income()">
+            338,683,372,678,394,688,426,694,443,627,409,590,410,546,429,513,448,487,461,437,450,394,444" title="" onclick="Income()">
 
-            <area shape="poly" coords="1005,552,931,483,822,457,742,438,713,384,721,310,793,283,849,305,898,347,958,381,1007,402,1044,494" title="Legacy" onclick="Legacy()">
+            <area shape="poly" coords="1005,552,931,483,822,457,742,438,713,384,721,310,793,283,849,305,898,347,958,381,1007,402,1044,494" title="" onclick="Legacy()">
 
-            <!-- 1050,409,1067,577,960,570,946,528,908,493,873,479,835,475,807,480,771,481,725,458,695,442,681,401,680,376,694,
-            332,692,306,684,286,719,284,762,267,794,255,824,255,865,283,912,331,973,369,1017,368,1045,364 -->
           </map>
 
           <div class="image-btn">
             <!-- to fund centre -->
-            <a href="https://www.lionglobalinvestors.com/en/fund-centre.html?&retire_goals=Income%20Generation" id="fundCentre" class="fundCentre-button">
-
-              Click here to view related funds >
+            <a href="https://www.lionglobalinvestors.com/en/fund-centre.html?&retire_goals=Income%20Generation" id="fundCentre">
+              <button class="fundCentre-button">
+                Click here to view related funds >
+              </button>
             </a>
 
             <!-- share results -->
-            /
+            
           </div>
           
         </div>
-        <!-- <div class="share-results">
-          <p>Share your quiz results!</p>
-          <div class="social-media-icons">
-          <div>
-            <a href="#" id="shareResult" class="share-links instagram" target="_blank">
-              <img src="icon/share_black.png" alt="social-media" />
-               <button class="share">Share my results</button>
-            </a>
-          </div>
-        </div> -->
+        
         <p class="disclaimer" id="disclaimer">This is for information and illustration only, and does not have regard to your specific investment objectives, financial situation, tax position or needs. The information herein is not intended to be and does not constitute financial advice or an offer or solicitation for the purchase or sale of units in any fund. Not all investment ideas are suitable for all investors and no recommendation is given as to the suitability of any funds for any particular investor. Prior to making any investment, you should make your own evaluation or seek independent advice as to whether such investment is suitable for you. LGI does not accept any liability for any damages or loss, including loss of profit, whether direct, indirect, economic or consequential, arising from reliance on any information, opinion or estimate herein.</p>
         
       </div>
@@ -111,13 +114,6 @@
     window.addEventListener("load", fixImageMap);
     window.addEventListener("resize", fixImageMap);
 
-    // Also trigger when clicking on the image
-    // document.addEventListener("click", function (event) {
-    //     if (event.target.tagName === "IMG") {
-    //         fixImageMap();
-    //     }
-    // });
-
     // Trigger fixImageMap on clicking an image by id or class name
     document.addEventListener("click", function (event) {
         // Check if the clicked element has the specific id or class
@@ -131,12 +127,7 @@
 </body>
 
 <footer>
-    <!-- <div class="dropDown">
-      <button id="disclaimerBtn" onclick="disclaimerOpen()" class="dropBtn">Disclaimer  </button>
-      <div id="dropBar" class="dropDown-content"> -->
-        
-      <!-- </div>
-    </div> -->
+
     <div id="footer-buttons" class="sticky-bar">
       <!-- to retirement page -->
       <a href="#" id="shareResult" class="share-links instagram learnMore-button" target="_blank">
@@ -146,16 +137,13 @@
       </a>
 
       <!-- replay game -->
-      <!-- <a href="#" id="shareResult" class="share-links instagram replay-button" target="_blank">  -->
       <a href="index.html" class="replay-button"> 
 
         Replay
-        <!-- <img src="icon/share_black.png" alt="social-media" /> -->
-        <!-- <button class="share-button">Share my results</button> -->
+
       </a>
 
       <a onclick="document.getElementById('bottom').scrollIntoView();" id="scrollButton" class="scrollDown">
-        
 
       </a>
 
@@ -167,7 +155,6 @@
 <script>
   var finalPic = ' ';
 
-  // document.getElementById('disclaimerBtn').style.display = 'none';
   document.getElementById("disclaimer").style.display = 'none';
   document.getElementById('footer-buttons').style.display = 'none';
   document.getElementById("loading").addEventListener('click', () => {
@@ -179,7 +166,6 @@
   });
 
   document.getElementById("result-anim").addEventListener('click', () => {
-      // document.getElementById('plane-button').style.display = 'none';
       document.getElementById('result-anim').style.display = 'none';
       document.getElementById('centerWrapper').style.display = 'none';
       const ansWrapper = document.querySelector('.ans-wrapper');
@@ -190,14 +176,7 @@
       document.getElementById('disclaimer').style.display = 'block';
       document.getElementById('footer-buttons').style.display = 'block';
       document.getElementById('fundCentre').style.display = 'none';
-      // document.getElementById('shareResult').style.display = 'none';
   });
-
-  // document.getElementById("result-img").addEventListener("click", async (event) => {
-  //   event.preventDefault();
-  //   //do stuff
-  //   window.open("https://www.lionglobalinvestors.com/en/fund-centre.html?&retire_goals=Income%20Generation");
-  // });
 
   document.getElementById("shareResult").addEventListener("click", async (event) => {
     event.preventDefault();
@@ -205,11 +184,6 @@
 
     // copy link to clipboard
     const shareMessage = `https://lionglobalinvestors.github.io/Retirement/`;
-    //   navigator.clipboard.writeText(shareMessage).then(() => {
-    //       alert('Link copied to clipboard!');
-    //   }).catch(err => {
-    //       alert('Failed to copy link. Please try again.');
-    //   });
 
     function isFacebookApp() {
       return navigator.userAgent.includes("FBAN") || navigator.userAgent.includes("FBAV");
@@ -270,35 +244,27 @@ function Capital(){
   document.getElementById('result-img').src = "results/capital_breakdown.jpg";
 
   document.getElementById('fundCentre').style.display = 'block';
-  // document.getElementById('shareResult').style.display = 'block';
 
-  // console.log("capital");
 }
 
 function Wealth(){
   document.getElementById('result-img').src = "results/wealth_breakdown.jpg";
 
   document.getElementById('fundCentre').style.display = 'block';
-  // document.getElementById('shareResult').style.display = 'block';
 
-  // console.log("wealth");
 }
 
 function Income(){
   document.getElementById('result-img').src = "results/income_breakdown.jpg";
 
   document.getElementById('fundCentre').style.display = 'block';
-  // document.getElementById('shareResult').style.display = 'block';
 
-  // console.log("income");
 }
 
 function Legacy(){
   document.getElementById('result-img').src = "results/legacy_breakdown.jpg";
 
   document.getElementById('fundCentre').style.display = 'block';
-  // document.getElementById('shareResult').style.display = 'block';
 
-  // console.log("legacy");
 }
 </script>
