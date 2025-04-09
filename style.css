@@ -65,21 +65,20 @@
 
     display: block;
     margin: 1vh auto auto auto;
-    text-decoration: none;
 }
 
 .start-button:hover {
     background-color: white;
     color: #c4306d;
-
-    border-color: 1px solid #c4306d;
 }
 
 .start-button:active {
     background-color: #89264f;
     color: white;
+}
 
-    border-color: 1px solid #89264f;
+.start-link {
+    text-decoration: none;
 }
 
 .lets-fly-button{
