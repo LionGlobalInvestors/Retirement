@@ -61,7 +61,11 @@
 
     /* position: absolute; */
     margin-top: 1vh;
-    transform: translateX(15%);
+    /* transform: translateX(15%); */
+
+    display: block;
+    margin: 1vh auto auto auto;
+    text-decoration: none;
 }
 
 .start-button:hover {
