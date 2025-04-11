@@ -682,7 +682,6 @@ footer {
   .fundCentre-button {
     font-family: 'Arial', sans-serif;
     font-size: 14px;
-    z-index: 2;
     position: absolute;
     text-decoration: none;
     text-align: left;
