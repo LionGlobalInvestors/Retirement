@@ -47,29 +47,18 @@
     font-family: 'Arial', sans-serif;
     font-size: 18px;
     font-weight: 600;
-
     height: 50px;
-    width: 350px;
+    width: 150px;
     border-radius: 12px;
-
-    background-color: #c4306d;
-    color: white;
-    border: 1px solid #c4306d;
-    /* border: solid 2px #c4306d; */
-
+    background-color: white;
+    /* color: white; */
+    border: none;
     /* animation: pulse 1s infinite; */
-
-    /* position: absolute; */
-    margin-top: 1vh;
-    /* transform: translateX(15%); */
-
-    display: block;
-    margin: 1vh auto auto auto;
 }
 
 .start-button:hover {
-    background-color: white;
-    color: #c4306d;
+    background-color: #89264f;
+    color: white;
 }
 
 .start-button:active {
@@ -81,39 +70,20 @@
     text-decoration: none;
 }
 
-.lets-fly-button{
-    /* width: 92%; */
+.link-to-lets-fly {
 
-    border-radius: 12px;
-    /* background-color: #FFFFFF; */
-    /* color: #000000; */
-    /* border: 1px solid #c2cddf; */
-
-    display: flex;
-    /* margin: 0 auto; */
-    justify-content: center;
-    align-items: center;
-    /* margin-bottom: 70px; */
-    cursor: pointer;
-    transition: all 0.3s ease;
-
-    font-family: 'Arial', sans-serif;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 21.79px;
-    letter-spacing: 0.5px;
-    text-align: center;
-    text-transform: none;
-    /* padding: 20px; */
+    position: absolute;
+    display: block;
+    margin: 0 auto;
 
     z-index: 2;
-    position: relative;
-    border-radius: 50px;
+    transform: translate(-50%, -50%);
 
-    /* pulse animation */
-    animation: pulse 1s infinite;
+    text-align: center;
 
-    width: 50px;
+    top: 65%;
+    left: 73%;
+
 }
 
 .next-button{
