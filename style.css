@@ -213,7 +213,7 @@
     transform: translate(-50%, -50%);
     z-index: 2; /* Ensure the div appears above the image */
     text-align: center;
-    width: 190px; /* Optional: adjust if you need to set a max width */
+    width: 180px; /* Optional: adjust if you need to set a max width */
 }
 
 .lets-begin-button {
