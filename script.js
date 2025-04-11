@@ -9,7 +9,7 @@ class Quiz {
           Wealth: `Bring only 2 - 3 sets of clothes`,
           Capital: `Pack extra clothing for weather changes`,
           Legacy: `Pack an outfit for each day`,
-          Income: `Pack half and buy the rest there`,
+          Income: `Bring 5 sets of clothes and buy any if needed`,
         },
       },
       {
@@ -34,12 +34,12 @@ class Quiz {
       },
       {
         image: `quiz-Q4.jpg`,
-        question: `You're told that your flight will be delayed overnight. <br> What do you do first?`,
+        question: `You're told that your flight will be delayed by 10 hours. <br> What do you do first?`,
         answers: {
-          Income: `Pay extra to get onto the next available flight`,
-          Wealth: `Request accommodation and meal allowance from the airline`,
-          Capital: `Wait patiently for the delayed flight`,
-          Legacy: `Check how much can be claimed from travel insurance`,
+          Income: `Wait patiently for the delayed flight`,
+          Wealth: `Pay extra to get onto the next available flight`,
+          Capital: `Check how much can be claimed from travel insurance`,
+          Legacy: `Request for meal allowance from the airline`,
         },
       },
       {
@@ -47,9 +47,9 @@ class Quiz {
         question: `Your flight has started boarding and you're feeling hungry. <br> What do you do?`,
         answers: {
           Wealth: `Eat at a restaurant in the transit area believing you can finish in 15 minutes`,
-          Capital: `Wait for the in-flight meal`,
+          Capital: `Eat the packed food in your backpack`,
           Legacy: `Get a snack at the convenience store and eat while waiting to board`,
-          Income: `Queue to buy a takeaway in the transit area and eat on the aircraft`,
+          Income: `Wait for the in-flight meal`,
         },
       },
       {
@@ -69,12 +69,12 @@ class Quiz {
       {
         isTransition2: false,
         image: `quiz-Q6.jpg`,
-        question: `How do you keep yourself entertained on the flight?`,
+        question: `What do you do most on a 10-hour red eye flight?`,
         answers: {
-          Wealth: `Binge-watch a whole season of a show`,
+          Wealth: `Binge-watc`,
           Legacy: `Listen to music`,
           Capital: `Read a book`,
-          Income: `Sleep throughout the whole flight`,
+          Income: `Sleep`,
         },
       },
       // landing gif
@@ -100,9 +100,9 @@ class Quiz {
         question: `At the baggage claim, you notice someone struggling to lift their luggage. <br> Do you:`,
         answers: {
           Legacy: `Offer to help them`,
-          Income: `Take your luggage and walk away`,
+          Income: `Take your luggage quickly and join your group`,
           Capital: `Look around to see if anyone else is offering help`,
-          Wealth: `Take their luggage for them`,
+          Wealth: `Intuitively take their luggage for them`,
         },
       },
       { //only show when got tie-breaker
