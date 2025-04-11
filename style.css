@@ -891,7 +891,7 @@ footer {
 
     .fundCentre-button {
         bottom: 3.5vw;
-        width: 270px;
+        width: auto;
         font-size: 17px;
         left: 2vw;
     }
@@ -909,8 +909,8 @@ footer {
 
     .fundCentre-button {
         bottom: 3.5vw;
-        /* width: 210px; */
-        font-size: 15px;
+        width: auto;
+        font-size: 16px;
         left: 2vw;
     }
 }
@@ -925,7 +925,7 @@ footer {
 
     .fundCentre-button {
         bottom: 3.5vw;
-        width: 230px;
+        width: auto;
         font-size: 14px;
         left: 2vw;
     }
@@ -936,7 +936,7 @@ footer {
 
     .fundCentre-button {
         bottom: 3.5vw;
-        width: 210px;
+        width: auto;
         font-size: 13px;
         left: 2vw;
     }
@@ -946,7 +946,7 @@ footer {
 
     .fundCentre-button {
         bottom: 3.5vw;
-        width: 192px;
+        width: auto;
         font-size: 12px;
         left: 2vw;
     }
