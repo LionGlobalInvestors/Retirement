@@ -1171,6 +1171,15 @@ footer {
 }
 
 @media screen and (max-width: 414px){
+    .start-button {
+        height: 50px;
+        width: 140px;
+    }
+
+    .link-to-lets-fly {
+        left: 73%;
+    }
+
     .learnMore-button,
     .replay-button,
     .scrollDown {
@@ -1183,6 +1192,14 @@ footer {
 }
 
 @media screen and (max-width: 390px){
+    .start-button {
+        height: 50px;
+        width: 130px;
+    }
+
+    .link-to-lets-fly {
+        left: 73%;
+    }
 
     .fundCentre-button {
         font-size: 13px;
