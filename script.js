@@ -71,7 +71,7 @@ class Quiz {
         image: `quiz-Q6.jpg`,
         question: `What do you do most on a 10-hour red eye flight?`,
         answers: {
-          Wealth: `Binge-watc`,
+          Wealth: `Binge-watch`,
           Legacy: `Listen to music`,
           Capital: `Read a book`,
           Income: `Sleep`,
