@@ -248,7 +248,7 @@ function Transition() {
             alert(`navigator.share doesn't support in your device`);
           }
         } catch (error) {
-          alert ('Failed to fetch or share linked image');
+          return;
         }
 
       }

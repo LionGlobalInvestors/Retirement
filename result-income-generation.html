@@ -187,10 +187,18 @@ function Transition() {
   }, 3000);
 }
 
-  document.getElementById("shareResult").addEventListener("click", async (event) => {
+document.getElementById("shareResult").addEventListener("click", async (event) => {
     event.preventDefault();
-    const mainImage = document.querySelector('.ans-banner-img');
+    // const mainImage = document.querySelector('.ans-banner-img');
 
+    const mainImage = document.getElementById('random-result');
+
+    const images = [
+      { main: 'results/income_reviews1.jpg', linked: 'results/income1.jpg' },
+      { main: 'results/income_reviews2.jpg', linked: 'results/income2.jpg' },
+      { main: 'results/income_reviews3.jpg', linked: 'results/income3.jpg' }
+    ];
+    
     // copy link to clipboard
     const shareMessage = `https://lionglobalinvestors.github.io/Retirement/`;
 
@@ -206,24 +214,44 @@ function Transition() {
     else {
       // sharing of image to application of choice
       if (mainImage && mainImage.getAttribute('src')) {
-        const URL = mainImage.getAttribute('src');
-        const response = await fetch(URL);
-        const blob = await response.blob();
+        // const URL = mainImage.getAttribute('src');
 
-        const file = new File([blob], finalPic, {type: blob.type});
+        const mainImageSrc = mainImage.src.split('/').pop();
 
-        const shareData = {
-          files: [file],
-          text: shareMessage,
-        };
-        
-        if (navigator.canShare && navigator.canShare(shareData)) {
-          await navigator.share(shareData);
-        } else {
-          alert(`navigator.share doesn't support in your device`);
+        const matchedImage = images.find(img => img.main.endsWith(mainImageSrc));
+
+        if (!matchedImage) {
+          alert ('Could not find corresponding image');
+          return;
         }
+
+        const URL_Linked = new URL(matchedImage.linked, window.location.href).href;
+
+        try {
+          const response = await fetch(URL_Linked);
+          const blob = await response.blob();
+
+          const fileName = URL_Linked.split('/').pop();
+
+          const file = new File([blob], fileName, {type: blob.type});
+
+          const shareData = {
+            files: [file],
+            text: shareMessage,
+          };
+
+          if (navigator.canShare && navigator.canShare(shareData)) {
+          await navigator.share(shareData);
+          } else {
+            alert(`navigator.share doesn't support in your device`);
+          }
+        } catch (error) {
+          return;
+        }
+
       }
-      }
+    }
+    
   });
 
   document.addEventListener("DOMContentLoaded", function () {
