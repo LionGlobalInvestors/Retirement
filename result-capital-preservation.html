@@ -50,7 +50,7 @@
 
 </head>
 
-<body>
+<body onload="Transition()">
 
   <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KCVW7GJH"
@@ -61,7 +61,7 @@
     <section class="uk-container uk-container-small">
       <div class="uk-card uk-card-default uk-card-body">
         <img id="result-anim" src="pic/results-anim.gif" alt="Animation" class="uk-width-1-1 cover-img"
-          style="display: none;" onload="Transition()">
+          style="display: none;">
         <div id="plane-button" class="lets-fly-info">
           <a href="#" class="next-button-link">
             <img class="next-button">
@@ -155,10 +155,6 @@
 
         Replay
 
-      </a>
-
-      <a onclick="document.getElementById('bottom').scrollIntoView();" id="scrollButton" class="scrollDown">
-    
       </a>
 
     </div>

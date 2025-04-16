@@ -489,6 +489,10 @@ footer {
     z-index: 2;
 }
 
+footer a {
+    display: inline-grid;
+}
+
 .social-media-icons {
     position: absolute;
     display: flex;
@@ -526,17 +530,16 @@ footer {
     border: 1px solid #c4306d;
     color: #89264f;
     text-decoration: none;
-    padding: 8px 12px;
+    padding: 4px 12px;
     text-align: center;
     place-items: center;
     margin-right: 8px;
 }
 
-.scrollDown::after {
+/* .scrollDown::after {
     content: "▼";
     padding: 0 20px;
-    /* padding: 0 20px; */
-}
+} */
 
 .learnMore-button:hover, 
 .replay-button:hover,
@@ -952,8 +955,8 @@ footer {
     .learnMore-button,
     .replay-button,
     .scrollDown {
-        width: 90px;
-        /* left: 2vw; */
+        width: 220px;
+        left: 0;
     }
 
     .fundCentre-button {
@@ -1062,7 +1065,7 @@ footer {
     .learnMore-button,
     .replay-button,
     .scrollDown {
-        width: 240px;
+        width: 200px;
     }
 
     .fundCentre-button {
@@ -1086,7 +1089,7 @@ footer {
     .learnMore-button,
     .replay-button,
     .scrollDown {
-        width: 240px;
+        width: 170px;
     }
 
     .fundCentre-button {
@@ -1110,7 +1113,8 @@ footer {
     .learnMore-button,
     .replay-button,
     .scrollDown {
-        padding: 14px 30px;
+        padding: 4px 14px;
+        width: 150px;
     }
 
     .fundCentre-button {
