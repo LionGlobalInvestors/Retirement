@@ -510,14 +510,15 @@ footer {
     opacity: 1;
 }
 
-.share-button,
-.replay-button {
+.learnMore-button,
+.replay-button,
+.scrollDown {
     font-family: 'Arial', sans-serif;
     font-weight: 600;
     background-color: white;
     font-size: 13px;
     width: 138px;
-    height: 30px;
+    height: 40px;
     border-radius: 7px;
     /* top: 50%; */
     position: relative;
@@ -531,20 +532,23 @@ footer {
     margin-right: 8px;
 }
 
-/* .scrollDown::after {
+.scrollDown::after {
     content: "▼";
     padding: 0 20px;
-} */
+    /* padding: 0 20px; */
+}
 
-.share-button:hover, 
-.replay-button:hover {
+.learnMore-button:hover, 
+.replay-button:hover,
+.scrollDown:hover {
     background-color: #c4306d;
     color: #FFFFFF;
 
 }
 
-.share-button:active, 
-.replay-button:active {
+.learnMore-button:active, 
+.replay-button:active,
+.scrollDown:active {
     background-color: white;
     color: #89264f;
 
@@ -659,7 +663,7 @@ footer {
         margin-left: 35px;
     }
 
-    .share-button,
+    .learnMore-button,
     .replay-button {
         width: 200px;
         left: 1.4vw;
@@ -745,11 +749,11 @@ footer {
         /* border: 1px solid black; */
     }
 
-    .share-button,
-    .replay-button {
-        width: 150px;
-        font-size: 15px;
-        left: 0;
+    .learnMore-button,
+    .replay-button,
+    .scrollDown {
+        width: 200px;
+        /* left: 1.3vw; */
     }
 
     .boarding-pass-image.animate {
@@ -794,9 +798,10 @@ footer {
 }
 
 @media screen and (max-width: 1600px) {
-    .share-button,
-    .replay-button {
-        width: 150px;
+    .learnMore-button,
+    .replay-button,
+    .scrollDown {
+        width: 170px;
         /* left: 1.2vw; */
     }
 
@@ -809,9 +814,10 @@ footer {
 }
 
 @media screen and (max-width: 1500px) {
-    .share-button,
-    .replay-button {
-        width: 150px;
+    .learnMore-button,
+    .replay-button,
+    .scrollDown {
+        width: 160px;
         /* left: 1.2vw; */
     }
 
@@ -854,11 +860,12 @@ footer {
         font-weight: 500;
     }
 
-    .share-button,
-    .replay-button {
-        width: 110px;
+    .learnMore-button,
+    .replay-button,
+    .scrollDown {
+        width: 90px;
         /* left: 2vw; */
-        font-size: 13px;
+        font-size: 12px;
     }
 
     .disclaimer {
@@ -942,11 +949,11 @@ footer {
         left: 80%;
     }
 
-    .share-button,
-    .replay-button {
-        width: 170px;
+    .learnMore-button,
+    .replay-button,
+    .scrollDown {
+        width: 90px;
         /* left: 2vw; */
-        margin-right: 2vh;
     }
 
     .fundCentre-button {
@@ -973,8 +980,9 @@ footer {
 
 @media screen and (max-width: 820px) { 
 
-    .share-button,
-    .replay-button {
+    .learnMore-button,
+    .replay-button,
+    .scrollDown {
         width: 270px;
         font-size: 15px;
     }
@@ -989,8 +997,9 @@ footer {
 
 @media screen and (max-width: 780px) { 
 
-    .share-button,
-    .replay-button {
+    .learnMore-button,
+    .replay-button,
+    .scrollDown {
         width: 270px;
 
         /* font-size: 18px; */
@@ -1006,8 +1015,9 @@ footer {
 
 @media screen and (max-width: 720px) { 
 
-    .share-button,
-    .replay-button {
+    .learnMore-button,
+    .replay-button,
+    .scrollDown {
         width: 270px;
     }
 
@@ -1029,9 +1039,10 @@ footer {
         left: 75%;
     }
 
-    .share-button,
-    .replay-button {
-        width: 180px;
+    .learnMore-button,
+    .replay-button,
+    .scrollDown {
+        width: 240px;
     }
 
     .fundCentre-button {
@@ -1048,9 +1059,10 @@ footer {
         width: 140px;
     }
 
-    .share-button,
-    .replay-button {
-        width: 170px;
+    .learnMore-button,
+    .replay-button,
+    .scrollDown {
+        width: 240px;
     }
 
     .fundCentre-button {
@@ -1071,9 +1083,10 @@ footer {
         left: 75%;
     }
 
-    .share-button,
-    .replay-button {
-        width: 10px;
+    .learnMore-button,
+    .replay-button,
+    .scrollDown {
+        width: 240px;
     }
 
     .fundCentre-button {
@@ -1094,11 +1107,10 @@ footer {
         left: 73%;
     }
 
-    .share-button,
-    .replay-button {
-        padding: 8px 20px;
-        width: 120px;
-        margin-right: 0.5vh;
+    .learnMore-button,
+    .replay-button,
+    .scrollDown {
+        padding: 14px 30px;
     }
 
     .fundCentre-button {

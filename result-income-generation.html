@@ -38,14 +38,10 @@
   <link rel="prefetch" href="pic/results-anim.gif">
   <link rel="prefetch" href="results/default_map.jpg">
 
-  <link rel="prefetch" href="results/income_capital.jpg">
-  <link rel="prefetch" href="results/income.jpg">
-  <link rel="prefetch" href="results/income_wealth.jpg">
-  <link rel="prefetch" href="results/income_legacy.jpg">
-
-  <link rel="prefetch" href="results/income_reviews1.jpg">
-  <link rel="prefetch" href="results/income_reviews2.jpg">
-  <link rel="prefetch" href="results/income_reviews3.jpg">
+  <link rel="prefetch" href="results/capital_breakdown.jpg">
+  <link rel="prefetch" href="results/wealth_breakdown.jpg">
+  <link rel="prefetch" href="results/income_breakdown.jpg">
+  <link rel="prefetch" href="results/legacy_breakdown.jpg">
 
   <link rel="prefetch" href="results/income1.jpg">
   <link rel="prefetch" href="results/income2.jpg">
@@ -53,7 +49,7 @@
 
 </head>
 
-<body onload="Transition()">
+<body>
 
   <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KCVW7GJH"
@@ -64,7 +60,7 @@
     <section class="uk-container uk-container-small">
       <div class="uk-card uk-card-default uk-card-body">
         <img id="result-anim" src="pic/results-anim.gif" alt="Animation" class="uk-width-1-1 cover-img"
-          style="display: none;">
+          style="display: none;" onload="Transition()">
         <div id="plane-button" class="lets-fly-info">
           <a href="#" class="next-button-link">
             <img class="next-button">
@@ -156,6 +152,10 @@
       <a href="index.html" class="replay-button"> 
 
         Replay
+
+      </a>
+
+      <a onclick="document.getElementById('bottom').scrollIntoView();" id="scrollButton" class="scrollDown">
 
       </a>
 
