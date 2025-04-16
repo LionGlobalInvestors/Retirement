@@ -2,11 +2,6 @@
     max-width: 650px;
 }
 
-/* @font-face {
-    font-family: 'OpenSans-Regular';
-    src: url("public/fonts/OpenSans-Regular.ttf") format("ttf"), url("public/fonts/OpenSans-Regular.otf") format("otf"), url("public/fonts/OpenSans-Regular.eot") format("eot"), url("public/fonts/OpenSans-Regular.svg") format("svg"), url("public/fonts/OpenSans-Regular.woff") format("woff"), url("public/fonts/OpenSans-Regular.woff2") format("woff2");
-} */
-
 /*********************/
 /** Index Page CSS **/
 /*********************/
@@ -30,17 +25,15 @@
 .cover-img {
     display: block;
     width: 100%;
-    /* aspect-ratio: 65/45; */
+
     object-fit: cover;
     object-position: center center;
     transform: translate(0%, 0%);
-    /* margin: 0; */
 }
 
 .lets-fly-info {
     padding-left: 15px;
     padding-right: 15px;
-    /* margin-bottom: 100px; */
 }
 
 .start-button {
@@ -51,9 +44,8 @@
     width: 140px;
     border-radius: 12px;
     background-color: white;
-    /* color: white; */
+
     border: none;
-    /* animation: pulse 1s infinite; */
 }
 
 .start-button:hover {
@@ -87,18 +79,14 @@
 }
 
 .next-button{
-    /* width: 92%; */
 
     border-radius: 12px;
-    /* background-color: #FFFFFF; */
-    /* color: #000000; */
-    /* border: 1px solid #c2cddf; */
 
     display: flex;
-    /* margin: 0 auto; */
+
     justify-content: center;
     align-items: center;
-    /* margin-bottom: 70px; */
+
     cursor: pointer;
     transition: all 0.3s ease;
 
@@ -109,7 +97,6 @@
     letter-spacing: 0.5px;
     text-align: center;
     text-transform: none;
-    /* padding: 20px; */
 
     z-index: 2;
     position: relative;
@@ -130,7 +117,7 @@
     margin: 0 auto;
     display: block;
     position: absolute;
-    /* top: 25.5%; */
+
     top: 95.5%;
     left: 90%;
     transform: translate(-50%, -50%);
@@ -154,16 +141,12 @@
 
 .lets-fly-button:hover,
 .next-button:active {
-    /* background-color: #c4306d; */
-    /* color: #FFFFFF; */
-    /* border: 3px solid #89264f; */
     transform: scale(1.05);
 }
 
 .lets-begin-info {
     padding-left: 15px;
     padding-right: 15px;
-    /* margin-bottom: 100px; */
 }
 
 .lets-begin-button-link,
@@ -172,12 +155,10 @@
     font-family: 'Arial', sans-serif;
     font-size: 18px;
     font-weight: 400;
-    /* color: #c4306d; */
+
     margin: 0 auto;
     display: block;
     position: absolute;
-    /* top: 26%; */
-    /* left: 61%; */
 
     left: 65%; /* macbook dimension */
     transform: translate(-50%, -50%);
@@ -187,7 +168,6 @@
 }
 
 .lets-begin-button {
-    /* width: 92%; */
 
     border-radius: 12px;
     background-color: black;
@@ -195,10 +175,10 @@
     border: 0.5px solid black;
 
     display: flex;
-    /* margin: 0 auto; */
+
     justify-content: center;
     align-items: center;
-    /* margin-bottom: 70px; */
+
     cursor: pointer;
     transition: all 0.3s ease;
 
@@ -214,13 +194,9 @@
     z-index: 2;
     position: relative;
 
-    /* top: 280px; */
 }
 
 .lets-begin-button:hover {
-    /* background-color: #c4306d;
-    color: #FFFFFF;
-    border: 3px solid #89264f; */
     transform: scale(1.05);
 }
 
@@ -237,7 +213,6 @@
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    /* margin-top: 30px; */
 }
 
 .quiz-card {
@@ -250,11 +225,6 @@
 
 .quiz-cover-image {
     opacity: 1;
-    /* background-size: cover;
-    background-position: top; */
-    /* width: 100%;
-    height: 100%; */
-    /* aspect-ratio: 65/45; */
     object-fit: cover;
     object-position: center center;
 }
@@ -593,26 +563,6 @@ footer {
     left: 12vw;
 }
 
-/* .result-wealth {
-    color: #e1763e;
-    display: block;
-}
-
-.result-capital {
-    color: #c4306d;
-    display: block;
-}
-
-.result-income {
-    color: #438e20;
-    display: block;
-}
-
-.result-legacy {
-    color: #0078be;
-    display: block;
-} */
-
 .boarding-pass-image {
     position: fixed;
     bottom: -100%; /* Start off-screen */
@@ -635,21 +585,6 @@ footer {
     /* top: 76.2% !important; */
     z-index: 2;
   }
-
-  /* .result-button {
-    font-family: 'Arial', sans-serif;
-    z-index: 2;
-    position: absolute;
-    text-decoration: none;
-    text-align: left;
-    bottom: 4.65vw;
-    height: 20px;
-    width: 138px;
-    border-radius: 20px;
-    padding: 2.3px 6.5px;
-    color: #FFFFFF;
-    background-color: #c4306d;
-  } */
 
   .fundCentre-button {
     font-family: 'Arial', sans-serif;
@@ -814,14 +749,6 @@ footer {
         margin-top: 0;
         /* border: 1px solid black; */
     }
-
-    /* .learnMore-button { */
-        /* top: 46.5%; */
-        /* top: 29.5%; */
-
-        /* top: 31.5%;
-        right: 33.5%; */
-    /* } */
 
     .learnMore-button,
     .replay-button,
