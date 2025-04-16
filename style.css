@@ -526,14 +526,16 @@ footer a {
     border-radius: 7px;
     /* top: 50%; */
     position: relative;
-    /* left: 2vw; */
+
+    left: -0.5vw;
+
     border: 1px solid #c4306d;
     color: #89264f;
     text-decoration: none;
-    padding: 4px 12px;
+    padding: 4px 10px;
     text-align: center;
     place-items: center;
-    margin-right: 8px;
+    margin-right: 5px;
 }
 
 /* .scrollDown::after {
@@ -669,7 +671,6 @@ footer a {
     .learnMore-button,
     .replay-button {
         width: 200px;
-        left: 1.4vw;
     }
 } 
 
@@ -956,7 +957,6 @@ footer a {
     .replay-button,
     .scrollDown {
         width: 220px;
-        left: 0;
     }
 
     .fundCentre-button {
