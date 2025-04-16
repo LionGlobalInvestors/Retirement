@@ -80,7 +80,7 @@
           
           <div id="bottom"></div>
 
-          <img id="result-img" class="main-img ans-banner-img" src="results/capital.jpg" alt="Capital Preservation" usemap="#retirementMap">
+          <img id="result-img" class="main-img" src="results/capital.jpg" alt="Capital Preservation" usemap="#retirementMap">
 
           <img id="random-result" class="main-img ans-banner-img" alt="Capital Preservation">
 
@@ -191,7 +191,9 @@ function Transition() {
 
   document.getElementById("shareResult").addEventListener("click", async (event) => {
     event.preventDefault();
-    const mainImage = document.querySelector('.ans-banner-img');
+    // const mainImage = document.querySelector('.ans-banner-img');
+
+    const mainImage = document.getElementById('random-result');
 
     const images = [
       { main: 'results/capital_reviews1.jpg', linked: 'results/capital1.jpg' },
@@ -214,9 +216,11 @@ function Transition() {
     else {
       // sharing of image to application of choice
       if (mainImage && mainImage.getAttribute('src')) {
-        const URL = mainImage.getAttribute('src');
+        // const URL = mainImage.getAttribute('src');
 
-        const matchedImage = images.find(img => URL.endsWith(img.main));
+        const mainImageSrc = mainImage.src.split('/').pop();
+
+        const matchedImage = images.find(img => img.main.endsWith(mainImageSrc));
 
         if (!matchedImage) {
           alert ('Could not find corresponding image');
