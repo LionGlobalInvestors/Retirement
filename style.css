@@ -749,7 +749,6 @@ footer {
     .replay-button {
         width: 150px;
         font-size: 15px;
-        display: inline-grid;
         left: 0;
     }
 
