@@ -227,7 +227,7 @@ function Transition() {
           return;
         }
 
-        const URL_Linked = matchedImage.linked;
+        const URL_Linked = new URL_Linked(matchedImage.linked, window.location.href).href;
 
         try {
           const response = await fetch(URL);
