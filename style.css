@@ -1096,6 +1096,7 @@ footer {
 
     .share-button,
     .replay-button {
+        padding: 8px 20px;
         width: 120px;
         margin-right: 0.5vh;
     }
