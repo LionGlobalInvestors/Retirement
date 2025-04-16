@@ -227,15 +227,15 @@ function Transition() {
           return;
         }
 
-        const URL_Linked = new URL_Linked(matchedImage.linked, window.location.href).href;
+        const URL_Linked = new URL(matchedImage.linked, window.location.href).href;
 
         try {
-          const response = await fetch(URL);
+          const response = await fetch(URL_Linked);
           const blob = await response.blob();
 
           const fileName = URL_Linked.split('/').pop();
 
-          const file = new File([blob], finalPic, {type: blob.type});
+          const file = new File([blob], fileName, {type: blob.type});
 
           const shareData = {
             files: [file],
