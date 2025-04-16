@@ -525,7 +525,7 @@ footer {
     border: 1px solid #c4306d;
     color: #89264f;
     text-decoration: none;
-    padding: 14px 30px;
+    padding: 10px 15px;
     text-align: center;
     place-items: center;
     margin-right: 8px;
@@ -749,8 +749,8 @@ footer {
     .share-button,
     .replay-button {
         width: 150px;
-        display: inline-grid;
         font-size: 15px;
+        display: inline-grid;
     }
 
     .boarding-pass-image.animate {
