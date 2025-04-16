@@ -225,25 +225,30 @@ function Transition() {
 
         const URL_Linked = matchedImage.linked;
 
-        const response = await fetch(URL);
-        const blob = await response.blob();
+        try {
+          const response = await fetch(URL);
+          const blob = await response.blob();
 
-        const fileName = URL_Linked.split('/').pop();
+          const fileName = URL_Linked.split('/').pop();
 
-        const file = new File([blob], finalPic, {type: blob.type});
+          const file = new File([blob], finalPic, {type: blob.type});
 
-        const shareData = {
-          files: [file],
-          text: shareMessage,
-        };
-        
-        if (navigator.canShare && navigator.canShare(shareData)) {
+          const shareData = {
+            files: [file],
+            text: shareMessage,
+          };
+
+          if (navigator.canShare && navigator.canShare(shareData)) {
           await navigator.share(shareData);
-        } else {
-          alert(`navigator.share doesn't support in your device`);
+          } else {
+            alert(`navigator.share doesn't support in your device`);
+          }
+        } catch (error) {
+          alert ('Failed to fetch or share linked image');
         }
+
       }
-      }
+    }
     
   });
 
