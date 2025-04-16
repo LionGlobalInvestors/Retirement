@@ -525,7 +525,7 @@ footer {
     border: 1px solid #c4306d;
     color: #89264f;
     text-decoration: none;
-    padding: 10px 5px;
+    padding: 4px 10px;
     text-align: center;
     place-items: center;
     margin-right: 8px;
@@ -1075,7 +1075,7 @@ footer {
 
     .share-button,
     .replay-button {
-        width: 170px;
+        width: 10px;
     }
 
     .fundCentre-button {
