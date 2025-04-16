@@ -227,7 +227,7 @@ class Quiz {
     if (!this.audio) {
       this.audio = new Audio('audio/bgm.mp3');
       this.audio.loop = true;
-      this.audio.volume = 0.2;
+      this.audio.volume = 0.1;
       this.audio.play().catch(err => {
         console.warn("Autoplay blocked, waiting for user interaction.");
           const playOnUserInteraction = () => {
@@ -257,16 +257,21 @@ class Quiz {
   }
 
   pulsingPlaneButton1() {
-    const nextQuiz = () => {
+    // const nextQuiz = () => {
+    //   this.renderQuiz(this.currentQuizID + 1);
+    //   this.currentQuizID += 1;
+    //   document.removeEventListener("click", nextQuiz);
+    // };
+    // document.addEventListener("click", nextQuiz);
+
+    setTimeout(() => {
       this.renderQuiz(this.currentQuizID + 1);
-      this.currentQuizID += 1;
-      document.removeEventListener("click", nextQuiz);
-    };
-    document.addEventListener("click", nextQuiz);
+      this.currentQuizID += 1
+    }, 4500);
 
     const audio = new Audio('audio/takeoff_edit.mp3');
     audio.loop = false;
-    audio.volume = 0.5;
+    audio.volume = 0.2;
     
 
     audio.play();
@@ -274,16 +279,21 @@ class Quiz {
   }
 
   pulsingPlaneButton2() {
-    const nextQuiz = () => {
+    // const nextQuiz = () => {
+    //   this.renderQuiz(this.currentQuizID + 1);
+    //   this.currentQuizID += 1;
+    //   document.removeEventListener("click", nextQuiz);
+    // };
+    // document.addEventListener("click", nextQuiz);
+
+    setTimeout(() => {
       this.renderQuiz(this.currentQuizID + 1);
-      this.currentQuizID += 1;
-      document.removeEventListener("click", nextQuiz);
-    };
-    document.addEventListener("click", nextQuiz);
+      this.currentQuizID += 1
+    }, 4000);
 
     const audio = new Audio('audio/landing_edit.mp3');
     audio.loop = false;
-    audio.volume = 0.5;
+    audio.volume = 0.2;
     
 
     audio.play();
