@@ -750,7 +750,6 @@ footer {
     .replay-button {
         width: 150px;
         font-size: 15px;
-        display: inline-block;
     }
 
     .boarding-pass-image.animate {
