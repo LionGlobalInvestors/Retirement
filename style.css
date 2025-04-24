@@ -369,7 +369,7 @@
   }
 
   .ans-wrapper::-webkit-scrollbar {
-    /* display: block; */
+    display: block;
     width: thin;
 }
 
