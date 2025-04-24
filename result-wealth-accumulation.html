@@ -142,10 +142,9 @@
 
     <div id="footer-buttons" class="sticky-bar">
 
-      <a href="#" id="shareResult" class="share-links instagram learnMore-button" target="_blank">
+      <a id="downloadImage" class="share-links instagram learnMore-button" download>
 
-        Share
-
+        Click to Download
       </a>
 
       <!-- replay game -->
@@ -162,6 +161,13 @@
 
 <script>
   var finalPic = ' ';
+  var selectedPic = null;
+
+  var images = [
+    { main: 'results/capital_reviews1.jpg', linked: 'results/capital1.jpg' },
+    { main: 'results/capital_reviews2.jpg', linked: 'results/capital2.jpg' },
+    { main: 'results/capital_reviews3.jpg', linked: 'results/capital3.jpg' }
+  ];
 
   document.getElementById("disclaimer").style.display = 'none';
   document.getElementById('footer-buttons').style.display = 'none';
@@ -183,97 +189,102 @@ function Transition() {
   }, 3000);
 }
 
-document.getElementById("shareResult").addEventListener("click", async (event) => {
-    event.preventDefault();
-    // const mainImage = document.querySelector('.ans-banner-img');
+// document.getElementById("shareResult").addEventListener("click", async (event) => {
+//     event.preventDefault();
 
-    const mainImage = document.getElementById('random-result');
+//     const mainImage = document.getElementById('random-result');
 
-    const images = [
-      { main: 'results/wealth_reviews1.jpg', linked: 'results/wealth1.jpg' },
-      { main: 'results/wealth_reviews2.jpg', linked: 'results/wealth2.jpg' },
-      { main: 'results/wealth_reviews3.jpg', linked: 'results/wealth3.jpg' }
-    ];
+//     const images = [
+//       { main: 'results/capital_reviews1.jpg', linked: 'results/capital1.jpg' },
+//       { main: 'results/capital_reviews2.jpg', linked: 'results/capital2.jpg' },
+//       { main: 'results/capital_reviews3.jpg', linked: 'results/capital3.jpg' }
+//     ];
 
-    function isFacebookApp() {
-      return navigator.userAgent.includes("FBAN") || navigator.userAgent.includes("FBAV");
-    }
+//     function isFacebookApp() {
+//       return navigator.userAgent.includes("FBAN") || navigator.userAgent.includes("FBAV");
+//     }
 
-    if (isFacebookApp()) {
-      // Facebook-specific logic: Open share link in a new tab
-      const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareMessage)}`;
-      window.open(facebookShareUrl, '_blank');
+//     if (isFacebookApp()) {
+//       // Facebook-specific logic: Open share link in a new tab
+//       const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareMessage)}`;
+//       window.open(facebookShareUrl, '_blank');
 
-      return;
-    }
-    else {
-      // sharing of image to application of choice
-      if (mainImage && mainImage.getAttribute('src')) {
-        // const URL = mainImage.getAttribute('src');
+//       return;
+//     }
+//     else {
+//       // sharing of image to application of choice
+//       if (mainImage && mainImage.getAttribute('src')) {
 
-        const mainImageSrc = mainImage.src.split('/').pop();
+//         const mainImageSrc = mainImage.src.split('/').pop();
 
-        const matchedImage = images.find(img => img.main.endsWith(mainImageSrc));
+//         const matchedImage = images.find(img => img.main.endsWith(mainImageSrc));
 
-        if (!matchedImage) {
-          alert ('Could not find corresponding image');
-          return;
-        }
+//         if (!matchedImage) {
+//           alert ('Could not find corresponding image');
+//           return;
+//         }
 
-        const URL_Linked = new URL(matchedImage.linked, window.location.href).href;
+//         const URL_Linked = new URL(matchedImage.linked, window.location.href).href;
 
-        try {
-          const response = await fetch(URL_Linked);
-          const blob = await response.blob();
+//         try {
+//           const response = await fetch(URL_Linked);
+//           const blob = await response.blob();
 
-          const fileName = URL_Linked.split('/').pop();
+//           const fileName = URL_Linked.split('/').pop();
 
-          const file = new File([blob], fileName, {type: blob.type});
+//           const file = new File([blob], fileName, {type: blob.type});
 
-          const shareData = {
-            files: [file],
-            text: `https://lionglobalinvestors.github.io/Retirement/`,
-            url: `https://lionglobalinvestors.github.io/Retirement/`,
-          };
+//           const shareData = {
+//             files: [file],
+//             text: `https://lionglobalinvestors.github.io/Retirement/`,
+//             url: `https://lionglobalinvestors.github.io/Retirement/`,
+//           };
 
-          if (navigator.canShare && navigator.canShare(shareData)) {
-          await navigator.share(shareData);
-          } else {
-            alert(`navigator.share doesn't support in your device`);
-          }
-        } catch (error) {
-          return;
-        }
+//           if (navigator.canShare && navigator.canShare(shareData)) {
+//           await navigator.share(shareData);
+//           } else {
+//             alert(`navigator.share doesn't support in your device`);
+//           }
+//         } catch (error) {
+//           return;
+//         }
 
-      }
-    }
+//       }
+//     }
     
-  });
+//   });
 
+function choosePic() {
+    var imgElement = document.getElementById('random-result');
+    if (imgElement) {
 
+      var randomNum = Math.floor(Math.random() * images.length);
+      var selectedPic = images[randomNum];
 
-  document.addEventListener("DOMContentLoaded", function () {
-    var pictures = ["results/wealth_reviews1.jpg", "results/wealth_reviews2.jpg", "results/wealth_reviews3.jpg"];
-    
-    function choosePic() {
-        var imgElement = document.getElementById('random-result');
-
-        // Ensure the element exists before setting src
-        if (imgElement) {
-            var randomNum = Math.floor(Math.random() * pictures.length);
-            var selectedPic = pictures[randomNum];
-
-            imgElement.src = selectedPic;
-
-            finalPic = selectedPic;
-            console.log("Selected Image:", pictures[randomNum]);
-        } else {
-            console.error("Image element not found! Check your HTML.");
-        }
+      imgElement.src = selectedPic.main;
+      finalPic = selectedPic.linked;
     }
+  }
 
+document.addEventListener("DOMContentLoaded", function () {
     choosePic();
-});
+
+    document.getElementById('downloadImage').addEventListener('click', function (e) {
+      e.preventDefault(); // Prevent default anchor behavior
+
+      if (!finalPic) {
+        console.error("No image selected!");
+        return;
+      }
+
+      const link = document.createElement("a");
+      link.href = finalPic;
+      link.download = finalPic.split('/').pop(); // Extract file name
+      document.body.appendChild(link);
+      link.click(); // Trigger download
+      document.body.removeChild(link); // Clean up
+    });
+  });
 
 function Capital(){
   document.getElementById('result-img').src = "results/wealth_capital.jpg";
