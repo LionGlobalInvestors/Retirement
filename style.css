@@ -369,7 +369,18 @@
   }
 
   .ans-wrapper::-webkit-scrollbar {
-    display: block;
+    /* display: block; */
+    width: thin;
+}
+
+.ans-wrapper::-webkit-scrollbar-track {
+    /* display: block; */
+    background: #f1f1f1;
+}
+
+.ans-wrapper::-webkit-scrollbar-thumb {
+    /* display: block; */
+    background: #888;
 }
 
 .ans-banner-img {
