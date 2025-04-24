@@ -207,8 +207,6 @@ document.getElementById("shareResult").addEventListener("click", async (event) =
       return;
     }
 
-    const matchedImageURL = new URL(matchedImage.linked, window.location.href).href;
-
     const URL_Linked = new URL(matchedImage.linked, window.location.href).href;
 
     const isIOS = /iP(ad|hone|od)/i.test(navigator.userAgent);
@@ -217,8 +215,8 @@ document.getElementById("shareResult").addEventListener("click", async (event) =
 
   // Special case for iOS or Facebook/LinkedIn: just open the image URL in a share link
   if (isIOS || isFacebookApp) {
-    const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(matchedImageURL)}`;
-    const linkedInShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(matchedImageURL)}`;
+    const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(URL_Linked)}`;
+    const linkedInShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(URL_Linked)}`;
 
     // Open Facebook by default or let user choose
     window.open(facebookShareUrl, '_blank');
