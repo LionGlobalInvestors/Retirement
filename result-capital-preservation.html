@@ -186,23 +186,34 @@ function Transition() {
   }, 3000);
 }
 
-  document.getElementById("shareResult").addEventListener("click", async (event) => {
+document.getElementById("shareResult").addEventListener("click", async (event) => {
     event.preventDefault();
     // const mainImage = document.querySelector('.ans-banner-img');
 
     const mainImage = document.getElementById('random-result');
 
     const images = [
-      { main: 'results/capital_reviews1.jpg', linked: 'results/capital1.jpg' },
-      { main: 'results/capital_reviews2.jpg', linked: 'results/capital2.jpg' },
-      { main: 'results/capital_reviews3.jpg', linked: 'results/capital3.jpg' }
+      { main: 'results/legacy_reviews1.jpg', linked: 'results/legacy1.jpg' },
+      { main: 'results/legacy_reviews2.jpg', linked: 'results/legacy2.jpg' },
+      { main: 'results/legacy_reviews3.jpg', linked: 'results/legacy3.jpg' }
     ];
     
     // copy link to clipboard
     const shareMessage = `https://lionglobalinvestors.github.io/Retirement/`;
 
     // test
+    const mainImageSrc = mainImage.src.split('/').pop();
+
+    const matchedImage = images.find(img => img.main.endsWith(mainImageSrc));
+
+    if (!matchedImage) {
+      alert ('Could not find corresponding image');
+      return;
+    }
+
     const matchedImageURL = new URL(matchedImage.linked, window.location.href).href;
+
+    const URL_Linked = new URL(matchedImage.linked, window.location.href).href;
 
     const isIOS = /iP(ad|hone|od)/i.test(navigator.userAgent);
 
@@ -218,53 +229,26 @@ function Transition() {
     return;
   }
 
-    // function isFacebookApp() {
-    //   return navigator.userAgent.includes("FBAN") || navigator.userAgent.includes("FBAV");
-    // }
+  try {
+    const response = await fetch(URL_Linked);
+    const blob = await response.blob();
 
-    // if (isFacebookApp()) {
-    //   const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareMessage)}`;
-    //   window.open(facebookShareUrl, '_blank');
-    // }
-    else {
-      // sharing of image to application of choice
-      if (mainImage && mainImage.getAttribute('src')) {
-        // const URL = mainImage.getAttribute('src');
+    const fileName = URL_Linked.split('/').pop();
 
-        const mainImageSrc = mainImage.src.split('/').pop();
+    const file = new File([blob], fileName, {type: blob.type});
 
-        const matchedImage = images.find(img => img.main.endsWith(mainImageSrc));
+    const shareData = {
+      files: [file],
+      text: shareMessage,
+    };
 
-        if (!matchedImage) {
-          alert ('Could not find corresponding image');
-          return;
-        }
-
-        const URL_Linked = new URL(matchedImage.linked, window.location.href).href;
-
-        try {
-          const response = await fetch(URL_Linked);
-          const blob = await response.blob();
-
-          const fileName = URL_Linked.split('/').pop();
-
-          const file = new File([blob], fileName, {type: blob.type});
-
-          const shareData = {
-            files: [file],
-            text: shareMessage,
-          };
-
-          if (navigator.canShare && navigator.canShare(shareData)) {
-          await navigator.share(shareData);
-          } else {
-            alert(`navigator.share doesn't support in your device`);
-          }
-        } catch (error) {
-          return;
-        }
-
+    if (navigator.canShare && navigator.canShare(shareData)) {
+      await navigator.share(shareData);
+      } else {
+        alert(`navigator.share doesn't support in your device`);
       }
+    } catch (error) {
+      return;
     }
     
   });
