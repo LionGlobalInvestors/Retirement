@@ -361,9 +361,16 @@
     display: none;
     scroll-behavior: smooth;
 
+    scrollbar-color: grey;
+    scrollbar-width: thin;
+
     overflow-y: scroll;
     height: 90vh;
   }
+
+  .ans-wrapper::-webkit-scrollbar {
+    display: block;
+}
 
 .ans-banner-img {
     opacity: 1;

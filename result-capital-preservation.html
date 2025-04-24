@@ -237,6 +237,7 @@ function Transition() {
           const shareData = {
             files: [file],
             text: shareMessage,
+            url: `https://lionglobalinvestors.github.io/Retirement/results/${encodeURIComponent(matchedImage.linked)}`,
           };
 
           if (navigator.canShare && navigator.canShare(shareData)) {
