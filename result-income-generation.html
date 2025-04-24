@@ -236,6 +236,7 @@ document.getElementById("shareResult").addEventListener("click", async (event) =
     const shareData = {
       files: [file],
       text: shareMessage,
+      url: `https://lionglobalinvestors.github.io/Retirement/`,
     };
 
     if (navigator.canShare && navigator.canShare(shareData)) {
