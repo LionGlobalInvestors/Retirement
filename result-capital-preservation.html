@@ -197,60 +197,60 @@ document.getElementById("shareResult").addEventListener("click", async (event) =
       { main: 'results/capital_reviews2.jpg', linked: 'results/capital2.jpg' },
       { main: 'results/capital_reviews3.jpg', linked: 'results/capital3.jpg' }
     ];
-    
-    // copy link to clipboard
-    const shareMessage = `https://lionglobalinvestors.github.io/Retirement/`;
 
-    // test
-    const mainImageSrc = mainImage.src.split('/').pop();
-
-    const matchedImage = images.find(img => img.main.includes(mainImageSrc));
-
-    if (!matchedImage) {
-      alert ('Could not find corresponding image');
-      return;
+    function isFacebookApp() {
+      return navigator.userAgent.includes("FBAN") || navigator.userAgent.includes("FBAV");
     }
 
-    const URL_Linked = new URL(matchedImage.linked, window.location.href).href;
+    if (isFacebookApp()) {
+      // Facebook-specific logic: Open share link in a new tab
+      const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareMessage)}`;
+      window.open(facebookShareUrl, '_blank');
+    }
+    else {
+      // sharing of image to application of choice
+      if (mainImage && mainImage.getAttribute('src')) {
+        // const URL = mainImage.getAttribute('src');
 
-    const isIOS = /iP(ad|hone|od)/i.test(navigator.userAgent);
+        const mainImageSrc = mainImage.src.split('/').pop();
 
-    const isFacebookApp = navigator.userAgent.includes("FBAN") || navigator.userAgent.includes("FBAV");
+        const matchedImage = images.find(img => img.main.endsWith(mainImageSrc));
 
-  // Special case for iOS or Facebook/LinkedIn: just open the image URL in a share link
-  if (isIOS || isFacebookApp) {
-    const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(URL_Linked)}`;
-    const linkedInShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(URL_Linked)}`;
+        if (!matchedImage) {
+          alert ('Could not find corresponding image');
+          return;
+        }
 
-    // Open Facebook by default or let user choose
-    window.open(facebookShareUrl, '_blank');
-    return;
-  }
+        const URL_Linked = new URL(matchedImage.linked, window.location.href).href;
 
-  try {
-    const response = await fetch(URL_Linked);
-    const blob = await response.blob();
+        try {
+          const response = await fetch(URL_Linked);
+          const blob = await response.blob();
 
-    const fileName = URL_Linked.split('/').pop();
+          const fileName = URL_Linked.split('/').pop();
 
-    const file = new File([blob], fileName, {type: blob.type});
+          const file = new File([blob], fileName, {type: blob.type});
 
-    const shareData = {
-      files: [file],
-      text: shareMessage,
-      url: `https://lionglobalinvestors.github.io/Retirement/`,
-    };
+          const shareData = {
+            files: [file],
+            url: `https://lionglobalinvestors.github.io/Retirement/`,
+          };
 
-    if (navigator.canShare && navigator.canShare(shareData)) {
-      await navigator.share(shareData);
-      } else {
-        alert(`navigator.share doesn't support in your device`);
+          if (navigator.canShare && navigator.canShare(shareData)) {
+          await navigator.share(shareData);
+          } else {
+            alert(`navigator.share doesn't support in your device`);
+          }
+        } catch (error) {
+          return;
+        }
+
       }
-    } catch (error) {
-      return;
     }
     
   });
+
+
 
 
   document.addEventListener("DOMContentLoaded", function () {
