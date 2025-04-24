@@ -203,6 +203,8 @@ document.getElementById("shareResult").addEventListener("click", async (event) =
       // Facebook-specific logic: Open share link in a new tab
       const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareMessage)}`;
       window.open(facebookShareUrl, '_blank');
+
+      return;
     }
     else {
       // sharing of image to application of choice
@@ -230,6 +232,7 @@ document.getElementById("shareResult").addEventListener("click", async (event) =
 
           const shareData = {
             files: [file],
+            text: `https://lionglobalinvestors.github.io/Retirement/`,
             url: `https://lionglobalinvestors.github.io/Retirement/`,
           };
 
