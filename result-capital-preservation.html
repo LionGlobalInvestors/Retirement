@@ -201,15 +201,31 @@ function Transition() {
     // copy link to clipboard
     const shareMessage = `https://lionglobalinvestors.github.io/Retirement/`;
 
-    function isFacebookApp() {
-      return navigator.userAgent.includes("FBAN") || navigator.userAgent.includes("FBAV");
-    }
+    // test
+    const matchedImageURL = new URL(matchedImage.linked, window.location.href).href;
 
-    if (isFacebookApp()) {
-      // Facebook-specific logic: Open share link in a new tab
-      const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareMessage)}`;
-      window.open(facebookShareUrl, '_blank');
-    }
+    const isIOS = /iP(ad|hone|od)/i.test(navigator.userAgent);
+
+    const isFacebookApp = navigator.userAgent.includes("FBAN") || navigator.userAgent.includes("FBAV");
+
+  // Special case for iOS or Facebook/LinkedIn: just open the image URL in a share link
+  if (isIOS || isFacebookApp) {
+    const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(matchedImageURL)}`;
+    const linkedInShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(matchedImageURL)}`;
+
+    // Open Facebook by default or let user choose
+    window.open(facebookShareUrl, '_blank');
+    return;
+  }
+
+    // function isFacebookApp() {
+    //   return navigator.userAgent.includes("FBAN") || navigator.userAgent.includes("FBAV");
+    // }
+
+    // if (isFacebookApp()) {
+    //   const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareMessage)}`;
+    //   window.open(facebookShareUrl, '_blank');
+    // }
     else {
       // sharing of image to application of choice
       if (mainImage && mainImage.getAttribute('src')) {
@@ -237,7 +253,6 @@ function Transition() {
           const shareData = {
             files: [file],
             text: shareMessage,
-            url: `https://lionglobalinvestors.github.io/Retirement/results/${encodeURIComponent(matchedImage.linked)}`,
           };
 
           if (navigator.canShare && navigator.canShare(shareData)) {
