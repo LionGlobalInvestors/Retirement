@@ -202,7 +202,7 @@ document.getElementById("shareResult").addEventListener("click", async (event) =
     // test
     const mainImageSrc = mainImage.src.split('/').pop();
 
-    const matchedImage = images.find(img => img.main.endsWith(mainImageSrc));
+    const matchedImage = images.find(img => img.main.includes(mainImageSrc));
 
     if (!matchedImage) {
       alert ('Could not find corresponding image');
