@@ -575,7 +575,7 @@ footer a {
     place-items: center;
     margin-right: 5px;
 
-    margin-top: 30px;
+    margin-top: 15px;
 }
 
 /* .scrollDown::after {
@@ -1145,7 +1145,7 @@ footer a {
     }
 
     .result-text {
-        font-size: 14px;
+        font-size: 15px;
     }
 
     .fundCentre-button {
@@ -1178,7 +1178,7 @@ footer a {
     }
 
     .result-text {
-        font-size: 14px;
+        font-size: 15px;
     }
 }
 
