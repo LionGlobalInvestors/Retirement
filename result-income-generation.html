@@ -76,8 +76,12 @@
 
         <div class="ans-banner-container">
           
-          
-          <div id="bottom"></div>
+          <p class="result-text">
+
+            Here is your traveller's profile. <br>
+            Don't lose it. Save the image!
+
+          </p>
           
           <img id="result-img" class="main-img ans-banner-img" src="results/income.jpg" alt="Income Generation" usemap="#retirementMap">
 
@@ -143,15 +147,16 @@
 
     <div id="footer-buttons" class="sticky-bar">
       <!-- to retirement page -->
-      <a id="downloadImage" class="share-links instagram learnMore-button" download>
+      <a id="downloadImage" class="share-links instagram learnMore-button">
 
-        Click to Download
+        Save
+        
       </a>
 
-      <!-- replay game -->
-      <a href="index.html" class="replay-button"> 
+      <!-- share game url -->
+      <a id="shareURL" class="replay-button"> 
 
-        Replay
+        Share
 
       </a>
 
@@ -286,6 +291,20 @@ document.addEventListener("DOMContentLoaded", function () {
       document.body.removeChild(link); // Clean up
     });
   });
+
+  document.getElementById("shareURL").addEventListener("click", async (event) => {
+    event.preventDefault(); // prevent default <a> behavior
+
+    const shareMessage = `https://lionglobalinvestors.github.io/Retirement/`;
+
+    try {
+      await navigator.clipboard.writeText(shareMessage);
+      alert("URL copied to clipboard!");
+    } catch (err) {
+      console.error("Clipboard copy failed", err);
+      alert("Failed to copy URL to clipboard.");
+    }
+});
 
 function Capital(){
   document.getElementById('result-img').src = "results/income_capital.jpg";
