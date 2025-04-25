@@ -297,7 +297,7 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("shareURL").addEventListener("click", async (event) => {
     event.preventDefault(); // prevent default <a> behavior
 
-    const shareMessage = `I am a Zoom Ninja traveller. What's yours? https://lionglobalinvestors.github.io/Retirement/`;
+    const shareMessage = `I am a Zoom Ninja traveller. What's yours? Find out your Traveller Profile here: https://lionglobalinvestors.github.io/Retirement/`;
 
     try {
       await navigator.clipboard.writeText(shareMessage);
