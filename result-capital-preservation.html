@@ -396,15 +396,15 @@ document.getElementById("shareURL").addEventListener("click", async (event) => {
     const previewLink = `https://lionglobalinvestors.github.io/yourgame/preview.html?img=${encodeURIComponent(imageUrl)}`;
 
 
-    if (navigator.canShare && navigator.canShare({ url: imageUrl })) {
+    if (navigator.canShare && navigator.canShare({ url: previewLink })) {
       await navigator.share({
         title: "Traveller Profile",
         text: "Here’s my Traveller Profile! What’s yours?",
-        url: imageUrl,
+        url: previewLink,
       });
     } else {
       // Fallback: copy homepage link
-      await navigator.clipboard.writeText(imageUrl);
+      await navigator.clipboard.writeText(previewLink);
       // alert("Link copied to clipboard! You can paste it to share.");
     }
 
