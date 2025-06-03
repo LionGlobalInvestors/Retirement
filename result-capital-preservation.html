@@ -388,12 +388,12 @@ document.getElementById("shareURL").addEventListener("click", async (event) => {
     });
 
     const data = await uploadRes.json();
-    // const imageUrl = data.secure_url;
+    const imageUrl = data.secure_url;
 
     // Share the homepage, not the image URL
     // const shareUrl = "http://lionglobalinvestors.github.io/Retirement/index.html";
 
-    const previewLink = `https://lionglobalinvestors.github.io/yourgame/preview.html?img=${encodeURIComponent(imageUrl)}`;
+    const previewLink = `https://lionglobalinvestors.github.io/Retirement/preview.html?img=${encodeURIComponent(imageUrl)}`;
 
 
     if (navigator.canShare && navigator.canShare({ url: previewLink })) {
@@ -413,8 +413,6 @@ document.getElementById("shareURL").addEventListener("click", async (event) => {
     // alert("Something went wrong. Try again!");
   }
 });
-
-
 
 function Capital(){
   document.getElementById('result-img').src = "results/capital.jpg";
