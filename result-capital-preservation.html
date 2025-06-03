@@ -48,6 +48,11 @@
   <link rel="prefetch" href="results/capital2.jpg">
   <link rel="prefetch" href="results/capital3.jpg">
 
+  <meta property="og:description" content="Here’s my Traveller Profile! What’s yours?" />
+  <meta property="og:image" content="https://res.cloudinary.com/dd2663add/image/upload/v1234567890/pic/start.jpg" />
+  <meta property="og:url" content="http://lionglobalinvestors.github.io/Retirement/index.html" />
+  <meta property="og:type" content="website" />
+
 </head>
 
 <body onload="Transition()">
@@ -368,14 +373,13 @@ document.getElementById("shareURL").addEventListener("click", async (event) => {
   }
 
   try {
-    // 1. Fetch the image as a Blob
     const response = await fetch(finalPic);
     const blob = await response.blob();
 
-    // 2. Upload to Cloudinary
+    // Upload to Cloudinary
     const formData = new FormData();
     formData.append("file", blob);
-    formData.append("upload_preset", "results"); // replace this
+    formData.append("upload_preset", "results");
     formData.append("folder", "traveller-profiles");
 
     const uploadRes = await fetch("https://api.cloudinary.com/v1_1/dd2663add/image/upload", {
@@ -383,28 +387,30 @@ document.getElementById("shareURL").addEventListener("click", async (event) => {
       body: formData,
     });
 
-    const gameindexURL = "http://lionglobalinvestors.github.io/Retirement/index.html";
-
     const data = await uploadRes.json();
     const imageUrl = data.secure_url;
 
-    // 3. Try to share using Web Share API
-    if (navigator.canShare && navigator.canShare({ url: gameindexURL })) {
+    // Share the homepage, not the image URL
+    // const shareUrl = "http://lionglobalinvestors.github.io/Retirement/index.html";
+
+    if (navigator.canShare && navigator.canShare({ url: imageUrl })) {
       await navigator.share({
         title: "Traveller Profile",
         text: "Here’s my Traveller Profile! What’s yours?",
-        url: gameindexURL,
+        url: imageUrl,
       });
     } else {
-      // 4. Fallback: copy link to clipboard
-      await navigator.clipboard.writeText(gameindexURL);
+      // Fallback: copy homepage link
+      await navigator.clipboard.writeText(imageUrl);
       // alert("Link copied to clipboard! You can paste it to share.");
     }
+
   } catch (err) {
     console.error("Sharing failed", err);
     // alert("Something went wrong. Try again!");
   }
 });
+
 
 
 function Capital(){
