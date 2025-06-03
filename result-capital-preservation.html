@@ -160,12 +160,20 @@
         Save
       </a>
 
+      <div id="share-container">>
       <!-- share game url -->
       <a id="shareURL" class="replay-button"> 
 
         Share
 
       </a>
+      <ul id="share-options">
+        <li onclick="shareToFacebook()">Facebook</li>
+        <li onclick="shareToWhatsApp()">WhatsApp</li>
+        <li onclick="shareToLinkedIn()">LinkedIn</li>
+        <li onclick="genericShare()">Other…</li>
+      </ul>
+    </div>
 
     </div>
 </footer>
@@ -364,55 +372,62 @@ document.addEventListener("DOMContentLoaded", function () {
 //   }
 // });
 
-document.getElementById("shareURL").addEventListener("click", async (event) => {
-  event.preventDefault();
+const basePageURL = "https://lionglobalinvestors.github.io/Retirement/index.html";
 
-  if (!finalPic) {
-    console.error("No image selected!");
-    return;
+  // Toggle share dropdown
+  document.getElementById("shareURL").addEventListener("click", function (e) {
+    e.preventDefault();
+    const menu = document.getElementById("share-options");
+    menu.style.display = (menu.style.display === "block") ? "none" : "block";
+  });
+
+  function hideShareOptions() {
+    document.getElementById("share-options").style.display = "none";
   }
 
-  try {
-    const response = await fetch(finalPic);
-    const blob = await response.blob();
+  function shareToFacebook() {
+    hideShareOptions();
+    const shareUrl = `${basePageURL}?img=${encodeURIComponent(finalPic)}`;
+    const fbUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`;
+    window.open(fbUrl, "_blank");
+  }
 
-    // Upload to Cloudinary
-    const formData = new FormData();
-    formData.append("file", blob);
-    formData.append("upload_preset", "results");
-    formData.append("folder", "traveller-profiles");
+  function shareToWhatsApp() {
+    hideShareOptions();
+    const message = `Check out my Traveller Profile: ${basePageURL}?img=${encodeURIComponent(finalPic)}`;
+    const waUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
+    window.open(waUrl, "_blank");
+  }
 
-    const uploadRes = await fetch("https://api.cloudinary.com/v1_1/dd2663add/image/upload", {
-      method: "POST",
-      body: formData,
-    });
+  function shareToLinkedIn() {
+    hideShareOptions();
+    const linkedInUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(basePageURL)}?img=${encodeURIComponent(finalPic)}`;
+    window.open(linkedInUrl, "_blank");
+  }
 
-    const data = await uploadRes.json();
-    const imageUrl = data.secure_url;
+  async function genericShare() {
+    hideShareOptions();
+    const shareUrl = `${basePageURL}?img=${encodeURIComponent(finalPic)}`;
 
-    // Share the homepage, not the image URL
-    // const shareUrl = "http://lionglobalinvestors.github.io/Retirement/index.html";
-
-    const previewLink = `https://lionglobalinvestors.github.io/Retirement/preview.html?img=${encodeURIComponent(imageUrl)}`;
-
-
-    if (navigator.canShare && navigator.canShare({ url: previewLink })) {
+    if (navigator.canShare && navigator.canShare({ url: shareUrl })) {
       await navigator.share({
         title: "Traveller Profile",
         text: "Here’s my Traveller Profile! What’s yours?",
-        url: previewLink,
+        url: shareUrl,
       });
     } else {
-      // Fallback: copy homepage link
-      await navigator.clipboard.writeText(previewLink);
-      // alert("Link copied to clipboard! You can paste it to share.");
+      await navigator.clipboard.writeText(shareUrl);
+      // alert("Link copied to clipboard. Share it anywhere!");
     }
-
-  } catch (err) {
-    console.error("Sharing failed", err);
-    // alert("Something went wrong. Try again!");
   }
-});
+
+  // Optional: Close menu if clicked outside
+  document.addEventListener("click", function (e) {
+    const container = document.getElementById("share-container");
+    if (!container.contains(e.target)) {
+      document.getElementById("share-options").style.display = "none";
+    }
+  });
 
 function Capital(){
   document.getElementById('result-img').src = "results/capital.jpg";
