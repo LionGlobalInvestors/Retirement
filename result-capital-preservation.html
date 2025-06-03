@@ -49,8 +49,8 @@
   <link rel="prefetch" href="results/capital3.jpg">
 
   <meta property="og:description" content="Here’s my Traveller Profile! What’s yours?" />
-  <meta property="og:image" content="https://res.cloudinary.com/dd2663add/image/upload/v1234567890/pic/start.jpg" />
-  <meta property="og:url" content="http://lionglobalinvestors.github.io/Retirement/index.html" />
+  <meta property="og:image" content=""/>
+  <meta property="og:url" content="" />
   <meta property="og:type" content="website" />
 
 </head>
@@ -388,10 +388,14 @@ document.getElementById("shareURL").addEventListener("click", async (event) => {
     });
 
     const data = await uploadRes.json();
-    const imageUrl = data.secure_url;
+    // const imageUrl = data.secure_url;
 
     // Share the homepage, not the image URL
     // const shareUrl = "http://lionglobalinvestors.github.io/Retirement/index.html";
+
+    const imageUrl = "https://res.cloudinary.com/dd2663add/image/upload/your-result-image.png"; // The image for this result
+    const previewLink = `https://lionglobalinvestors.github.io/yourgame/preview.html?img=${encodeURIComponent(imageUrl)}`;
+
 
     if (navigator.canShare && navigator.canShare({ url: imageUrl })) {
       await navigator.share({
