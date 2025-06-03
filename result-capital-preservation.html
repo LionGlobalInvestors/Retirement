@@ -308,54 +308,99 @@ document.addEventListener("DOMContentLoaded", function () {
 //     }
 // });
 
+// document.getElementById("shareURL").addEventListener("click", async (event) => {
+//   event.preventDefault();
+
+//   const shareText = "I am a Zoom Ninja traveller. What's yours?";
+//   const shareUrl = "https://lionglobalinvestors.github.io/Retirement/";
+//   const imageUrl = finalPic;
+
+//   // Check if share with files is supported
+//   if (navigator.share && navigator.canShare && navigator.canShare({ files: [] })) {
+//     try {
+//       const response = await fetch(imageUrl);
+//       const blob = await response.blob();
+//       const file = new File([blob], "traveller-profile.jpg", { type: blob.type });
+
+//       await navigator.share({
+//         title: "My Traveller Profile",
+//         text: shareText,
+//         url: shareUrl,
+//         files: [file]
+//       });
+//     } catch (err) {
+//       console.error("Sharing failed:", err);
+//       fallbackCopy();
+//     }
+
+//   // Fallback to text-only share if file support isn't available
+//   } else if (navigator.share) {
+//     try {
+//       await navigator.share({
+//         title: "My Traveller Profile",
+//         text: `${shareText}\n${shareUrl}`
+//       });
+//     } catch (err) {
+//       console.error("Text-only sharing failed:", err);
+//       fallbackCopy();
+//     }
+
+//   // If no Web Share API support
+//   } else {
+//     fallbackCopy();
+//   }
+
+//   function fallbackCopy() {
+//     navigator.clipboard.writeText(`${shareText}\n${shareUrl}`).then(() => {
+//       alert("Sharing not supported — link copied to clipboard!");
+//     }).catch((err) => {
+//       alert("Failed to copy link. Please copy manually.");
+//     });
+//   }
+// });
+
 document.getElementById("shareURL").addEventListener("click", async (event) => {
   event.preventDefault();
 
-  const shareText = "I am a Zoom Ninja traveller. What's yours?";
-  const shareUrl = "https://lionglobalinvestors.github.io/Retirement/";
-  const imageUrl = finalPic;
-
-  // Check if share with files is supported
-  if (navigator.share && navigator.canShare && navigator.canShare({ files: [] })) {
-    try {
-      const response = await fetch(imageUrl);
-      const blob = await response.blob();
-      const file = new File([blob], "traveller-profile.jpg", { type: blob.type });
-
-      await navigator.share({
-        title: "My Traveller Profile",
-        text: shareText,
-        url: shareUrl,
-        files: [file]
-      });
-    } catch (err) {
-      console.error("Sharing failed:", err);
-      fallbackCopy();
-    }
-
-  // Fallback to text-only share if file support isn't available
-  } else if (navigator.share) {
-    try {
-      await navigator.share({
-        title: "My Traveller Profile",
-        text: `${shareText}\n${shareUrl}`
-      });
-    } catch (err) {
-      console.error("Text-only sharing failed:", err);
-      fallbackCopy();
-    }
-
-  // If no Web Share API support
-  } else {
-    fallbackCopy();
+  if (!finalPic) {
+    console.error("No image selected!");
+    return;
   }
 
-  function fallbackCopy() {
-    navigator.clipboard.writeText(`${shareText}\n${shareUrl}`).then(() => {
-      alert("Sharing not supported — link copied to clipboard!");
-    }).catch((err) => {
-      alert("Failed to copy link. Please copy manually.");
+  try {
+    // 1. Fetch the image as a Blob
+    const response = await fetch(finalPic);
+    const blob = await response.blob();
+
+    // 2. Upload to Cloudinary
+    const formData = new FormData();
+    formData.append("file", blob);
+    formData.append("upload_preset", "results"); // replace this
+    formData.append("folder", "traveller-profiles");
+
+    const uploadRes = await fetch("https://api.cloudinary.com/v1_1/dd2663add/image/upload", {
+      method: "POST",
+      body: formData,
     });
+
+    const data = await uploadRes.json();
+    const imageUrl = data.secure_url;
+
+    // 3. Try to share using Web Share API
+    if (navigator.canShare && navigator.canShare({ url: imageUrl })) {
+      await navigator.share({
+        title: "Traveller Profile",
+        text: "Here’s my Traveller Profile! What’s yours?",
+        url: imageUrl,
+      });
+    } else {
+      // 4. Fallback: copy link to clipboard
+      await navigator.clipboard.writeText(imageUrl);
+      // alert("Link copied to clipboard! You can paste it to share.");
+    }
+  } catch (err) {
+    console.error("Sharing failed", err);
+    // alert("Something went wrong. Try again!");
   }
 });
 
