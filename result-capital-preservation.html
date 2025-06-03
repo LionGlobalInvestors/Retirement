@@ -49,7 +49,7 @@
   <link rel="prefetch" href="results/capital3.jpg">
 
   <meta property="og:description" content="Here’s my Traveller Profile! What’s yours?" />
-  <meta property="og:image" content=""/>
+  <meta property="og:image" content="pic/start.jpg" />
   <meta property="og:url" content="" />
   <meta property="og:type" content="website" />
 
@@ -252,72 +252,6 @@ async function generateShareURL() {
   }
 }
 
-
-// document.getElementById("shareResult").addEventListener("click", async (event) => {
-//     event.preventDefault();
-
-//     const mainImage = document.getElementById('random-result');
-
-//     const images = [
-//       { main: 'results/capital_reviews1.jpg', linked: 'results/capital1.jpg' },
-//       { main: 'results/capital_reviews2.jpg', linked: 'results/capital2.jpg' },
-//       { main: 'results/capital_reviews3.jpg', linked: 'results/capital3.jpg' }
-//     ];
-
-//     function isFacebookApp() {
-//       return navigator.userAgent.includes("FBAN") || navigator.userAgent.includes("FBAV");
-//     }
-
-//     if (isFacebookApp()) {
-//       // Facebook-specific logic: Open share link in a new tab
-//       const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareMessage)}`;
-//       window.open(facebookShareUrl, '_blank');
-
-//       return;
-//     }
-//     else {
-//       // sharing of image to application of choice
-//       if (mainImage && mainImage.getAttribute('src')) {
-
-//         const mainImageSrc = mainImage.src.split('/').pop();
-
-//         const matchedImage = images.find(img => img.main.endsWith(mainImageSrc));
-
-//         if (!matchedImage) {
-//           alert ('Could not find corresponding image');
-//           return;
-//         }
-
-//         const URL_Linked = new URL(matchedImage.linked, window.location.href).href;
-
-//         try {
-//           const response = await fetch(URL_Linked);
-//           const blob = await response.blob();
-
-//           const fileName = URL_Linked.split('/').pop();
-
-//           const file = new File([blob], fileName, {type: blob.type});
-
-//           const shareData = {
-//             files: [file],
-//             text: `https://lionglobalinvestors.github.io/Retirement/`,
-//             url: `https://lionglobalinvestors.github.io/Retirement/`,
-//           };
-
-//           if (navigator.canShare && navigator.canShare(shareData)) {
-//           await navigator.share(shareData);
-//           } else {
-//             alert(`navigator.share doesn't support in your device`);
-//           }
-//         } catch (error) {
-//           return;
-//         }
-
-//       }
-//     }
-    
-//   });
-
 function choosePic() {
     var imgElement = document.getElementById('random-result');
     if (imgElement) {
@@ -326,7 +260,7 @@ function choosePic() {
       var selectedPic = images[randomNum];
 
       imgElement.src = selectedPic.main;
-      finalPic = selectedPic.linked;
+      window.finalPic = selectedPic.linked;
     }
   }
 
@@ -350,123 +284,74 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-//   document.getElementById("shareURL").addEventListener("click", async (event) => {
-//     event.preventDefault(); // prevent default <a> behavior
+ const baseGameURL = "http://lionglobalinvestors.github.io/Retirement/index.html";  // Your actual game base URL
 
-//     const shareMessage = `I am a Zoom Ninja traveller. What's yours? Find out your Traveller Profile here: https://lionglobalinvestors.github.io/Retirement/`;
+  // Function to get result image URL only
+  function getResultInfo() {
+    // Replace with your actual result retrieval
+    const img = window.finalPic || "";
+    return { img };
+  }
 
-//     try {
-//       await navigator.clipboard.writeText(shareMessage);
-//       // alert("URL copied to clipboard!");
-//     } catch (err) {
-//       console.error("Clipboard copy failed", err);
-//       // alert("Failed to copy URL to clipboard.");
-//     }
-// });
+  // Build a share URL with image query param for Facebook/LinkedIn
+  function buildShareURL() {
+    const { img } = getResultInfo();
+    const url = new URL(baseGameURL);
+    if (img) url.searchParams.set("img", img);
+    return url.toString();
+  }
 
-// document.getElementById("shareURL").addEventListener("click", async (event) => {
-//   event.preventDefault();
+  // Build WhatsApp share message (text)
+  function buildWhatsAppMessage() {
+    const { img } = getResultInfo();
+    let message = `I am a Zoom Ninja traveller. What's yours? Find out your Traveller Profile here:\n${baseGameURL}`;
+    // if (img) message += `\nImage: ${img}`;
+    return message;
+  }
 
-//   const shareText = "I am a Zoom Ninja traveller. What's yours?";
-//   const shareUrl = "https://lionglobalinvestors.github.io/Retirement/";
-//   const imageUrl = finalPic;
+  document.addEventListener("DOMContentLoaded", function () {
+    const shareBtn = document.getElementById("shareURL");
+    const shareOptions = document.getElementById("socialList");
+    const shareContainer = document.querySelector('.share-menu');
 
-//   // Check if share with files is supported
-//   if (navigator.share && navigator.canShare && navigator.canShare({ files: [] })) {
-//     try {
-//       const response = await fetch(imageUrl);
-//       const blob = await response.blob();
-//       const file = new File([blob], "traveller-profile.jpg", { type: blob.type });
+    shareBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      shareOptions.style.display = (shareOptions.style.display === "block") ? "none" : "block";
+    });
 
-//       await navigator.share({
-//         title: "My Traveller Profile",
-//         text: shareText,
-//         url: shareUrl,
-//         files: [file]
-//       });
-//     } catch (err) {
-//       console.error("Sharing failed:", err);
-//       fallbackCopy();
-//     }
+    document.addEventListener("click", function (e) {
+      if (!shareContainer.contains(e.target)) {
+        shareOptions.style.display = "none";
+      }
+    });
 
-//   // Fallback to text-only share if file support isn't available
-//   } else if (navigator.share) {
-//     try {
-//       await navigator.share({
-//         title: "My Traveller Profile",
-//         text: `${shareText}\n${shareUrl}`
-//       });
-//     } catch (err) {
-//       console.error("Text-only sharing failed:", err);
-//       fallbackCopy();
-//     }
+    document.getElementById("shareFacebook").addEventListener("click", function (e) {
+      e.preventDefault();
+      const url = buildShareURL();
+      // if (!url) return alert("No URL to share!");
+      const fbURL = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+      window.open(fbURL, "_blank", "noopener,noreferrer");
+    });
 
-//   // If no Web Share API support
-//   } else {
-//     fallbackCopy();
-//   }
+    document.getElementById("shareWhatsApp").addEventListener("click", function (e) {
+      e.preventDefault();
+      const msg = buildWhatsAppMessage();
+      // if (!msg) return alert("No message to share!");
+      const waURL = `https://api.whatsapp.com/send?text=${encodeURIComponent(msg)}`;
+      window.open(waURL, "_blank", "noopener,noreferrer");
+    });
 
-//   function fallbackCopy() {
-//     navigator.clipboard.writeText(`${shareText}\n${shareUrl}`).then(() => {
-//       alert("Sharing not supported — link copied to clipboard!");
-//     }).catch((err) => {
-//       alert("Failed to copy link. Please copy manually.");
-//     });
-//   }
-// });
-
-let currentShareURL = "";
-
-function updateShareURL(newURL) {
-  currentShareURL = newURL || "";
-  console.log("Updated currentShareURL to:", currentShareURL);
-}
-
-document.addEventListener("DOMContentLoaded", function () {
-  const shareBtn = document.getElementById("shareURL");
-  const shareOptions = document.getElementById("socialList");
-  const shareContainer = document.querySelector('.share-menu');
-
-  shareBtn.addEventListener("click", function (e) {
-    e.preventDefault();
-    shareOptions.style.display = (shareOptions.style.display === "block") ? "none" : "block";
+    document.getElementById("shareLinkedIn").addEventListener("click", function (e) {
+      e.preventDefault();
+      const url = buildShareURL();
+      // if (!url) return alert("No URL to share!");
+      const liURL = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`;
+      window.open(liURL, "_blank", "noopener,noreferrer");
+    });
   });
 
-  document.addEventListener("click", function (e) {
-    if (!shareContainer.contains(e.target)) {
-      shareOptions.style.display = "none";
-    }
-  });
-
-  // Attach share button listeners
-  document.getElementById("shareFacebook").addEventListener("click", function (e) {
-    e.preventDefault();
-    if (!currentShareURL) return alert("No URL to share!");
-    const url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(currentShareURL)}`;
-    window.open(url, "_blank", "noopener,noreferrer");
-  });
-
-  document.getElementById("shareWhatsApp").addEventListener("click", function (e) {
-    e.preventDefault();
-    if (!currentShareURL) return alert("No URL to share!");
-    const url = `https://api.whatsapp.com/send?text=${encodeURIComponent(currentShareURL)}`;
-    window.open(url, "_blank", "noopener,noreferrer");
-  });
-
-  document.getElementById("shareLinkedIn").addEventListener("click", function (e) {
-    e.preventDefault();
-    if (!currentShareURL) return alert("No URL to share!");
-    const url = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(currentShareURL)}`;
-    window.open(url, "_blank", "noopener,noreferrer");
-  });
-});
-
-// TEST: Simulate URL ready after 3 seconds
-setTimeout(() => {
-  const testURL = "https://example.com/game-result-123";
-  updateShareURL(testURL);
-  console.log("Test updateShareURL called with:", testURL);
-}, 3000);
+  // Example test value - replace or update dynamically in your game
+  // window.finalPic = "https://yourgame.com/images/result123.png";
 
 function Capital(){
   document.getElementById('result-img').src = "results/capital.jpg";

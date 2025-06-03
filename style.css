@@ -554,7 +554,7 @@ footer a {
     display: none;
     position: absolute;
     bottom: 45px;
-    left: 0;
+    left: -1.3vw;
     background-color: white;
     border-radius: 7px;
     border: 1px solid #ccc;
@@ -828,7 +828,7 @@ footer a {
     .replay-button,
     .scrollDown {
         width: 200px;
-        left: -1.7vw;
+        left: -1.8vw;
     }
 
     .boarding-pass-image.animate {
