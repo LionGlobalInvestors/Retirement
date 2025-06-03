@@ -390,7 +390,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function getFinalPic() {
-  return window.finalPic || "results/capital1.jpg";
+  return window.finalPic;
 }
 
 function shareToFacebook() {
@@ -416,7 +416,7 @@ async function genericShare() {
   if (navigator.canShare && navigator.canShare({ url: shareUrl })) {
     await navigator.share({
       title: "Traveller Profile",
-      text: "Here’s my Traveller Profile! What’s yours?",
+      text: "Here's my Traveller Profile! What's yours?",
       url: shareUrl,
     });
   } else {
