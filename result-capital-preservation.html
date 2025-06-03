@@ -294,19 +294,71 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  document.getElementById("shareURL").addEventListener("click", async (event) => {
-    event.preventDefault(); // prevent default <a> behavior
+//   document.getElementById("shareURL").addEventListener("click", async (event) => {
+//     event.preventDefault(); // prevent default <a> behavior
 
-    const shareMessage = `I am a Zoom Ninja traveller. What's yours? Find out your Traveller Profile here: https://lionglobalinvestors.github.io/Retirement/`;
+//     const shareMessage = `I am a Zoom Ninja traveller. What's yours? Find out your Traveller Profile here: https://lionglobalinvestors.github.io/Retirement/`;
 
+//     try {
+//       await navigator.clipboard.writeText(shareMessage);
+//       // alert("URL copied to clipboard!");
+//     } catch (err) {
+//       console.error("Clipboard copy failed", err);
+//       // alert("Failed to copy URL to clipboard.");
+//     }
+// });
+
+document.getElementById("shareURL").addEventListener("click", async (event) => {
+  event.preventDefault();
+
+  const shareText = "I am a Zoom Ninja traveller. What's yours?";
+  const shareUrl = "https://lionglobalinvestors.github.io/Retirement/";
+  const imageUrl = finalPic;
+
+  // Check if share with files is supported
+  if (navigator.share && navigator.canShare && navigator.canShare({ files: [] })) {
     try {
-      await navigator.clipboard.writeText(shareMessage);
-      alert("URL copied to clipboard!");
+      const response = await fetch(imageUrl);
+      const blob = await response.blob();
+      const file = new File([blob], "traveller-profile.jpg", { type: blob.type });
+
+      await navigator.share({
+        title: "My Traveller Profile",
+        text: shareText,
+        url: shareUrl,
+        files: [file]
+      });
     } catch (err) {
-      console.error("Clipboard copy failed", err);
-      alert("Failed to copy URL to clipboard.");
+      console.error("Sharing failed:", err);
+      fallbackCopy();
     }
+
+  // Fallback to text-only share if file support isn't available
+  } else if (navigator.share) {
+    try {
+      await navigator.share({
+        title: "My Traveller Profile",
+        text: `${shareText}\n${shareUrl}`
+      });
+    } catch (err) {
+      console.error("Text-only sharing failed:", err);
+      fallbackCopy();
+    }
+
+  // If no Web Share API support
+  } else {
+    fallbackCopy();
+  }
+
+  function fallbackCopy() {
+    navigator.clipboard.writeText(`${shareText}\n${shareUrl}`).then(() => {
+      alert("Sharing not supported — link copied to clipboard!");
+    }).catch((err) => {
+      alert("Failed to copy link. Please copy manually.");
+    });
+  }
 });
+
 
 function Capital(){
   document.getElementById('result-img').src = "results/capital.jpg";
