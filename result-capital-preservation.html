@@ -195,8 +195,6 @@
   var finalPic = ' ';
   var selectedPic = null;
 
-  let currentShareURL = ""; // Global variable to store the URL
-
   var images = [
     { main: 'results/capital_reviews1.jpg', linked: 'results/capital1.jpg' },
     { main: 'results/capital_reviews2.jpg', linked: 'results/capital2.jpg' },
@@ -417,7 +415,8 @@ document.addEventListener("DOMContentLoaded", function () {
 //   }
 // });
 
-// Helper function to update the share URL dynamically
+let currentShareURL = "";
+
 function updateShareURL(newURL) {
   currentShareURL = newURL || "";
   console.log("Updated currentShareURL to:", currentShareURL);
@@ -426,25 +425,18 @@ function updateShareURL(newURL) {
 document.addEventListener("DOMContentLoaded", function () {
   const shareBtn = document.getElementById("shareURL");
   const shareOptions = document.getElementById("socialList");
-  
-  // Use correct container element that wraps your share menu
-  const shareContainer = document.querySelector('.share-menu'); 
+  const shareContainer = document.querySelector('.share-menu');
 
-  // Toggle dropdown visibility
   shareBtn.addEventListener("click", function (e) {
     e.preventDefault();
     shareOptions.style.display = (shareOptions.style.display === "block") ? "none" : "block";
   });
 
-  // Close dropdown when clicking outside
   document.addEventListener("click", function (e) {
     if (!shareContainer.contains(e.target)) {
       shareOptions.style.display = "none";
     }
   });
-
-  // Initially set currentShareURL if window.imageUrl already exists
-  updateShareURL(window.imageUrl);
 
   // Attach share button listeners
   document.getElementById("shareFacebook").addEventListener("click", function (e) {
@@ -469,9 +461,12 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// Example: When your game or image URL is ready, call this:
-// updateShareURL("https://yourgame.com/result123");
-
+// TEST: Simulate URL ready after 3 seconds
+setTimeout(() => {
+  const testURL = "https://example.com/game-result-123";
+  updateShareURL(testURL);
+  console.log("Test updateShareURL called with:", testURL);
+}, 3000);
 
 function Capital(){
   document.getElementById('result-img').src = "results/capital.jpg";
