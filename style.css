@@ -515,27 +515,6 @@ footer a {
     display: inline-grid;
 }
 
-.social-media-icons {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    z-index: 2;
-    bottom: 23.6vw; /* Adjust this to control how many pixels above .disclaimer */
-    right: 10.2vh;
-    animation: pulse 1s infinite;
-}
-
-.social-media-icons img {
-    width: 6vw;
-    max-width: 35px;
-
-    /* width: 15vw;
-    max-width: 150px; */
-    cursor: pointer;
-    transition: opacity 0.3s;
-    opacity: 1;
-}
-
 .learnMore-button,
 .replay-button,
 .scrollDown {
@@ -548,9 +527,7 @@ footer a {
     border-radius: 7px;
     /* top: 50%; */
     position: relative;
-
     left: -0.5vw;
-
     border: 1px solid #c4306d;
     color: #89264f;
     text-decoration: none;
@@ -560,33 +537,59 @@ footer a {
     margin-right: 5px;
 }
 
-#share-container {
+.share-wrapper {
     position: relative;
     display: inline-block;
   }
   
-  #share-options {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+/* Wrap the share button and dropdown in a relative container */
+.share-menu {
+    position: relative;
+    display: inline-block;
+    width: 138px; /* Match Share button */
+  }
+  
+  /* Style the dropdown */
+  .share-menu ul {
     display: none;
     position: absolute;
-    background: #fff;
+    bottom: 45px;
+    left: 0;
+    background-color: white;
+    border-radius: 7px;
     border: 1px solid #ccc;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-    z-index: 999;
+    padding: 0px 5px;
+    z-index: 10;
+    list-style: none;
+    margin: 0;
+    width: 160px; /* Match Share button exactly */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   }
   
-  #share-options li {
-    padding: 10px 20px;
-    cursor: pointer;
+  /* Style each dropdown item */
+  .share-menu ul li a {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px 0;
+    text-align: center;
+    text-decoration: none;
+    color: #89264f;
+    font-size: 13px;
+    font-weight: 600;
+    font-family: 'Arial', sans-serif;
+    border-bottom: 1px solid #eee;
   }
   
-  #share-options li:hover {
-    background-color: #f0f0f0;
+  /* Remove bottom border for last item */
+  .share-menu ul li:last-child a {
+    border-bottom: none;
   }
   
+  
+  .share-menu ul li a:hover {
+    background-color: #f3f3f3;
+  }
 
 .result-text {
     font-family: 'Arial', sans-serif;

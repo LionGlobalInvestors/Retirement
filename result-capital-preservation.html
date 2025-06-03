@@ -160,20 +160,31 @@
         Save
       </a>
 
-      <div id="share-container">
+      <div id="share-container" class="share-wrapper">
       <!-- share game url -->
-      <a id="shareURL" class="replay-button"> 
+
+      <li class="share-menu">
+        <a id="shareURL" class="replay-button">Share</a>
+        <ul id="socialList">
+          <li><a href="#" onclick="shareTo('facebook')">Facebook</a></li>
+          <li><a href="#" onclick="shareTo('whatsapp')">WhatsApp</a></li>
+          <li><a href="#" onclick="shareTo('linkedin')">LinkedIn</a></li>
+        </ul>
+      </li>
+      
+
+      <!-- <a id="shareURL" class="replay-button"> 
 
         Share
 
       </a>
-      <ul id="share-options">
-        <li onclick="shareToFacebook()">Facebook</li>
-        <li onclick="shareToWhatsApp()">WhatsApp</li>
-        <li onclick="shareToLinkedIn()">LinkedIn</li>
-        <li onclick="genericShare()">Other…</li>
+      <ul id="share-options" class="share-options">
+        <li><a href="#" onclick="shareToFacebook()">Facebook</a></li>
+        <li><a href="#" onclick="shareToWhatsApp()">WhatsApp</a></li>
+        <li><a href="#" onclick="shareToLinkedIn()">LinkedIn</a></li>
+        <li><a href="#" onclick="genericShare()">More...</a></li>
       </ul>
-    </div>
+    </div> -->
 
     </div>
 </footer>
@@ -374,7 +385,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
   const shareBtn = document.getElementById("shareURL");
-  const shareOptions = document.getElementById("share-options");
+  const shareOptions = document.getElementById("socialList");
   const shareContainer = document.getElementById("share-container");
 
   shareBtn.addEventListener("click", function (e) {
@@ -395,24 +406,21 @@ function getFinalPic() {
 
 function shareToFacebook() {
   const shareUrl = `https://lionglobalinvestors.github.io/Retirement/index.html?img=${encodeURIComponent(getFinalPic())}`;
-  const fbUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`;
-  window.open(fbUrl, "_blank");
+  window.open(`https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`, "_blank");
 }
 
 function shareToWhatsApp() {
   const msg = `Check out my Traveller Profile: https://lionglobalinvestors.github.io/Retirement/index.html?img=${encodeURIComponent(getFinalPic())}`;
-  const waUrl = `https://wa.me/?text=${encodeURIComponent(msg)}`;
-  window.open(waUrl, "_blank");
+  window.open(`https://wa.me/?text=${encodeURIComponent(msg)}`, "_blank");
 }
 
 function shareToLinkedIn() {
-  const liUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent("https://lionglobalinvestors.github.io/Retirement/index.html?img=" + getFinalPic())}`;
-  window.open(liUrl, "_blank");
+  const shareUrl = `https://lionglobalinvestors.github.io/Retirement/index.html?img=${encodeURIComponent(getFinalPic())}`;
+  window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}`, "_blank");
 }
 
 async function genericShare() {
   const shareUrl = `https://lionglobalinvestors.github.io/Retirement/index.html?img=${encodeURIComponent(getFinalPic())}`;
-
   if (navigator.canShare && navigator.canShare({ url: shareUrl })) {
     await navigator.share({
       title: "Traveller Profile",
@@ -424,6 +432,7 @@ async function genericShare() {
     alert("Link copied to clipboard!");
   }
 }
+
 
 function Capital(){
   document.getElementById('result-img').src = "results/capital.jpg";
