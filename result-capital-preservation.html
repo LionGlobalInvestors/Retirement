@@ -327,25 +327,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.getElementById("shareFacebook").addEventListener("click", function (e) {
       e.preventDefault();
-      const url = buildShareURL();
+      // const url = buildShareURL();
       // if (!url) return alert("No URL to share!");
-      const fbURL = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+      const fbURL = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(baseGameURL)}`;
       window.open(fbURL, "_blank", "noopener,noreferrer");
     });
 
     document.getElementById("shareWhatsApp").addEventListener("click", function (e) {
       e.preventDefault();
-      const msg = buildWhatsAppMessage();
+      // const msg = buildWhatsAppMessage();
       // if (!msg) return alert("No message to share!");
-      const waURL = `https://api.whatsapp.com/send?text=${encodeURIComponent(msg)}`;
+      const waURL = `https://api.whatsapp.com/send?text=${encodeURIComponent(baseGameURL)}`;
       window.open(waURL, "_blank", "noopener,noreferrer");
     });
 
     document.getElementById("shareLinkedIn").addEventListener("click", function (e) {
       e.preventDefault();
-      const url = buildShareURL();
+      // const url = buildShareURL();
       // if (!url) return alert("No URL to share!");
-      const liURL = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`;
+      const liURL = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(baseGameURL)}`;
       window.open(liURL, "_blank", "noopener,noreferrer");
     });
   });
