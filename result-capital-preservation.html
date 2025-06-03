@@ -383,19 +383,21 @@ document.getElementById("shareURL").addEventListener("click", async (event) => {
       body: formData,
     });
 
+    const gameindexURL = "http://lionglobalinvestors.github.io/Retirement/index.html";
+
     const data = await uploadRes.json();
     const imageUrl = data.secure_url;
 
     // 3. Try to share using Web Share API
-    if (navigator.canShare && navigator.canShare({ url: imageUrl })) {
+    if (navigator.canShare && navigator.canShare({ url: gameindexURL })) {
       await navigator.share({
         title: "Traveller Profile",
         text: "Here’s my Traveller Profile! What’s yours?",
-        url: imageUrl,
+        url: gameindexURL,
       });
     } else {
       // 4. Fallback: copy link to clipboard
-      await navigator.clipboard.writeText(imageUrl);
+      await navigator.clipboard.writeText(gameindexURL);
       // alert("Link copied to clipboard! You can paste it to share.");
     }
   } catch (err) {
