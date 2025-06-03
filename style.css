@@ -828,7 +828,7 @@ footer a {
     .replay-button,
     .scrollDown {
         width: 200px;
-        /* left: 1.3vw; */
+        left: -1.7vw;
     }
 
     .boarding-pass-image.animate {
@@ -1036,6 +1036,7 @@ footer a {
     .replay-button,
     .scrollDown {
         width: 220px;
+        left: -6.5vw;
     }
 
     .fundCentre-button {
@@ -1067,6 +1068,7 @@ footer a {
     .scrollDown {
         width: 270px;
         font-size: 15px;
+        left: -12vw;
     }
 
     .result-text {
@@ -1173,6 +1175,7 @@ footer a {
     .replay-button,
     .scrollDown {
         width: 170px;
+        left: -6vw;
     }
 
     .result-text {

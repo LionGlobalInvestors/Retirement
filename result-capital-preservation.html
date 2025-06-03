@@ -164,11 +164,11 @@
       <!-- share game url -->
 
       <li class="share-menu">
-        <a id="shareURL" class="replay-button">Share</a>
+        <a href="#" id="shareURL" class="replay-button">Share</a>
         <ul id="socialList">
-          <li><a href="#" onclick="shareTo('facebook')">Facebook</a></li>
-          <li><a href="#" onclick="shareTo('whatsapp')">WhatsApp</a></li>
-          <li><a href="#" onclick="shareTo('linkedin')">LinkedIn</a></li>
+          <li><a href="#" id="shareFacebook">Facebook</a></li>
+          <li><a href="#" id="shareWhatsApp">WhatsApp</a></li>
+          <li><a href="#" id="shareLinkedIn">LinkedIn</a></li>
         </ul>
       </li>
       
@@ -195,6 +195,8 @@
   var finalPic = ' ';
   var selectedPic = null;
 
+  let currentShareURL = ""; // Global variable to store the URL
+
   var images = [
     { main: 'results/capital_reviews1.jpg', linked: 'results/capital1.jpg' },
     { main: 'results/capital_reviews2.jpg', linked: 'results/capital2.jpg' },
@@ -220,6 +222,38 @@ function Transition() {
     document.getElementById('capitalFunds').style.display = 'block';
   }, 3000);
 }
+
+async function generateShareURL() {
+  if (!finalPic) {
+    console.error("No image selected!");
+    return;
+  }
+
+  try {
+    const response = await fetch(finalPic);
+    const blob = await response.blob();
+
+    const formData = new FormData();
+    formData.append("file", blob);
+    formData.append("upload_preset", "results");
+    formData.append("folder", "traveller-profiles");
+
+    const uploadRes = await fetch("https://api.cloudinary.com/v1_1/dd2663add/image/upload", {
+      method: "POST",
+      body: formData,
+    });
+
+    const data = await uploadRes.json();
+    const imageUrl = data.secure_url;
+
+    // Save the image URL to reuse in all share links
+    currentShareURL = imageUrl;
+
+  } catch (err) {
+    console.error("Failed to generate share URL", err);
+  }
+}
+
 
 // document.getElementById("shareResult").addEventListener("click", async (event) => {
 //     event.preventDefault();
@@ -383,55 +417,60 @@ document.addEventListener("DOMContentLoaded", function () {
 //   }
 // });
 
+// Helper function to update the share URL dynamically
+function updateShareURL(newURL) {
+  currentShareURL = newURL || "";
+  console.log("Updated currentShareURL to:", currentShareURL);
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   const shareBtn = document.getElementById("shareURL");
   const shareOptions = document.getElementById("socialList");
-  const shareContainer = document.getElementById("share-container");
+  
+  // Use correct container element that wraps your share menu
+  const shareContainer = document.querySelector('.share-menu'); 
 
+  // Toggle dropdown visibility
   shareBtn.addEventListener("click", function (e) {
     e.preventDefault();
     shareOptions.style.display = (shareOptions.style.display === "block") ? "none" : "block";
   });
 
+  // Close dropdown when clicking outside
   document.addEventListener("click", function (e) {
     if (!shareContainer.contains(e.target)) {
       shareOptions.style.display = "none";
     }
   });
+
+  // Initially set currentShareURL if window.imageUrl already exists
+  updateShareURL(window.imageUrl);
+
+  // Attach share button listeners
+  document.getElementById("shareFacebook").addEventListener("click", function (e) {
+    e.preventDefault();
+    if (!currentShareURL) return alert("No URL to share!");
+    const url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(currentShareURL)}`;
+    window.open(url, "_blank", "noopener,noreferrer");
+  });
+
+  document.getElementById("shareWhatsApp").addEventListener("click", function (e) {
+    e.preventDefault();
+    if (!currentShareURL) return alert("No URL to share!");
+    const url = `https://api.whatsapp.com/send?text=${encodeURIComponent(currentShareURL)}`;
+    window.open(url, "_blank", "noopener,noreferrer");
+  });
+
+  document.getElementById("shareLinkedIn").addEventListener("click", function (e) {
+    e.preventDefault();
+    if (!currentShareURL) return alert("No URL to share!");
+    const url = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(currentShareURL)}`;
+    window.open(url, "_blank", "noopener,noreferrer");
+  });
 });
 
-function getFinalPic() {
-  return window.finalPic;
-}
-
-function shareToFacebook() {
-  const shareUrl = `https://lionglobalinvestors.github.io/Retirement/index.html?img=${encodeURIComponent(getFinalPic())}`;
-  window.open(`https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`, "_blank");
-}
-
-function shareToWhatsApp() {
-  const msg = `Check out my Traveller Profile: https://lionglobalinvestors.github.io/Retirement/index.html?img=${encodeURIComponent(getFinalPic())}`;
-  window.open(`https://wa.me/?text=${encodeURIComponent(msg)}`, "_blank");
-}
-
-function shareToLinkedIn() {
-  const shareUrl = `https://lionglobalinvestors.github.io/Retirement/index.html?img=${encodeURIComponent(getFinalPic())}`;
-  window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}`, "_blank");
-}
-
-async function genericShare() {
-  const shareUrl = `https://lionglobalinvestors.github.io/Retirement/index.html?img=${encodeURIComponent(getFinalPic())}`;
-  if (navigator.canShare && navigator.canShare({ url: shareUrl })) {
-    await navigator.share({
-      title: "Traveller Profile",
-      text: "Here's my Traveller Profile! What's yours?",
-      url: shareUrl,
-    });
-  } else {
-    await navigator.clipboard.writeText(shareUrl);
-    alert("Link copied to clipboard!");
-  }
-}
+// Example: When your game or image URL is ready, call this:
+// updateShareURL("https://yourgame.com/result123");
 
 
 function Capital(){
