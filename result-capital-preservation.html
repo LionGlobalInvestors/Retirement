@@ -178,25 +178,12 @@
       <li class="share-menu">
         <a href="#" id="shareURL" class="replay-button">Share</a>
         <ul id="socialList">
-          <li><a href="#" id="shareFacebook">Facebook</a></li>
+          <!-- <li><a href="#" id="shareFacebook">Facebook</a></li> -->
           <li><a href="#" id="shareWhatsApp">WhatsApp</a></li>
           <li><a href="#" id="shareLinkedIn">LinkedIn</a></li>
+          <li><a href="#" id="shareOthers">Others</a></li>
         </ul>
       </li>
-      
-
-      <!-- <a id="shareURL" class="replay-button"> 
-
-        Share
-
-      </a>
-      <ul id="share-options" class="share-options">
-        <li><a href="#" onclick="shareToFacebook()">Facebook</a></li>
-        <li><a href="#" onclick="shareToWhatsApp()">WhatsApp</a></li>
-        <li><a href="#" onclick="shareToLinkedIn()">LinkedIn</a></li>
-        <li><a href="#" onclick="genericShare()">More...</a></li>
-      </ul>
-    </div> -->
 
     </div>
 </footer>
@@ -334,28 +321,31 @@ document.addEventListener("DOMContentLoaded", function () {
     //     : `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(baseGameURL)}`;
     //   window.open(fbURL, "_blank");
     // });
-    document.getElementById("shareFacebook").addEventListener("click", function (e) {
+
+    document.getElementById("shareOthers").addEventListener("click", function (e) {
       e.preventDefault();
 
-      const shareData = {
-        title: "I'm a Zoom Ninja Traveller! What's yours?",
-        url: baseGameURL,
-      };
+      const msg = `I'm a Zoom Ninja Traveller! What's yours?\n${baseGameURL}`;
 
-      if (navigator.share) {
-        // Use native share dialog on mobile devices
-        navigator.share(shareData)
-          .catch((error) => {
-            console.error("Error sharing:", error);
-            // Fallback to browser share URL if native share fails
-            window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(baseGameURL)}`, "_blank");
-          });
+      if (navigator.share && /Android|iPhone|iPad/i.test(navigator.userAgent)) {
+        // Mobile — use Web Share API
+        navigator.share({
+          title: "I'm a Zoom Ninja Traveller! What's yours?",
+          text: msg,
+          url: baseGameURL,
+        }).catch((err) => {
+          console.error("Share failed:", err);
+        });
       } else {
-        // Fallback for browsers that don't support Web Share API
-        window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(baseGameURL)}`, "_blank");
+        // Desktop — fallback to copying message
+        navigator.clipboard.writeText(msg).then(() => {
+          alert("Link copied to clipboard! You can paste it anywhere.");
+        }).catch((err) => {
+          console.error("Copy failed:", err);
+          // alert("Unable to copy. Please copy manually:\n" + msg);
+        });
       }
     });
-
 
     // LinkedIn - only works via browser for now
     document.getElementById("shareLinkedIn").addEventListener("click", function (e) {
