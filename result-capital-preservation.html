@@ -53,6 +53,10 @@
   <meta property="og:url" content="https://lionglobalinvestors.github.io/Retirement/index.html" />
   <meta property="og:type" content="website" />
 
+  <!-- Facebook SDK -->
+  <script async defer crossorigin="anonymous" 
+  src="https://connect.facebook.net/en_US/sdk.js"></script>
+
 </head>
 
 <body onload="Transition()">
@@ -146,8 +150,16 @@
       }
     });
 
-   </script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : 'YOUR_APP_ID', // Replace with your Facebook App ID
+        cookie     : true,
+        xfbml      : false,
+        version    : 'v18.0'
+      });
+    };
 
+   </script>
 
 </body>
 
@@ -315,13 +327,26 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Facebook - deep link fallback to browser
-    document.getElementById("shareFacebook").addEventListener("click", function (e) {
-      e.preventDefault();
-      const fbURL = /Android|iPhone/i.test(navigator.userAgent)
-        ? `fb://facewebmodal/f?href=https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(baseGameURL)}`
-        : `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(baseGameURL)}`;
-      window.open(fbURL, "_blank");
+    // document.getElementById("shareFacebook").addEventListener("click", function (e) {
+    //   e.preventDefault();
+    //   const fbURL = /Android|iPhone/i.test(navigator.userAgent)
+    //     ? `fb://facewebmodal/f?href=https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(baseGameURL)}`
+    //     : `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(baseGameURL)}`;
+    //   window.open(fbURL, "_blank");
+    // });
+
+    document.getElementById('shareFacebook').addEventListener('click', function() {
+    FB.ui({
+      method: 'share',
+      href: 'https://lionglobalinvestors.github.io/Retirement/index.html',
+    }, function(response){ 
+      if (response && !response.error_message) {
+        console.log('Posting completed.');
+      } else {
+        console.log('Error while posting.');
+      }
     });
+  });
 
     // LinkedIn - only works via browser for now
     document.getElementById("shareLinkedIn").addEventListener("click", function (e) {
