@@ -1139,6 +1139,11 @@ footer a {
         font-size: 18px;
         width: auto;
     }
+
+    .share-menu ul{
+        left: -11vw;
+        width: 240px;
+    }
 }
 
 @media screen and (max-width: 540px) { 
@@ -1158,6 +1163,11 @@ footer a {
         left: 5.5vw;
         font-size: 17px;
         width: auto;
+    }
+
+    .share-menu ul{
+        left: -8vw;
+        width: 200px;
     }
 }
 
@@ -1188,6 +1198,11 @@ footer a {
         font-size: 15px;
         width: auto;
     }
+
+    .share-menu ul{
+        left: -6vw;
+        width: 170px;
+    }
 }
 
 @media screen and (max-width: 414px){
@@ -1213,6 +1228,11 @@ footer a {
 
     .result-text {
         font-size: 15px;
+    }
+
+    .share-menu ul{
+        left: -5vw;
+        width: 150px;
     }
 }
 
