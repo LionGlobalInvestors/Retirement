@@ -177,12 +177,12 @@
 
       <li class="share-menu">
         <a href="#" id="shareURL" class="replay-button">Share</a>
-        <!-- <ul id="socialList">
-          <li><a href="#" id="shareFacebook">Facebook</a></li>
+        <ul id="socialList">
+          <!-- <li><a href="#" id="shareFacebook">Facebook</a></li> -->
           <li><a href="#" id="shareWhatsApp">WhatsApp</a></li>
-          <li><a href="#" id="shareLinkedIn">LinkedIn</a></li>
+          <!-- <li><a href="#" id="shareLinkedIn">LinkedIn</a></li> -->
           <li><a href="#" id="shareOthers">Others</a></li>
-        </ul> -->
+        </ul>
       </li>
 
     </div>
@@ -291,17 +291,17 @@ document.addEventListener("DOMContentLoaded", function () {
     const shareContainer = document.querySelector('.share-menu');
 
     // Toggle share options
-    // document.getElementById("shareURL").addEventListener("click", function (e) {
-    //   e.preventDefault();
-    //   shareOptions.style.display = (shareOptions.style.display === "block") ? "none" : "block";
-    // });
+    document.getElementById("shareURL").addEventListener("click", function (e) {
+      e.preventDefault();
+      shareOptions.style.display = (shareOptions.style.display === "block") ? "none" : "block";
+    });
 
     // Hide on outside click
-    // document.addEventListener("click", function (e) {
-    //   if (!shareContainer.contains(e.target)) {
-    //     shareOptions.style.display = "none";
-    //   }
-    // });
+    document.addEventListener("click", function (e) {
+      if (!shareContainer.contains(e.target)) {
+        shareOptions.style.display = "none";
+      }
+    });
 
     // WhatsApp - mobile app or WhatsApp Web
     document.getElementById("shareWhatsApp").addEventListener("click", function (e) {
@@ -322,7 +322,7 @@ document.addEventListener("DOMContentLoaded", function () {
     //   window.open(fbURL, "_blank");
     // });
 
-    document.getElementById("shareURL").addEventListener("click", function (e) {
+    document.getElementById("shareOthers").addEventListener("click", function (e) {
       e.preventDefault();
 
       const msg = `I'm a Zoom Ninja Traveller! What's yours?\n${baseGameURL}`;
@@ -342,7 +342,7 @@ document.addEventListener("DOMContentLoaded", function () {
           alert("Link copied to clipboard! You can paste it anywhere.");
         }).catch((err) => {
           console.error("Copy failed:", err);
-          alert("Unable to copy. Please copy manually:\n" + msg);
+          // alert("Unable to copy. Please copy manually:\n" + msg);
         });
       }
     });
