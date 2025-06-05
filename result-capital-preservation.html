@@ -284,74 +284,52 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
- const baseGameURL = "http://lionglobalinvestors.github.io/Retirement/index.html";  // Your actual game base URL
-
-  // Function to get result image URL only
-  function getResultInfo() {
-    // Replace with your actual result retrieval
-    const img = window.finalPic || "";
-    return { img };
-  }
-
-  // Build a share URL with image query param for Facebook/LinkedIn
-  function buildShareURL() {
-    const { img } = getResultInfo();
-    const url = new URL(baseGameURL);
-    if (img) url.searchParams.set("img", img);
-    return url.toString();
-  }
-
-  // Build WhatsApp share message (text)
-  function buildWhatsAppMessage() {
-    const { img } = getResultInfo();
-    let message = `I am a Zoom Ninja traveller. What's yours? Find out your Traveller Profile here:\n${baseGameURL}`;
-    // if (img) message += `\nImage: ${img}`;
-    return message;
-  }
+  const baseGameURL = "https://lionglobalinvestors.github.io/Retirement/index.html";
+  const shareText = "I'm a Zoom Ninja Traveller! What's yours?";
 
   document.addEventListener("DOMContentLoaded", function () {
-    const shareBtn = document.getElementById("shareURL");
     const shareOptions = document.getElementById("socialList");
     const shareContainer = document.querySelector('.share-menu');
 
-    shareBtn.addEventListener("click", function (e) {
+    // Toggle share options
+    document.getElementById("shareURL").addEventListener("click", function (e) {
       e.preventDefault();
       shareOptions.style.display = (shareOptions.style.display === "block") ? "none" : "block";
     });
 
+    // Hide on outside click
     document.addEventListener("click", function (e) {
       if (!shareContainer.contains(e.target)) {
         shareOptions.style.display = "none";
       }
     });
 
-    document.getElementById("shareFacebook").addEventListener("click", function (e) {
-      e.preventDefault();
-      // const url = buildShareURL();
-      // if (!url) return alert("No URL to share!");
-      const fbURL = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(baseGameURL)}`;
-      window.open(fbURL, "_blank", "noopener,noreferrer");
-    });
-
+    // WhatsApp - mobile app or WhatsApp Web
     document.getElementById("shareWhatsApp").addEventListener("click", function (e) {
       e.preventDefault();
-      // const msg = buildWhatsAppMessage();
-      // if (!msg) return alert("No message to share!");
-      const waURL = `https://api.whatsapp.com/send?text=${encodeURIComponent(baseGameURL)}`;
-      window.open(waURL, "_blank", "noopener,noreferrer");
+      const msg = `${shareText}\n${baseGameURL}`;
+      const waURL = /Android|iPhone/i.test(navigator.userAgent)
+        ? `whatsapp://send?text=${encodeURIComponent(msg)}`
+        : `https://web.whatsapp.com/send?text=${encodeURIComponent(msg)}`;
+      window.open(waURL, "_blank");
     });
 
+    // Facebook - deep link fallback to browser
+    document.getElementById("shareFacebook").addEventListener("click", function (e) {
+      e.preventDefault();
+      const fbURL = /Android|iPhone/i.test(navigator.userAgent)
+        ? `fb://facewebmodal/f?href=https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(baseGameURL)}`
+        : `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(baseGameURL)}`;
+      window.open(fbURL, "_blank");
+    });
+
+    // LinkedIn - only works via browser for now
     document.getElementById("shareLinkedIn").addEventListener("click", function (e) {
       e.preventDefault();
-      // const url = buildShareURL();
-      // if (!url) return alert("No URL to share!");
       const liURL = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(baseGameURL)}`;
-      window.open(liURL, "_blank", "noopener,noreferrer");
+      window.open(liURL, "_blank");
     });
   });
-
-  // Example test value - replace or update dynamically in your game
-  // window.finalPic = "https://yourgame.com/images/result123.png";
 
 function Capital(){
   document.getElementById('result-img').src = "results/capital.jpg";
