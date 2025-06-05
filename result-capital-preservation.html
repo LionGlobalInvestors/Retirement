@@ -334,19 +334,28 @@ document.addEventListener("DOMContentLoaded", function () {
     //     : `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(baseGameURL)}`;
     //   window.open(fbURL, "_blank");
     // });
+    document.getElementById("shareFacebook").addEventListener("click", function (e) {
+      e.preventDefault();
 
-    document.getElementById('shareFacebook').addEventListener('click', function() {
-    FB.ui({
-      method: 'share',
-      href: 'https://lionglobalinvestors.github.io/Retirement/index.html',
-    }, function(response){ 
-      if (response && !response.error_message) {
-        console.log('Posting completed.');
+      const shareData = {
+        title: "I'm a Zoom Ninja Traveller! What's yours?",
+        url: baseGameURL,
+      };
+
+      if (navigator.share) {
+        // Use native share dialog on mobile devices
+        navigator.share(shareData)
+          .catch((error) => {
+            console.error("Error sharing:", error);
+            // Fallback to browser share URL if native share fails
+            window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(baseGameURL)}`, "_blank");
+          });
       } else {
-        console.log('Error while posting.');
+        // Fallback for browsers that don't support Web Share API
+        window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(baseGameURL)}`, "_blank");
       }
     });
-  });
+
 
     // LinkedIn - only works via browser for now
     document.getElementById("shareLinkedIn").addEventListener("click", function (e) {
