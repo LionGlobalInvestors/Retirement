@@ -4,14 +4,14 @@
 <head>
 
 <!-- Google tag (gtag.js) -->
-<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-DHC21792BX"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DHC21792BX"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'G-DHC21792BX');
-</script> -->
+</script>
 
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -76,8 +76,12 @@
 
         <div class="ans-banner-container">
           
-          
-          <div id="bottom"></div>
+          <p class="result-text">
+
+            Here is your traveller's profile. <br>
+            Don't lose it. Save the image!
+
+          </p>
 
           <img id="result-img" class="main-img ans-banner-img" src="results/wealth.jpg" alt="Wealth Accumulation" usemap="#retirementMap">
 
@@ -108,8 +112,9 @@
           
         </div>
 
-        <p class="disclaimer" id="disclaimer">This is for information and illustration only, and does not have regard to your specific investment objectives, financial situation, tax position or needs. The information herein is not intended to be and does not constitute financial advice or an offer or solicitation for the purchase or sale of units in any fund. Not all investment ideas are suitable for all investors and no recommendation is given as to the suitability of any funds for any particular investor. Prior to making any investment, you should make your own evaluation or seek independent advice as to whether such investment is suitable for you. LGI does not accept any liability for any damages or loss, including loss of profit, whether direct, indirect, economic or consequential, arising from reliance on any information, opinion or estimate herein.</p>
+        <p class="disclaimer" id="disclaimer">This is for information and illustration only, and does not have regard to your specific investment objectives, financial situation, tax position or needs. The information herein is not intended to be and does not constitute financial advice or an offer or solicitation for the purchase or sale of units in any fund. Not all investment ideas are suitable for all investors and no recommendation is given as to the suitability of any funds for any particular investor. Prior to making any investment, you should make your own evaluation or seek independent advice as to whether such investment is suitable for you. Lion Global Investors does not accept any liability for any damages or loss, including loss of profit, whether direct, indirect, economic or consequential, arising from reliance on any information, opinion or estimate herein.</p>
         
+        <p class="spacer"></p>
       </div>
     </div>
 
@@ -141,16 +146,16 @@
 
     <div id="footer-buttons" class="sticky-bar">
 
-      <a href="#" id="shareResult" class="share-links instagram learnMore-button" target="_blank">
+      <a id="downloadImage" class="share-links instagram learnMore-button">
 
-        Share
+        Save
 
       </a>
 
-      <!-- replay game -->
-      <a href="index.html" class="replay-button"> 
+      <!-- share game url -->
+      <a id="shareURL" class="replay-button"> 
 
-        Replay
+        Share
 
       </a>
 
@@ -161,6 +166,13 @@
 
 <script>
   var finalPic = ' ';
+  var selectedPic = null;
+
+  var images = [
+    { main: 'results/wealth_reviews1.jpg', linked: 'results/wealth1.jpg' },
+    { main: 'results/wealth_reviews2.jpg', linked: 'results/wealth2.jpg' },
+    { main: 'results/wealth_reviews3.jpg', linked: 'results/wealth3.jpg' }
+  ];
 
   document.getElementById("disclaimer").style.display = 'none';
   document.getElementById('footer-buttons').style.display = 'none';
@@ -182,94 +194,115 @@ function Transition() {
   }, 3000);
 }
 
-document.getElementById("shareResult").addEventListener("click", async (event) => {
-    event.preventDefault();
-    // const mainImage = document.querySelector('.ans-banner-img');
+// document.getElementById("shareResult").addEventListener("click", async (event) => {
+//     event.preventDefault();
 
-    const mainImage = document.getElementById('random-result');
+//     const mainImage = document.getElementById('random-result');
 
-    const images = [
-      { main: 'results/wealth_reviews1.jpg', linked: 'results/wealth1.jpg' },
-      { main: 'results/wealth_reviews2.jpg', linked: 'results/wealth2.jpg' },
-      { main: 'results/wealth_reviews3.jpg', linked: 'results/wealth3.jpg' }
-    ];
+//     const images = [
+//       { main: 'results/capital_reviews1.jpg', linked: 'results/capital1.jpg' },
+//       { main: 'results/capital_reviews2.jpg', linked: 'results/capital2.jpg' },
+//       { main: 'results/capital_reviews3.jpg', linked: 'results/capital3.jpg' }
+//     ];
+
+//     function isFacebookApp() {
+//       return navigator.userAgent.includes("FBAN") || navigator.userAgent.includes("FBAV");
+//     }
+
+//     if (isFacebookApp()) {
+//       // Facebook-specific logic: Open share link in a new tab
+//       const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareMessage)}`;
+//       window.open(facebookShareUrl, '_blank');
+
+//       return;
+//     }
+//     else {
+//       // sharing of image to application of choice
+//       if (mainImage && mainImage.getAttribute('src')) {
+
+//         const mainImageSrc = mainImage.src.split('/').pop();
+
+//         const matchedImage = images.find(img => img.main.endsWith(mainImageSrc));
+
+//         if (!matchedImage) {
+//           alert ('Could not find corresponding image');
+//           return;
+//         }
+
+//         const URL_Linked = new URL(matchedImage.linked, window.location.href).href;
+
+//         try {
+//           const response = await fetch(URL_Linked);
+//           const blob = await response.blob();
+
+//           const fileName = URL_Linked.split('/').pop();
+
+//           const file = new File([blob], fileName, {type: blob.type});
+
+//           const shareData = {
+//             files: [file],
+//             text: `https://lionglobalinvestors.github.io/Retirement/`,
+//             url: `https://lionglobalinvestors.github.io/Retirement/`,
+//           };
+
+//           if (navigator.canShare && navigator.canShare(shareData)) {
+//           await navigator.share(shareData);
+//           } else {
+//             alert(`navigator.share doesn't support in your device`);
+//           }
+//         } catch (error) {
+//           return;
+//         }
+
+//       }
+//     }
     
-    // copy link to clipboard
-    const shareMessage = `https://lionglobalinvestors.github.io/Retirement/`;
+//   });
 
-    function isFacebookApp() {
-      return navigator.userAgent.includes("FBAN") || navigator.userAgent.includes("FBAV");
+function choosePic() {
+    var imgElement = document.getElementById('random-result');
+    if (imgElement) {
+
+      var randomNum = Math.floor(Math.random() * images.length);
+      var selectedPic = images[randomNum];
+
+      imgElement.src = selectedPic.main;
+      finalPic = selectedPic.linked;
     }
+  }
 
-    if (isFacebookApp()) {
-      // Facebook-specific logic: Open share link in a new tab
-      const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareMessage)}`;
-      window.open(facebookShareUrl, '_blank');
-    }
-    else {
-      // sharing of image to application of choice
-      if (mainImage && mainImage.getAttribute('src')) {
-        // const URL = mainImage.getAttribute('src');
+document.addEventListener("DOMContentLoaded", function () {
+    choosePic();
 
-        const mainImageSrc = mainImage.src.split('/').pop();
+    document.getElementById('downloadImage').addEventListener('click', function (e) {
+      e.preventDefault(); // Prevent default anchor behavior
 
-        const matchedImage = images.find(img => img.main.endsWith(mainImageSrc));
-
-        if (!matchedImage) {
-          alert ('Could not find corresponding image');
-          return;
-        }
-
-        const URL_Linked = new URL(matchedImage.linked, window.location.href).href;
-
-        try {
-          const response = await fetch(URL_Linked);
-          const blob = await response.blob();
-
-          const fileName = URL_Linked.split('/').pop();
-
-          const file = new File([blob], fileName, {type: blob.type});
-
-          const shareData = {
-            files: [file],
-            text: shareMessage,
-          };
-
-          if (navigator.canShare && navigator.canShare(shareData)) {
-          await navigator.share(shareData);
-          } else {
-            alert(`navigator.share doesn't support in your device`);
-          }
-        } catch (error) {
-          return;
-        }
-
+      if (!finalPic) {
+        console.error("No image selected!");
+        return;
       }
-    }
-    
+
+      const link = document.createElement("a");
+      link.href = finalPic;
+      link.download = finalPic.split('/').pop(); // Extract file name
+      document.body.appendChild(link);
+      link.click(); // Trigger download
+      document.body.removeChild(link); // Clean up
+    });
   });
 
-  document.addEventListener("DOMContentLoaded", function () {
-    var pictures = ["results/wealth_reviews1.jpg", "results/wealth_reviews2.jpg", "results/wealth_reviews3.jpg"];
-    
-    function choosePic() {
-        var imgElement = document.getElementById('random-result');
+  document.getElementById("shareURL").addEventListener("click", async (event) => {
+    event.preventDefault(); // prevent default <a> behavior
 
-        // Ensure the element exists before setting src
-        if (imgElement) {
-            var randomNum = Math.floor(Math.random() * pictures.length);
-            var selectedPic = pictures[randomNum];
+    const shareMessage = `I am a Daredevil traveller. What's yours? Find out your Traveller Profile here: https://lionglobalinvestors.github.io/Retirement/`;
 
-            imgElement.src = selectedPic;
-
-            finalPic = selectedPic;
-            console.log("Selected Image:", pictures[randomNum]);
-        } else {
-            console.error("Image element not found! Check your HTML.");
-        }
+    try {
+      await navigator.clipboard.writeText(shareMessage);
+      alert("URL copied to clipboard!");
+    } catch (err) {
+      console.error("Clipboard copy failed", err);
+      alert("Failed to copy URL to clipboard.");
     }
-
-    choosePic();
 });
 
 function Capital(){

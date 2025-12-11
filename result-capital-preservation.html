@@ -4,21 +4,21 @@
 <head>
 
 <!-- Google tag (gtag.js) -->
-<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-DHC21792BX"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DHC21792BX"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'G-DHC21792BX');
-</script> -->
+</script>
 
 <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+<!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-KCVW7GJH');</script>
+  })(window,document,'script','dataLayer','GTM-KCVW7GJH');</script> -->
 <!-- End Google Tag Manager -->
 
 
@@ -47,6 +47,15 @@
   <link rel="prefetch" href="results/capital1.jpg">
   <link rel="prefetch" href="results/capital2.jpg">
   <link rel="prefetch" href="results/capital3.jpg">
+
+  <meta property="og:description" content="Here's my Traveller Profile! What's yours?" />
+  <meta property="og:image" content="https://lionglobalinvestors.github.io/Retirement/pic/start.jpg" />
+  <meta property="og:url" content="https://lionglobalinvestors.github.io/Retirement/index.html" />
+  <meta property="og:type" content="website" />
+
+  <!-- Facebook SDK -->
+  <script async defer crossorigin="anonymous" 
+  src="https://connect.facebook.net/en_US/sdk.js"></script>
 
 </head>
 
@@ -77,8 +86,12 @@
 
         <div class="ans-banner-container">
           
-          
-          <div id="bottom"></div>
+          <p class="result-text">
+
+            Here is your traveller's profile. <br>
+            Don't lose it. Save the image!
+
+          </p>
 
           <img id="result-img" class="main-img" src="results/capital.jpg" alt="Capital Preservation" usemap="#retirementMap">
 
@@ -111,8 +124,9 @@
           
         </div>
 
-        <p class="disclaimer" id="disclaimer">This is for information and illustration only, and does not have regard to your specific investment objectives, financial situation, tax position or needs. The information herein is not intended to be and does not constitute financial advice or an offer or solicitation for the purchase or sale of units in any fund. Not all investment ideas are suitable for all investors and no recommendation is given as to the suitability of any funds for any particular investor. Prior to making any investment, you should make your own evaluation or seek independent advice as to whether such investment is suitable for you. LGI does not accept any liability for any damages or loss, including loss of profit, whether direct, indirect, economic or consequential, arising from reliance on any information, opinion or estimate herein.</p>
+        <p class="disclaimer" id="disclaimer">This is for information and illustration only, and does not have regard to your specific investment objectives, financial situation, tax position or needs. The information herein is not intended to be and does not constitute financial advice or an offer or solicitation for the purchase or sale of units in any fund. Not all investment ideas are suitable for all investors and no recommendation is given as to the suitability of any funds for any particular investor. Prior to making any investment, you should make your own evaluation or seek independent advice as to whether such investment is suitable for you. Lion Global Investors does not accept any liability for any damages or loss, including loss of profit, whether direct, indirect, economic or consequential, arising from reliance on any information, opinion or estimate herein.</p>
         
+        <p class="spacer"></p>
       </div>
     </div>
 
@@ -136,8 +150,16 @@
       }
     });
 
-   </script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : 'YOUR_APP_ID', // Replace with your Facebook App ID
+        cookie     : true,
+        xfbml      : false,
+        version    : 'v18.0'
+      });
+    };
 
+   </script>
 
 </body>
 
@@ -145,17 +167,23 @@
 
     <div id="footer-buttons" class="sticky-bar">
 
-      <a href="#" id="shareResult" class="share-links instagram learnMore-button" target="_blank">
+      <a id="downloadImage" class="share-links instagram learnMore-button">
 
-        Share
+        Save
       </a>
 
-      <!-- replay game -->
-      <a href="index.html" class="replay-button"> 
+      <div id="share-container" class="share-wrapper">
+      <!-- share game url -->
 
-        Replay
-
-      </a>
+      <li class="share-menu">
+        <a href="#" id="shareURL" class="replay-button">Share</a>
+        <ul id="socialList">
+          <!-- <li><a href="#" id="shareFacebook">Facebook</a></li> -->
+          <li><a href="#" id="shareWhatsApp">WhatsApp</a></li>
+          <!-- <li><a href="#" id="shareLinkedIn">LinkedIn</a></li> -->
+          <li><a href="#" id="shareOthers">Others</a></li>
+        </ul>
+      </li>
 
     </div>
 </footer>
@@ -164,6 +192,13 @@
 
 <script>
   var finalPic = ' ';
+  var selectedPic = null;
+
+  var images = [
+    { main: 'results/capital_reviews1.jpg', linked: 'results/capital1.jpg' },
+    { main: 'results/capital_reviews2.jpg', linked: 'results/capital2.jpg' },
+    { main: 'results/capital_reviews3.jpg', linked: 'results/capital3.jpg' }
+  ];
 
   document.getElementById("disclaimer").style.display = 'none';
   document.getElementById('footer-buttons').style.display = 'none';
@@ -185,96 +220,140 @@ function Transition() {
   }, 3000);
 }
 
-  document.getElementById("shareResult").addEventListener("click", async (event) => {
-    event.preventDefault();
-    // const mainImage = document.querySelector('.ans-banner-img');
+async function generateShareURL() {
+  if (!finalPic) {
+    console.error("No image selected!");
+    return;
+  }
 
-    const mainImage = document.getElementById('random-result');
+  try {
+    const response = await fetch(finalPic);
+    const blob = await response.blob();
 
-    const images = [
-      { main: 'results/capital_reviews1.jpg', linked: 'results/capital1.jpg' },
-      { main: 'results/capital_reviews2.jpg', linked: 'results/capital2.jpg' },
-      { main: 'results/capital_reviews3.jpg', linked: 'results/capital3.jpg' }
-    ];
-    
-    // copy link to clipboard
-    const shareMessage = `https://lionglobalinvestors.github.io/Retirement/`;
+    const formData = new FormData();
+    formData.append("file", blob);
+    formData.append("upload_preset", "results");
+    formData.append("folder", "traveller-profiles");
 
-    function isFacebookApp() {
-      return navigator.userAgent.includes("FBAN") || navigator.userAgent.includes("FBAV");
+    const uploadRes = await fetch("https://api.cloudinary.com/v1_1/dd2663add/image/upload", {
+      method: "POST",
+      body: formData,
+    });
+
+    const data = await uploadRes.json();
+    const imageUrl = data.secure_url;
+
+    // Save the image URL to reuse in all share links
+    currentShareURL = imageUrl;
+
+  } catch (err) {
+    console.error("Failed to generate share URL", err);
+  }
+}
+
+function choosePic() {
+    var imgElement = document.getElementById('random-result');
+    if (imgElement) {
+
+      var randomNum = Math.floor(Math.random() * images.length);
+      var selectedPic = images[randomNum];
+
+      imgElement.src = selectedPic.main;
+      window.finalPic = selectedPic.linked;
     }
+  }
 
-    if (isFacebookApp()) {
-      // Facebook-specific logic: Open share link in a new tab
-      const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareMessage)}`;
-      window.open(facebookShareUrl, '_blank');
-    }
-    else {
-      // sharing of image to application of choice
-      if (mainImage && mainImage.getAttribute('src')) {
-        // const URL = mainImage.getAttribute('src');
+document.addEventListener("DOMContentLoaded", function () {
+    choosePic();
 
-        const mainImageSrc = mainImage.src.split('/').pop();
+    document.getElementById('downloadImage').addEventListener('click', function (e) {
+      e.preventDefault(); // Prevent default anchor behavior
 
-        const matchedImage = images.find(img => img.main.endsWith(mainImageSrc));
-
-        if (!matchedImage) {
-          alert ('Could not find corresponding image');
-          return;
-        }
-
-        const URL_Linked = new URL(matchedImage.linked, window.location.href).href;
-
-        try {
-          const response = await fetch(URL_Linked);
-          const blob = await response.blob();
-
-          const fileName = URL_Linked.split('/').pop();
-
-          const file = new File([blob], fileName, {type: blob.type});
-
-          const shareData = {
-            files: [file],
-            text: shareMessage,
-          };
-
-          if (navigator.canShare && navigator.canShare(shareData)) {
-          await navigator.share(shareData);
-          } else {
-            alert(`navigator.share doesn't support in your device`);
-          }
-        } catch (error) {
-          return;
-        }
-
+      if (!finalPic) {
+        console.error("No image selected!");
+        return;
       }
-    }
-    
+
+      const link = document.createElement("a");
+      link.href = finalPic;
+      link.download = finalPic.split('/').pop(); // Extract file name
+      document.body.appendChild(link);
+      link.click(); // Trigger download
+      document.body.removeChild(link); // Clean up
+    });
   });
 
+  const baseGameURL = "https://lionglobalinvestors.github.io/Retirement/index.html";
+  const shareText = "I'm a Zoom Ninja Traveller! What's yours?";
 
   document.addEventListener("DOMContentLoaded", function () {
-    var pictures = ["results/capital_reviews1.jpg", "results/capital_reviews2.jpg", "results/capital_reviews3.jpg"];
-    
-    function choosePic() {
-        var imgElement = document.getElementById('random-result');
+    const shareOptions = document.getElementById("socialList");
+    const shareContainer = document.querySelector('.share-menu');
 
-        // Ensure the element exists before setting src
-        if (imgElement) {
-            var randomNum = Math.floor(Math.random() * pictures.length);
-            var selectedPic = pictures[randomNum];
+    // Toggle share options
+    document.getElementById("shareURL").addEventListener("click", function (e) {
+      e.preventDefault();
+      shareOptions.style.display = (shareOptions.style.display === "block") ? "none" : "block";
+    });
 
-            imgElement.src = selectedPic;
+    // Hide on outside click
+    document.addEventListener("click", function (e) {
+      if (!shareContainer.contains(e.target)) {
+        shareOptions.style.display = "none";
+      }
+    });
 
-            finalPic = selectedPic;
+    // WhatsApp - mobile app or WhatsApp Web
+    document.getElementById("shareWhatsApp").addEventListener("click", function (e) {
+      e.preventDefault();
+      const msg = `${shareText}\n${baseGameURL}`;
+      const waURL = /Android|iPhone/i.test(navigator.userAgent)
+        ? `whatsapp://send?text=${encodeURIComponent(msg)}`
+        : `https://web.whatsapp.com/send?text=${encodeURIComponent(msg)}`;
+      window.open(waURL, "_blank");
+    });
 
-        } else {
-            console.error("Image element not found! Check your HTML.");
-        }
-    }
+    // Facebook - deep link fallback to browser
+    // document.getElementById("shareFacebook").addEventListener("click", function (e) {
+    //   e.preventDefault();
+    //   const fbURL = /Android|iPhone/i.test(navigator.userAgent)
+    //     ? `fb://facewebmodal/f?href=https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(baseGameURL)}`
+    //     : `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(baseGameURL)}`;
+    //   window.open(fbURL, "_blank");
+    // });
 
-    choosePic();
-});
+    document.getElementById("shareOthers").addEventListener("click", function (e) {
+      e.preventDefault();
+
+      const msg = `I'm a Zoom Ninja Traveller! What's yours?\n${baseGameURL}`;
+
+      if (navigator.share && /Android|iPhone|iPad/i.test(navigator.userAgent)) {
+        // Mobile — use Web Share API
+        navigator.share({
+          title: "I'm a Zoom Ninja Traveller! What's yours?",
+          text: msg,
+          // url: baseGameURL,
+        }).catch((err) => {
+          console.error("Share failed:", err);
+        });
+      } else {
+        // Desktop — fallback to copying message
+        navigator.clipboard.writeText(msg).then(() => {
+          alert("Link copied to clipboard! You can paste it anywhere.");
+        }).catch((err) => {
+          console.error("Copy failed:", err);
+          // alert("Unable to copy. Please copy manually:\n" + msg);
+        });
+      }
+    });
+
+    // LinkedIn - only works via browser for now
+    document.getElementById("shareLinkedIn").addEventListener("click", function (e) {
+      e.preventDefault();
+      const liURL = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(baseGameURL)}`;
+      window.open(liURL, "_blank");
+    });
+  });
 
 function Capital(){
   document.getElementById('result-img').src = "results/capital.jpg";
