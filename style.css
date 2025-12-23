@@ -1185,7 +1185,7 @@ footer a {
     .replay-button,
     .scrollDown {
         width: 170px;
-        left: -6vw;
+        left: -5vw;
     }
 
     .result-text {
@@ -1219,7 +1219,7 @@ footer a {
     .replay-button,
     .scrollDown {
         padding: 4px 14px;
-        width: 150px;
+        width: 135px;
     }
 
     .fundCentre-button {
