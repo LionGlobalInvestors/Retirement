@@ -1185,8 +1185,10 @@ footer a {
     .learnMore-button,
     .replay-button,
     .scrollDown {
-        width: 170px;
-        left: -5vw;
+        /* width: 170px;
+        left: -5vw; */
+        width: 150px;
+        left: -3vw;
     }
 
     .result-text {
