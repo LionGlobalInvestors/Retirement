@@ -1068,7 +1068,8 @@ footer a {
     .scrollDown {
         width: 270px;
         font-size: 15px;
-        left: -12vw;
+        /* left: -12vw; */
+        left:  -6vw;
     }
 
     .result-text {
