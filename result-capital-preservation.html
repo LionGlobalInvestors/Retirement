@@ -311,20 +311,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-  document.getElementById("shareURL").addEventListener("click", async (event) => {
-    event.preventDefault(); // prevent default <a> behavior
-
-    const shareMessage = `I am a Zoom Ninja traveller. What's yours? Find out your Traveller Profile here: https://lionglobalinvestors.github.io/Retirement/`;
-
-    try {
-      await navigator.clipboard.writeText(shareMessage);
-      alert("URL copied to clipboard!");
-    } catch (err) {
-      console.error("Clipboard copy failed", err);
-      alert("Failed to copy URL to clipboard.");
-    }
-});
-
 function Capital(){
   document.getElementById('result-img').src = "results/capital.jpg";
 
