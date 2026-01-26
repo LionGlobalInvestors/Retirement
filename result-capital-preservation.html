@@ -278,7 +278,7 @@ function choosePic() {
       var selectedPic = images[randomNum];
 
       imgElement.src = selectedPic.main;
-      window.finalPic = selectedPic.linked;
+      finalPic = selectedPic.linked;
     }
   }
 
@@ -302,77 +302,33 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  const baseGameURL = "https://lionglobalinvestors.github.io/Retirement/index.html";
-  const shareText = "I'm a Zoom Ninja Traveller! What's yours?";
+  document.getElementById("shareURL").addEventListener("click", async (event) => {
+    event.preventDefault(); // prevent default <a> behavior
 
-  document.addEventListener("DOMContentLoaded", function () {
-    const shareOptions = document.getElementById("socialList");
-    const shareContainer = document.querySelector('.share-menu');
+    const shareMessage = `I am a Daredevil traveller. What's yours? Find out your Traveller Profile here: https://lionglobalinvestors.github.io/Retirement/`;
 
-    // Toggle share options
-    document.getElementById("shareURL").addEventListener("click", function (e) {
-      e.preventDefault();
-      shareOptions.style.display = (shareOptions.style.display === "block") ? "none" : "block";
-    });
+    try {
+      await navigator.clipboard.writeText(shareMessage);
+      alert("URL copied to clipboard!");
+    } catch (err) {
+      console.error("Clipboard copy failed", err);
+      alert("Failed to copy URL to clipboard.");
+    }
+});
 
-    // Hide on outside click
-    document.addEventListener("click", function (e) {
-      if (!shareContainer.contains(e.target)) {
-        shareOptions.style.display = "none";
-      }
-    });
+  document.getElementById("shareURL").addEventListener("click", async (event) => {
+    event.preventDefault(); // prevent default <a> behavior
 
-    // WhatsApp - mobile app or WhatsApp Web
-    document.getElementById("shareWhatsApp").addEventListener("click", function (e) {
-      e.preventDefault();
-      const msg = `${shareText}\n${baseGameURL}`;
-      const waURL = /Android|iPhone/i.test(navigator.userAgent)
-        ? `whatsapp://send?text=${encodeURIComponent(msg)}`
-        : `https://web.whatsapp.com/send?text=${encodeURIComponent(msg)}`;
-      window.open(waURL, "_blank");
-    });
+    const shareMessage = `I am a Daredevil traveller. What's yours? Find out your Traveller Profile here: https://lionglobalinvestors.github.io/Retirement/`;
 
-    // Facebook - deep link fallback to browser
-    // document.getElementById("shareFacebook").addEventListener("click", function (e) {
-    //   e.preventDefault();
-    //   const fbURL = /Android|iPhone/i.test(navigator.userAgent)
-    //     ? `fb://facewebmodal/f?href=https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(baseGameURL)}`
-    //     : `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(baseGameURL)}`;
-    //   window.open(fbURL, "_blank");
-    // });
-
-    document.getElementById("shareOthers").addEventListener("click", function (e) {
-      e.preventDefault();
-
-      const msg = `I'm a Zoom Ninja Traveller! What's yours?\n${baseGameURL}`;
-
-      if (navigator.share && /Android|iPhone|iPad/i.test(navigator.userAgent)) {
-        // Mobile — use Web Share API
-        navigator.share({
-          title: "I'm a Zoom Ninja Traveller! What's yours?",
-          text: msg,
-          // url: baseGameURL,
-        }).catch((err) => {
-          console.error("Share failed:", err);
-        });
-      } else {
-        // Desktop — fallback to copying message
-        navigator.clipboard.writeText(msg).then(() => {
-          alert("Link copied to clipboard! You can paste it anywhere.");
-        }).catch((err) => {
-          console.error("Copy failed:", err);
-          // alert("Unable to copy. Please copy manually:\n" + msg);
-        });
-      }
-    });
-
-    // LinkedIn - only works via browser for now
-    // document.getElementById("shareLinkedIn").addEventListener("click", function (e) {
-    //   e.preventDefault();
-    //   const liURL = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(baseGameURL)}`;
-    //   window.open(liURL, "_blank");
-    // });
-  });
+    try {
+      await navigator.clipboard.writeText(shareMessage);
+      alert("URL copied to clipboard!");
+    } catch (err) {
+      console.error("Clipboard copy failed", err);
+      alert("Failed to copy URL to clipboard.");
+    }
+});
 
 function Capital(){
   document.getElementById('result-img').src = "results/capital.jpg";
