@@ -476,7 +476,7 @@
     /*background-color: #c7cbd0; */ /* Dark maroon color */
     background-color: none;
     color: black; /* Text color */
-    font-size: 14px; /* Readable font size */
+    font-size: 12px; /* Readable font size */
     font-weight: 200; /* Slightly bold */
     padding: 10px 10px; /* Comfortable padding */
     /* bottom: 20vh; */
@@ -487,6 +487,7 @@
     transition: background-color 0.3s ease; /* Smooth hover effect */
     margin: 0;
     font-family: 'Arial', sans-serif;
+    line-height: 85%;
 }
 
 .spacer {
@@ -853,9 +854,10 @@ footer a {
         width: 98.7%;
     }
 
-    .disclaimer {
+    /* .disclaimer {
         font-size: 14px;
-    }
+        line-height: 85%;
+    } */
 
     .social-media-icons {
         bottom: 3.7vw;
@@ -951,9 +953,9 @@ footer a {
         font-size: 13px;
     }
 
-    .disclaimer {
-        font-size: 13px;
-    }
+    /* .disclaimer {
+        font-size: 11px;
+    } */
 }
 
 @media screen and (max-width: 959px) {
@@ -1052,9 +1054,9 @@ footer a {
         left: 52%;
     }
 
-    .disclaimer {
-        font-size: 14px;
-    }
+    /* .disclaimer {
+        font-size: 10px;
+    } */
 
     label {
         width: 95%;
